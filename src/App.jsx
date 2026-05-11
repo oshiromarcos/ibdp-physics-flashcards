@@ -198,6 +198,20 @@ function FormulaList({ formulas }) {
   );
 }
 
+
+function cardReportCode(card) {
+  const raw = String(card?.id || "unknown-card");
+  const levels = card?.levels || (card?.level === "HL" ? ["HL"] : ["SL", "HL"]);
+  const isSharedSLHL = levels.includes("SL") && levels.includes("HL");
+
+  // If the same card appears in both SL and HL, use one neutral code.
+  if (isSharedSLHL) {
+    return raw.replace(/^(sl|hl)-/i, "");
+  }
+
+  return raw;
+}
+
 function CardFace({ card, side, studyMode, isSaved }) {
   const isFront = side === "front";
   const text = isFront ? card.front : card.back;
@@ -218,6 +232,18 @@ function CardFace({ card, side, studyMode, isSaved }) {
           <span>{levelLabel}</span>
           <span>{card.topicCode}</span>
           <span>{isFront ? "Question" : "Answer"}</span>
+          <button
+            type="button"
+            className="cardCodeBadge"
+            title="Copy card code"
+            aria-label={`Copy card code ${cardReportCode(card)}`}
+            onClick={(event) => {
+              event.stopPropagation();
+              navigator.clipboard?.writeText(cardReportCode(card));
+            }}
+          >
+            Copy code: {cardReportCode(card)}
+          </button>
           {studyMode === "review" && <span>Review sprint</span>}
         </div>
         <div className="subtopicTitle">{card.subtopicFull || card.topic}</div>
