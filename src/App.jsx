@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import katex from "katex";
+import "katex/contrib/mhchem";
 import "katex/dist/katex.min.css";
 import "./App.css";
 import rawCards from "./data/all-cards.json";
