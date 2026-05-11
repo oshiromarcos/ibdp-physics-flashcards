@@ -159,9 +159,23 @@ function RichText({ text }) {
 function FormulaList({ formulas }) {
   if (!formulas?.length) return null;
 
+  const hasUseful = formulas.some(
+    (formula) => formula.source && !/data booklet/i.test(formula.source)
+  );
+
+  const hasBooklet = formulas.some(
+    (formula) => !formula.source || /data booklet/i.test(formula.source)
+  );
+
+  const title = hasUseful && hasBooklet
+    ? "Formula reminders"
+    : hasUseful
+      ? "Useful formula reminder"
+      : "Data booklet formula";
+
   return (
     <section className="formulaBox" onClick={(event) => event.stopPropagation()}>
-      <div className="formulaTitle">Data booklet formula</div>
+      <div className="formulaTitle">{title}</div>
       {formulas.map((formula, index) => (
         <div className="formulaItem" key={`${formula.label}-${index}`}>
           <span className="formulaLabel">{formula.label}</span>
@@ -174,6 +188,9 @@ function FormulaList({ formulas }) {
               }),
             }}
           />
+          {formula.source && !/data booklet/i.test(formula.source) && (
+            <span className="formulaSource">{formula.source}</span>
+          )}
         </div>
       ))}
     </section>
@@ -247,6 +264,7 @@ export default function App() {
   const [selectedSubtopic, setSelectedSubtopic] = useState("All topics");
   const [index, setIndex] = useState(0);
   const [history, setHistory] = useState([]);
+  const [future, setFuture] = useState([]);
   const [flipped, setFlipped] = useState(false);
   const [knownCount, setKnownCount] = useState(0);
   const [reviewIds, setReviewIds] = useState(loadReviewIds);
@@ -329,30 +347,45 @@ export default function App() {
   function goToNext() {
     if (filteredCards.length === 0) return;
     setFlipped(false);
-    setIndex((current) => {
-      pushHistory(current);
-      if (shuffleOn) return randomIndex(filteredCards.length, current);
-      return (current + 1) % filteredCards.length;
-    });
+
+    if (future.length > 0) {
+      const nextFromFuture = Math.min(future[0], filteredCards.length - 1);
+      setHistory((items) => [...items, safeIndex].slice(-300));
+      setFuture((items) => items.slice(1));
+      setIndex(nextFromFuture);
+      return;
+    }
+
+    const nextIndex = shuffleOn
+      ? randomIndex(filteredCards.length, safeIndex)
+      : (safeIndex + 1) % filteredCards.length;
+
+    setHistory((items) => [...items, safeIndex].slice(-300));
+    setFuture([]);
+    setIndex(nextIndex);
   }
 
   function previousCard() {
     if (filteredCards.length === 0) return;
     setFlipped(false);
 
-    if (shuffleOn && history.length > 0) {
-      const previous = history[history.length - 1];
+    if (history.length > 0) {
+      const previous = Math.min(history[history.length - 1], filteredCards.length - 1);
       setHistory((items) => items.slice(0, -1));
-      setIndex(Math.min(previous, filteredCards.length - 1));
+      setFuture((items) => [safeIndex, ...items].slice(0, 300));
+      setIndex(previous);
       return;
     }
 
-    setIndex((current) => (current - 1 + filteredCards.length) % filteredCards.length);
+    const previous = (safeIndex - 1 + filteredCards.length) % filteredCards.length;
+    setFuture((items) => [safeIndex, ...items].slice(0, 300));
+    setIndex(previous);
   }
 
   function resetPosition() {
     setIndex(0);
     setHistory([]);
+    setFuture([]);
     setFlipped(false);
   }
 
@@ -398,6 +431,7 @@ export default function App() {
 
       setFlipped(false);
       setHistory([]);
+      setFuture([]);
       setIndex((current) => {
         if (shuffleOn) return randomIndex(remaining.length, -1);
         return Math.min(current, remaining.length - 1);
@@ -414,6 +448,7 @@ export default function App() {
     setStudyMode("review");
     setSelectedSubtopic("All topics");
     setHistory([]);
+    setFuture([]);
     setIndex(shuffleOn ? randomIndex(reviewIds.length, -1) : 0);
     setFlipped(false);
   }

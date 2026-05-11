@@ -111,7 +111,7 @@ body {
 .controls {
   display: grid;
   grid-template-columns: minmax(160px, 0.55fr) minmax(280px, 1.45fr) auto;
-  gap: 14px;
+  gap: 10px;
   align-items: end;
   margin-bottom: 22px;
 }
@@ -258,7 +258,7 @@ select:disabled {
   justify-content: center;
   align-items: center;
   text-align: center;
-  gap: 14px;
+  gap: 10px;
 }
 
 .cardContent::-webkit-scrollbar {
@@ -273,8 +273,8 @@ select:disabled {
 .mathText {
   width: 100%;
   white-space: pre-wrap;
-  font-size: clamp(19px, 2.2vw, 27px);
-  line-height: 1.43;
+  font-size: clamp(17px, 1.75vw, 23px);
+  line-height: 1.35;
   text-align: center;
 }
 
@@ -299,7 +299,7 @@ select:disabled {
 
 .formulaBox {
   width: min(100%, 680px);
-  margin-top: 18px;
+  margin-top: 10px;
   text-align: left;
   border-radius: 22px;
   padding: 14px 16px;
@@ -358,7 +358,7 @@ select:disabled {
   justify-content: center;
   gap: 10px;
   flex-wrap: wrap;
-  margin-top: 18px;
+  margin-top: 10px;
 }
 
 .buttons button,
@@ -528,4 +528,58 @@ select:disabled {
 
 select {
   color: #111827;
+}
+
+
+.cardBack .mathText {
+  font-size: clamp(16px, 1.65vw, 22px);
+}
+
+.formulaBox {
+  max-height: 210px;
+  overflow: auto;
+}
+
+@media (max-width: 700px) {
+  .mathText {
+    font-size: clamp(15px, 4.2vw, 20px);
+  }
+
+  .cardBack .mathText {
+    font-size: clamp(14px, 4vw, 19px);
+  }
+}
+
+
+.formulaSource {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.78rem;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+
+.inlineFormula {
+  display: block;
+  width: min(100%, 720px);
+  margin: 0.75rem auto 0;
+  padding: 0.65rem 0.85rem;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.58);
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  font-size: 0.9em;
+  text-align: center;
+}
+
+.inlineFormula .katex-display {
+  margin: 0.25rem 0 0;
+}
+
+
+.formulaNote {
+  margin-top: 0.25rem;
+  font-size: 0.9em;
+  color: #475569;
 }
