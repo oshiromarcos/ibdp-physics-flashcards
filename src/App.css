@@ -20,15 +20,16 @@ body {
   padding: 32px 18px;
   background:
     radial-gradient(circle at top left, var(--accent-soft), transparent 34%),
-    radial-gradient(circle at bottom right, rgba(255, 255, 255, 0.9), transparent 34%),
+    radial-gradient(circle at bottom right, var(--glow), transparent 30%),
     linear-gradient(135deg, var(--page-start), var(--page-end));
+  transition: background 400ms ease;
 }
 
 .reviewShell {
   background:
-    radial-gradient(circle at top left, #fecdd3, transparent 34%),
-    radial-gradient(circle at bottom right, #fef3c7, transparent 36%),
-    linear-gradient(135deg, #fff1f2, #fff7ed);
+    radial-gradient(circle at 18% 16%, rgba(251, 146, 60, 0.38), transparent 28%),
+    radial-gradient(circle at 82% 10%, rgba(216, 180, 254, 0.45), transparent 30%),
+    linear-gradient(135deg, #fff7ed, #fae8ff 58%, #fef3c7);
 }
 
 .app {
@@ -55,23 +56,38 @@ body {
   font-weight: 900;
   letter-spacing: 0.03em;
   margin-bottom: 12px;
-}
-
-.reviewShell .modeBadge {
-  background: linear-gradient(135deg, #be123c, #f97316);
+  box-shadow: 0 10px 24px var(--glow);
 }
 
 .header h1 {
   margin: 0 0 8px;
-  font-size: clamp(30px, 5vw, 48px);
-  line-height: 1;
-  letter-spacing: -0.04em;
+  font-size: clamp(32px, 5vw, 52px);
+  line-height: 0.98;
+  letter-spacing: -0.05em;
 }
 
 .header p {
   margin: 0;
   color: #4b5563;
   font-size: 17px;
+}
+
+.currentContext {
+  margin-top: 12px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.currentContext span {
+  background: rgba(255, 255, 255, 0.7);
+  color: #111827;
+  border: 1px solid rgba(255, 255, 255, 0.92);
+  border-radius: 999px;
+  padding: 8px 11px;
+  font-weight: 850;
+  font-size: 13px;
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.06);
 }
 
 .stats {
@@ -82,9 +98,9 @@ body {
 }
 
 .stats span {
-  background: rgba(255, 255, 255, 0.72);
-  border: 1px solid rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.74);
+  border: 1px solid rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(14px);
   border-radius: 999px;
   padding: 9px 13px;
   font-weight: 900;
@@ -94,8 +110,8 @@ body {
 
 .controls {
   display: grid;
-  grid-template-columns: minmax(120px, 160px) minmax(260px, 1fr) auto;
-  gap: 16px;
+  grid-template-columns: minmax(160px, 0.55fr) minmax(280px, 1.45fr) auto;
+  gap: 14px;
   align-items: end;
   margin-bottom: 22px;
 }
@@ -113,17 +129,21 @@ select {
   border-radius: 16px;
   border: 1px solid rgba(17, 24, 39, 0.12);
   background: rgba(255, 255, 255, 0.84);
+  min-width: 100%;
   box-shadow: 0 10px 28px rgba(15, 23, 42, 0.07);
 }
 
+select:disabled {
+  opacity: 0.68;
+}
+
 .cardCounter {
-  font-weight: 900;
+  font-weight: 950;
   color: var(--accent);
-  background: rgba(255, 255, 255, 0.76);
+  background: rgba(255, 255, 255, 0.72);
   padding: 12px 16px;
   border-radius: 999px;
   white-space: nowrap;
-  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.07);
 }
 
 .cardArea {
@@ -132,9 +152,10 @@ select {
 }
 
 .flipScene {
-  width: min(100%, 820px);
-  height: 500px;
-  perspective: 1400px;
+  width: min(100%, 850px);
+  height: clamp(500px, 58vh, 650px);
+  min-height: 500px;
+  perspective: 1500px;
 }
 
 .flashcard {
@@ -157,49 +178,53 @@ select {
 .cardFace {
   position: absolute;
   inset: 0;
-  border-radius: 34px;
+  border-radius: 36px;
   padding: 28px;
-  text-align: left;
+  text-align: center;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 16px;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.86);
+  border: 1px solid rgba(255, 255, 255, 0.88);
   box-shadow:
-    0 26px 70px var(--glow),
-    0 18px 42px rgba(15, 23, 42, 0.12),
+    0 28px 70px rgba(15, 23, 42, 0.19),
+    0 0 0 8px rgba(255, 255, 255, 0.24),
     inset 0 1px 0 rgba(255, 255, 255, 0.82);
 }
 
 .cardFront {
-  background: var(--card-front);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.72), transparent 40%),
+    var(--card-front);
 }
 
 .cardBack {
-  background: var(--card-back);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.66), transparent 42%),
+    var(--card-back);
   transform: rotateY(180deg);
 }
 
-.reviewShell .cardFace {
-  border: 2px solid rgba(190, 18, 60, 0.18);
-  box-shadow:
-    0 30px 80px rgba(190, 18, 60, 0.22),
-    0 18px 42px rgba(15, 23, 42, 0.12);
+.savedBadge {
+  position: absolute;
+  top: 20px;
+  right: 22px;
+  z-index: 3;
+  background: #111827;
+  color: white;
+  border-radius: 999px;
+  padding: 8px 12px;
+  font-size: 13px;
+  font-weight: 950;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.2);
 }
 
-.cardHeader {
-  border-bottom: 1px solid rgba(17, 24, 39, 0.08);
-  padding-bottom: 12px;
-}
-
-.cardHeader h2 {
-  margin: 10px 0 0;
-  font-size: clamp(18px, 2.3vw, 24px);
-  line-height: 1.2;
-  letter-spacing: -0.02em;
-  color: #111827;
+.cardTop {
+  display: grid;
+  gap: 10px;
+  padding-right: 80px;
 }
 
 .cardMeta {
@@ -213,34 +238,112 @@ select {
   color: var(--accent);
   border-radius: 999px;
   padding: 7px 11px;
-  font-size: 14px;
-  font-weight: 900;
+  font-size: 13px;
+  font-weight: 950;
+}
+
+.subtopicTitle {
+  color: var(--accent);
+  font-size: 15px;
+  font-weight: 950;
+  line-height: 1.25;
 }
 
 .cardContent {
   flex: 1;
   overflow: auto;
-  padding-right: 6px;
+  padding: 0 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 14px;
+}
+
+.cardContent::-webkit-scrollbar {
+  width: 9px;
+}
+
+.cardContent::-webkit-scrollbar-thumb {
+  background: var(--accent-soft);
+  border-radius: 999px;
 }
 
 .mathText {
+  width: 100%;
   white-space: pre-wrap;
-  font-size: clamp(20px, 2.7vw, 27px);
-  line-height: 1.45;
+  font-size: clamp(19px, 2.2vw, 27px);
+  line-height: 1.43;
+  text-align: center;
 }
 
-.displayMath {
-  display: block;
-  margin: 12px 0;
+.mathText strong {
+  font-weight: 950;
+}
+
+.mathText sub,
+.mathText sup {
+  font-size: 0.68em;
+  line-height: 0;
 }
 
 .cardImage {
   display: block;
   max-width: 100%;
-  max-height: 190px;
+  max-height: min(260px, 42vh);
   object-fit: contain;
-  margin: 16px auto 0;
+  margin: 14px auto 0;
   border-radius: 18px;
+}
+
+.formulaBox {
+  width: min(100%, 680px);
+  margin-top: 18px;
+  text-align: left;
+  border-radius: 22px;
+  padding: 14px 16px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(17, 24, 39, 0.08);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.92);
+}
+
+.formulaTitle {
+  font-size: 13px;
+  font-weight: 950;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 8px;
+}
+
+.formulaItem {
+  display: grid;
+  grid-template-columns: minmax(100px, 0.45fr) minmax(0, 1fr);
+  gap: 10px;
+  align-items: center;
+  padding: 9px 0;
+  border-top: 1px solid rgba(17, 24, 39, 0.08);
+}
+
+.formulaItem:first-of-type {
+  border-top: 0;
+}
+
+.formulaLabel {
+  color: #374151;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.formulaMath {
+  overflow-x: auto;
+  font-size: 1.02rem;
+}
+
+.formulaMath .katex-display {
+  margin: 0;
+  text-align: center;
 }
 
 .tapHint {
@@ -264,7 +367,7 @@ select {
   border-radius: 999px;
   padding: 13px 18px;
   font: inherit;
-  font-weight: 900;
+  font-weight: 950;
   background: var(--accent);
   color: white;
   cursor: pointer;
@@ -284,14 +387,20 @@ select {
 }
 
 .buttons.secondary button {
-  background: rgba(255, 255, 255, 0.78);
+  background: rgba(255, 255, 255, 0.8);
   color: #111827;
-  border: 1px solid rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(14px);
 }
 
-.buttons button.toggleOn {
-  background: linear-gradient(135deg, var(--accent), #111827);
+.buttons .activeButton {
+  background: #111827;
+  color: white;
+}
+
+.buttons .savedButton {
+  background: #111827;
+  color: white;
 }
 
 .emptyState {
@@ -308,149 +417,115 @@ select {
   margin-top: 0;
 }
 
-@media (max-width: 760px) {
+@media (max-width: 780px) {
   .appShell {
-    padding: 18px 12px 28px;
+    padding: 18px 12px 26px;
+  }
+
+  .header,
+  .controls {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
   }
 
   .header {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 12px;
-    margin-bottom: 16px;
+    margin-bottom: 18px;
   }
 
   .header h1 {
-    font-size: 32px;
-  }
-
-  .header p {
-    font-size: 15px;
+    font-size: clamp(30px, 11vw, 42px);
   }
 
   .stats {
     justify-content: flex-start;
   }
 
-  .stats span {
-    font-size: 13px;
-    padding: 8px 11px;
-  }
-
-  .controls {
-    grid-template-columns: 1fr;
-    gap: 10px;
-    margin-bottom: 16px;
-  }
-
-  .cardCounter {
-    width: fit-content;
-    font-size: 14px;
-    padding: 10px 13px;
-  }
-
-  select {
-    width: 100%;
-    padding: 11px 13px;
-  }
-
   .flipScene {
-    width: 100%;
-    height: min(66vh, 520px);
-    min-height: 410px;
+    height: min(68vh, 620px);
+    min-height: 500px;
   }
 
   .cardFace {
-    padding: 20px;
-    border-radius: 26px;
+    padding: 22px;
+    border-radius: 28px;
   }
 
-  .cardHeader h2 {
-    font-size: 18px;
+  .cardTop {
+    padding-right: 70px;
   }
 
-  .cardMeta span {
+  .buttons {
+    gap: 8px;
+  }
+
+  .buttons button {
+    flex: 1 1 44%;
+    padding: 12px 12px;
+  }
+
+  .formulaItem {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .appShell {
+    padding-inline: 10px;
+  }
+
+  .currentContext span {
+    max-width: 100%;
+  }
+
+  .flipScene {
+    height: 70vh;
+    min-height: 520px;
+  }
+
+  .cardFace {
+    padding: 18px;
+    border-radius: 24px;
+  }
+
+  .savedBadge {
+    top: 16px;
+    right: 16px;
     font-size: 12px;
-    padding: 6px 9px;
+    padding: 7px 10px;
+  }
+
+  .cardTop {
+    padding-right: 62px;
   }
 
   .mathText {
     font-size: 19px;
-    line-height: 1.4;
   }
 
   .cardImage {
-    max-height: 150px;
-  }
-
-  .buttons {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 9px;
+    max-height: 180px;
   }
 
   .buttons button {
-    width: 100%;
-    padding: 12px 11px;
-    font-size: 14px;
-  }
-}
-
-@media (max-width: 420px) {
-  .appShell {
-    padding: 14px 9px 24px;
-  }
-
-  .header h1 {
-    font-size: 28px;
-  }
-
-  .modeBadge {
-    font-size: 12px;
-    padding: 6px 10px;
-  }
-
-  .flipScene {
-    height: min(64vh, 500px);
-    min-height: 390px;
-  }
-
-  .cardFace {
-    padding: 16px;
-    border-radius: 22px;
-  }
-
-  .mathText {
-    font-size: 17px;
-  }
-
-  .tapHint {
-    font-size: 12px;
+    flex: 1 1 100%;
   }
 }
 
 
-.savedCorner {
-  position: absolute;
-  top: 18px;
-  right: 18px;
-  z-index: 5;
-  background: linear-gradient(135deg, #16a34a, #22c55e);
-  color: white;
-  font-size: 12px;
-  font-weight: 1000;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  padding: 7px 11px;
-  border-radius: 999px;
-  box-shadow: 0 10px 24px rgba(22, 163, 74, 0.24);
+.controls label:nth-child(2) select {
+  width: 100%;
 }
 
-@media (max-width: 420px) {
-  .savedCorner {
-    top: 12px;
-    right: 12px;
-    font-size: 10px;
-    padding: 6px 9px;
-  }
+.currentContext span {
+  max-width: 100%;
+}
+
+.currentContext span:nth-child(2) {
+  border-color: color-mix(in srgb, var(--accent) 25%, white);
+  color: var(--accent);
+}
+
+select {
+  color: #111827;
 }

@@ -1,53 +1,68 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import katex from "katex";
 import "katex/dist/katex.min.css";
 import "./App.css";
 import rawCards from "./data/all-cards.json";
 
+const TOPIC_ORDER = [
+  "Physics", "Inquiry 1", "Inquiry 2", "Inquiry 3", "Tool 3", "T1", "T2", "T3",
+  "A1", "A2", "A3", "A4", "A5",
+  "B1", "B2", "B3", "B4", "B5",
+  "C1", "C2", "C3", "C4", "C5",
+  "D1", "D2", "D3", "D4",
+  "E1", "E2", "E3", "E4", "E5",
+];
+
+const THEME_LABELS = {
+  common: "Common tools",
+  A: "Theme A — Space, Time, and Motion",
+  B: "Theme B — The Particulate Nature of Matter",
+  C: "Theme C — Wave Behaviour",
+  D: "Theme D — Fields",
+  E: "Theme E — Nuclear and Quantum Physics",
+};
+
 const cards = rawCards.map((card, index) => ({
   ...card,
   id: card.id || `card-${index + 1}`,
-  levels: card.levels || [card.level || "SL"],
+  levels: card.levels || (card.level === "HL" ? ["HL"] : ["SL", "HL"]),
+  frontImages: card.frontImages || (card.frontImage ? [card.frontImage] : []),
+  backImages: card.backImages || (card.backImage ? [card.backImage] : []),
+  bookletFormulas: card.bookletFormulas || [],
 }));
 
-function imageSrc(path) {
-  if (!path) return "";
-  return import.meta.env.BASE_URL + path.replace(/^\//, "");
-}
+const REVIEW_THEME = {
+  accent: "#7c2d12",
+  accentSoft: "#fed7aa",
+  pageStart: "#fff7ed",
+  pageEnd: "#fae8ff",
+  cardFront: "#fffaf0",
+  cardBack: "#ffedd5",
+  glow: "rgba(251, 146, 60, 0.28)",
+};
 
-function topicTitle(card) {
-  return `${card.topicCode} — ${card.topic}`;
-}
-
-function subtopicTitle(card) {
-  return card.subtopicFull || `${card.topicCode}: ${card.topic}`;
-}
-
-function themeGroup(topicCode) {
-  if (String(topicCode).startsWith("A")) return "A";
-  if (String(topicCode).startsWith("B")) return "B";
-  if (String(topicCode).startsWith("C")) return "C";
-  if (String(topicCode).startsWith("D")) return "D";
-  if (String(topicCode).startsWith("E")) return "E";
-  if (String(topicCode).startsWith("Inquiry")) return "Inquiry";
-  if (String(topicCode).startsWith("Tool")) return "Tool";
-  return "Default";
-}
-
-function themeFor(card, studyMode) {
-  if (studyMode === "review") {
-    return {
-      accent: "#be123c",
-      accentSoft: "#ffe4e6",
-      pageStart: "#fff1f2",
-      pageEnd: "#fef3c7",
-      cardFront: "#fff7ed",
-      cardBack: "#ffe4e6",
-      glow: "rgba(190, 18, 60, 0.24)",
-    };
-  }
+function themeForTopic(topicCode, studyMode) {
+  if (studyMode === "review") return REVIEW_THEME;
 
   const themes = {
+    Inquiry: {
+      accent: "#334155",
+      accentSoft: "#e2e8f0",
+      pageStart: "#f8fafc",
+      pageEnd: "#eef2ff",
+      cardFront: "#ffffff",
+      cardBack: "#f8fafc",
+      glow: "rgba(51, 65, 85, 0.18)",
+    },
+    Tool: {
+      accent: "#6d28d9",
+      accentSoft: "#ede9fe",
+      pageStart: "#f5f3ff",
+      pageEnd: "#eef2ff",
+      cardFront: "#ffffff",
+      cardBack: "#f5f3ff",
+      glow: "rgba(109, 40, 217, 0.18)",
+    },
     A: {
       accent: "#4f46e5",
       accentSoft: "#e0e7ff",
@@ -55,7 +70,7 @@ function themeFor(card, studyMode) {
       pageEnd: "#fdf2f8",
       cardFront: "#ffffff",
       cardBack: "#f5f3ff",
-      glow: "rgba(79, 70, 229, 0.22)",
+      glow: "rgba(79, 70, 229, 0.2)",
     },
     B: {
       accent: "#0f766e",
@@ -64,120 +79,136 @@ function themeFor(card, studyMode) {
       pageEnd: "#fff7ed",
       cardFront: "#fffdf7",
       cardBack: "#ecfeff",
-      glow: "rgba(15, 118, 110, 0.22)",
+      glow: "rgba(15, 118, 110, 0.2)",
     },
     C: {
-      accent: "#7c3aed",
-      accentSoft: "#ede9fe",
-      pageStart: "#f5f3ff",
+      accent: "#be123c",
+      accentSoft: "#ffe4e6",
+      pageStart: "#fff1f2",
       pageEnd: "#eff6ff",
       cardFront: "#ffffff",
-      cardBack: "#f3e8ff",
-      glow: "rgba(124, 58, 237, 0.22)",
+      cardBack: "#fff1f2",
+      glow: "rgba(190, 18, 60, 0.18)",
     },
     D: {
       accent: "#0369a1",
       accentSoft: "#e0f2fe",
-      pageStart: "#e0f2fe",
-      pageEnd: "#f8fafc",
+      pageStart: "#f0f9ff",
+      pageEnd: "#ecfeff",
       cardFront: "#ffffff",
-      cardBack: "#e0f2fe",
-      glow: "rgba(3, 105, 161, 0.22)",
+      cardBack: "#f0f9ff",
+      glow: "rgba(3, 105, 161, 0.18)",
     },
     E: {
       accent: "#b45309",
       accentSoft: "#fef3c7",
       pageStart: "#fffbeb",
       pageEnd: "#fef2f2",
-      cardFront: "#fffdf5",
-      cardBack: "#fef3c7",
-      glow: "rgba(180, 83, 9, 0.22)",
-    },
-    Inquiry: {
-      accent: "#15803d",
-      accentSoft: "#dcfce7",
-      pageStart: "#f0fdf4",
-      pageEnd: "#ecfeff",
       cardFront: "#ffffff",
-      cardBack: "#dcfce7",
-      glow: "rgba(21, 128, 61, 0.22)",
-    },
-    Tool: {
-      accent: "#475569",
-      accentSoft: "#e2e8f0",
-      pageStart: "#f8fafc",
-      pageEnd: "#f1f5f9",
-      cardFront: "#ffffff",
-      cardBack: "#e2e8f0",
-      glow: "rgba(71, 85, 105, 0.22)",
+      cardBack: "#fffbeb",
+      glow: "rgba(180, 83, 9, 0.18)",
     },
   };
 
-  return themes[themeGroup(card?.topicCode)] || themes.Tool;
+  const code = String(topicCode);
+  if (code.startsWith("Inquiry") || code === "Physics") return themes.Inquiry;
+  if (code.startsWith("Tool") || code.startsWith("T")) return themes.Tool;
+  return themes[code.charAt(0)] || themes.A;
 }
 
-function MathText({ text }) {
-  const parts = String(text || "").split(/(\\\(.+?\\\)|\\\[.+?\\\])/gs);
+function topicGroup(topicCode) {
+  const code = String(topicCode);
+  if (code.startsWith("Inquiry") || code.startsWith("Tool") || code.startsWith("T") || code === "Physics") return "common";
+  return code.charAt(0);
+}
 
+function imageSrc(path) {
+  if (!path) return "";
+  return import.meta.env.BASE_URL + path.replace(/^\//, "");
+}
+
+function renderRichMathToHtml(text, displayModeDefault = false) {
+  const raw = String(text || "");
+  const parts = raw.split(/(\\\(.+?\\\)|\\\[.+?\\\])/gs);
+
+  return parts
+    .map((part) => {
+      const isInlineMath = part.startsWith("\\(") && part.endsWith("\\)");
+      const isDisplayMath = part.startsWith("\\[") && part.endsWith("\\]");
+      if (isInlineMath || isDisplayMath) {
+        const tex = part.slice(2, -2);
+        return katex.renderToString(tex, {
+          throwOnError: false,
+          displayMode: isDisplayMath || displayModeDefault,
+        });
+      }
+      return part;
+    })
+    .join("");
+}
+
+function RichText({ text }) {
   return (
-    <div className="mathText">
-      {parts.map((part, index) => {
-        const isInlineMath = part.startsWith("\\(") && part.endsWith("\\)");
-        const isDisplayMath = part.startsWith("\\[") && part.endsWith("\\]");
-
-        if (isInlineMath || isDisplayMath) {
-          const tex = part.slice(2, -2);
-          const html = katex.renderToString(tex, {
-            throwOnError: false,
-            displayMode: isDisplayMath,
-          });
-
-          return (
-            <span
-              key={index}
-              className={isDisplayMath ? "displayMath" : ""}
-              dangerouslySetInnerHTML={{ __html: html }}
-            />
-          );
-        }
-
-        return <span key={index}>{part}</span>;
-      })}
-    </div>
+    <div
+      className="mathText"
+      dangerouslySetInnerHTML={{ __html: renderRichMathToHtml(text) }}
+    />
   );
 }
 
-function CardFace({ card, side, saved }) {
+function FormulaList({ formulas }) {
+  if (!formulas?.length) return null;
+
+  return (
+    <section className="formulaBox" onClick={(event) => event.stopPropagation()}>
+      <div className="formulaTitle">Data booklet formula</div>
+      {formulas.map((formula, index) => (
+        <div className="formulaItem" key={`${formula.label}-${index}`}>
+          <span className="formulaLabel">{formula.label}</span>
+          <span
+            className="formulaMath"
+            dangerouslySetInnerHTML={{
+              __html: katex.renderToString(formula.tex, {
+                throwOnError: false,
+                displayMode: true,
+              }),
+            }}
+          />
+        </div>
+      ))}
+    </section>
+  );
+}
+
+function CardFace({ card, side, studyMode, isSaved }) {
   const isFront = side === "front";
   const text = isFront ? card.front : card.back;
-  const images = isFront
-    ? card.frontImages?.length
-      ? card.frontImages
-      : card.frontImage
-        ? [card.frontImage]
-        : []
-    : card.backImages?.length
-      ? card.backImages
-      : card.backImage
-        ? [card.backImage]
-        : [];
+  const images = isFront ? card.frontImages : card.backImages;
+  const cardLevels = card.levels || (card.level === "HL" ? ["HL"] : ["SL", "HL"]);
+  const levelLabel = cardLevels.includes("SL") && cardLevels.includes("HL")
+    ? "SL + HL"
+    : cardLevels.includes("HL")
+      ? "HL only"
+      : "SL";
 
   return (
     <div className={`cardFace ${isFront ? "cardFront" : "cardBack"}`}>
-      {saved && <div className="savedCorner">Saved</div>}
-      <div className="cardHeader">
+      {isSaved && <div className="savedBadge">Saved</div>}
+
+      <div className="cardTop">
         <div className="cardMeta">
+          <span>{levelLabel}</span>
           <span>{card.topicCode}</span>
           <span>{isFront ? "Question" : "Answer"}</span>
+          {studyMode === "review" && <span>Review sprint</span>}
         </div>
-
-        <h2>{subtopicTitle(card)}</h2>
+        <div className="subtopicTitle">{card.subtopicFull || card.topic}</div>
       </div>
 
       <div className="cardContent">
-        <MathText text={text} />
+        <RichText text={text} />
 
-        {images.map((image, index) => (
+        {images.filter(Boolean).map((image, index) => (
           <img
             key={`${image}-${index}`}
             className="cardImage"
@@ -185,6 +216,8 @@ function CardFace({ card, side, saved }) {
             alt=""
           />
         ))}
+
+        {!isFront && <FormulaList formulas={card.bookletFormulas} />}
       </div>
 
       <div className="tapHint">Click card to flip</div>
@@ -192,125 +225,158 @@ function CardFace({ card, side, saved }) {
   );
 }
 
+function randomIndex(length, currentIndex = -1) {
+  if (length <= 1) return 0;
+  let next = currentIndex;
+  while (next === currentIndex) {
+    next = Math.floor(Math.random() * length);
+  }
+  return next;
+}
+
+function loadReviewIds() {
+  try {
+    return JSON.parse(localStorage.getItem("ib-physics-review-ids") || "[]");
+  } catch {
+    return [];
+  }
+}
+
 export default function App() {
   const [levelMode, setLevelMode] = useState("SL");
-  const [selectedTopic, setSelectedTopic] = useState("All topics");
+  const [selectedSubtopic, setSelectedSubtopic] = useState("All topics");
   const [index, setIndex] = useState(0);
+  const [history, setHistory] = useState([]);
   const [flipped, setFlipped] = useState(false);
   const [knownCount, setKnownCount] = useState(0);
-  const [reviewIds, setReviewIds] = useState([]);
+  const [reviewIds, setReviewIds] = useState(loadReviewIds);
   const [studyMode, setStudyMode] = useState("all");
   const [shuffleOn, setShuffleOn] = useState(false);
-  const [seenHistory, setSeenHistory] = useState([]);
 
-  const levelCards = useMemo(() => {
-    return cards.filter((card) => card.levels.includes(levelMode));
-  }, [levelMode]);
+  useEffect(() => {
+    localStorage.setItem("ib-physics-review-ids", JSON.stringify(reviewIds));
+  }, [reviewIds]);
 
-  const topics = useMemo(() => {
+  const availableCards = useMemo(
+    () => cards.filter((card) => card.levels.includes(levelMode)),
+    [levelMode]
+  );
+
+  const topicOptions = useMemo(() => {
     const unique = new Map();
-
-    levelCards.forEach((card) => {
-      unique.set(topicTitle(card), topicTitle(card));
+    availableCards.forEach((card) => {
+      const label = card.subtopicFull || `${card.topicCode} — ${card.topic}`;
+      unique.set(card.topicCode, { code: card.topicCode, label, group: topicGroup(card.topicCode) });
     });
 
-    return ["All topics", ...unique.values()];
-  }, [levelCards]);
+    const sorted = [...unique.values()].sort((a, b) => {
+      const ai = TOPIC_ORDER.indexOf(a.code);
+      const bi = TOPIC_ORDER.indexOf(b.code);
+      return (ai === -1 ? 999 : ai) - (bi === -1 ? 999 : bi) || a.label.localeCompare(b.label);
+    });
+
+    const grouped = { common: [], A: [], B: [], C: [], D: [], E: [] };
+    sorted.forEach((item) => {
+      const group = grouped[item.group] ? item.group : "common";
+      grouped[group].push(item);
+    });
+    return grouped;
+  }, [availableCards]);
 
   const filteredCards = useMemo(() => {
     if (studyMode === "review") {
-      return cards.filter(
-        (card) => reviewIds.includes(card.id) && card.levels.includes(levelMode)
-      );
+      return cards.filter((card) => reviewIds.includes(card.id));
     }
 
-    if (selectedTopic === "All topics") return levelCards;
+    if (selectedSubtopic === "All topics") return availableCards;
 
-    return levelCards.filter((card) => topicTitle(card) === selectedTopic);
-  }, [levelCards, selectedTopic, reviewIds, studyMode, levelMode]);
+    return availableCards.filter((card) => card.topicCode === selectedSubtopic);
+  }, [availableCards, reviewIds, selectedSubtopic, studyMode]);
 
-  const card = filteredCards[index] || filteredCards[0];
-  const theme = themeFor(card, studyMode);
+  const safeIndex = Math.min(index, Math.max(filteredCards.length - 1, 0));
+  const card = filteredCards[safeIndex] || filteredCards[0];
+  const theme = themeForTopic(card?.topicCode || "A", studyMode);
+  const isSaved = card ? reviewIds.includes(card.id) : false;
+  const flatTopicOptions = useMemo(
+    () => Object.values(topicOptions).flat(),
+    [topicOptions]
+  );
 
-  const savedForCurrentLevelCount = useMemo(() => {
-    return cards.filter(
-      (card) => reviewIds.includes(card.id) && card.levels.includes(levelMode)
-    ).length;
-  }, [reviewIds, levelMode]);
+  const selectedTopicOption = flatTopicOptions.find(
+    (item) => item.code === selectedSubtopic
+  );
 
-  function chooseNextIndex(length, currentIndex) {
-    if (length <= 1) return 0;
+  const selectedLevelLabel =
+    levelMode === "HL"
+      ? "Higher Level (HL): SL cards + HL extras"
+      : "Standard Level (SL)";
 
-    if (!shuffleOn) {
-      return (currentIndex + 1) % length;
-    }
+  const selectedTopicLabel =
+    studyMode === "review"
+      ? "Saved review cards"
+      : selectedSubtopic === "All topics"
+        ? "All topics"
+        : (selectedTopicOption?.label || card?.subtopicFull || selectedSubtopic);
 
-    let randomIndex = Math.floor(Math.random() * length);
-    while (randomIndex === currentIndex) {
-      randomIndex = Math.floor(Math.random() * length);
-    }
-    return randomIndex;
+  useEffect(() => {
+    if (index !== safeIndex) setIndex(safeIndex);
+  }, [index, safeIndex]);
+
+  function pushHistory(current) {
+    setHistory((items) => [...items, current].slice(-300));
   }
 
-  function resetNavigation() {
-    setIndex(0);
+  function goToNext() {
+    if (filteredCards.length === 0) return;
     setFlipped(false);
-    setSeenHistory([]);
-  }
-
-  function nextCard() {
-    if (filteredCards.length === 0 || !card) return;
-
-    setSeenHistory((current) => [...current, card.id]);
-    setFlipped(false);
-    setIndex((current) => chooseNextIndex(filteredCards.length, current));
+    setIndex((current) => {
+      pushHistory(current);
+      if (shuffleOn) return randomIndex(filteredCards.length, current);
+      return (current + 1) % filteredCards.length;
+    });
   }
 
   function previousCard() {
     if (filteredCards.length === 0) return;
-
-    const newHistory = [...seenHistory];
-    let targetIndex = null;
-
-    while (newHistory.length > 0 && targetIndex === null) {
-      const previousId = newHistory.pop();
-      const foundIndex = filteredCards.findIndex((item) => item.id === previousId);
-
-      if (foundIndex !== -1) {
-        targetIndex = foundIndex;
-      }
-    }
-
-    setSeenHistory(newHistory);
     setFlipped(false);
 
-    if (targetIndex !== null) {
-      setIndex(targetIndex);
-    } else {
-      setIndex((current) => (current - 1 + filteredCards.length) % filteredCards.length);
+    if (shuffleOn && history.length > 0) {
+      const previous = history[history.length - 1];
+      setHistory((items) => items.slice(0, -1));
+      setIndex(Math.min(previous, filteredCards.length - 1));
+      return;
     }
+
+    setIndex((current) => (current - 1 + filteredCards.length) % filteredCards.length);
+  }
+
+  function resetPosition() {
+    setIndex(0);
+    setHistory([]);
+    setFlipped(false);
+  }
+
+  function changeSubtopic(event) {
+    setSelectedSubtopic(event.target.value);
+    setStudyMode("all");
+    resetPosition();
   }
 
   function changeLevel(event) {
     setLevelMode(event.target.value);
-    setSelectedTopic("All topics");
     setStudyMode("all");
-    resetNavigation();
+    setSelectedSubtopic("All topics");
+    resetPosition();
   }
 
-  function changeTopic(event) {
-    setSelectedTopic(event.target.value);
-    setStudyMode("all");
-    resetNavigation();
-  }
-
-  function saveToReviewLater() {
+  function saveForReviewLater() {
     if (!card) return;
 
     setReviewIds((current) => {
       if (current.includes(card.id)) return current;
       return [...current, card.id];
     });
+    // Intentionally do not jump to the next card: the saved mark appears on this card.
   }
 
   function markKnown() {
@@ -320,43 +386,43 @@ export default function App() {
 
     if (studyMode === "review") {
       const currentCardId = card.id;
-      const remainingCards = filteredCards.filter((item) => item.id !== currentCardId);
-
+      const remaining = filteredCards.filter((item) => item.id !== currentCardId);
       setReviewIds((current) => current.filter((id) => id !== currentCardId));
-      setSeenHistory((current) => current.filter((id) => id !== currentCardId));
 
-      if (remainingCards.length === 0) {
+      if (remaining.length === 0) {
         setStudyMode("all");
-        resetNavigation();
+        setSelectedSubtopic("All topics");
+        resetPosition();
         return;
       }
 
       setFlipped(false);
-
-      if (shuffleOn) {
-        setIndex(Math.floor(Math.random() * remainingCards.length));
-      } else {
-        setIndex((current) => Math.min(current, remainingCards.length - 1));
-      }
-
+      setHistory([]);
+      setIndex((current) => {
+        if (shuffleOn) return randomIndex(remaining.length, -1);
+        return Math.min(current, remaining.length - 1);
+      });
       return;
     }
 
-    nextCard();
+    goToNext();
   }
 
   function startReviewQuiz() {
-    if (savedForCurrentLevelCount === 0) return;
+    if (reviewIds.length === 0) return;
 
     setStudyMode("review");
-    setSelectedTopic("All topics");
-    resetNavigation();
+    setSelectedSubtopic("All topics");
+    setHistory([]);
+    setIndex(shuffleOn ? randomIndex(reviewIds.length, -1) : 0);
+    setFlipped(false);
   }
 
   function clearReviewList() {
     setReviewIds([]);
     setStudyMode("all");
-    resetNavigation();
+    setSelectedSubtopic("All topics");
+    resetPosition();
   }
 
   if (!card) {
@@ -364,18 +430,18 @@ export default function App() {
       <main
         className="appShell"
         style={{
-          "--accent": "#334155",
-          "--accent-soft": "#e2e8f0",
-          "--page-start": "#f8fafc",
-          "--page-end": "#eef2ff",
-          "--card-front": "#ffffff",
-          "--card-back": "#f8fafc",
-          "--glow": "rgba(51, 65, 85, 0.18)",
+          "--accent": REVIEW_THEME.accent,
+          "--accent-soft": REVIEW_THEME.accentSoft,
+          "--page-start": REVIEW_THEME.pageStart,
+          "--page-end": REVIEW_THEME.pageEnd,
+          "--card-front": REVIEW_THEME.cardFront,
+          "--card-back": REVIEW_THEME.cardBack,
+          "--glow": REVIEW_THEME.glow,
         }}
       >
         <section className="emptyState">
-          <h1>No cards here yet</h1>
-          <p>Save some cards to review later, then start the review quiz.</p>
+          <h1>No saved review cards yet</h1>
+          <p>Use “Save to review later” on cards your students need to practise again.</p>
           <button onClick={() => setStudyMode("all")}>Back to all cards</button>
         </section>
       </main>
@@ -399,45 +465,57 @@ export default function App() {
         <section className="header">
           <div>
             <div className="modeBadge">
-              {studyMode === "review" ? "Review quiz — final push" : "Practice mode"}
+              {studyMode === "review" ? "Final review sprint" : "Practice mode"}
             </div>
             <h1>IB Physics Flashcards</h1>
             <p>
               {studyMode === "review"
                 ? `Reviewing ${filteredCards.length} saved card(s)`
-                : `${levelMode} mode • ${filteredCards.length} cards available`}
+                : `${selectedLevelLabel} · ${availableCards.length} available cards`}
             </p>
+            <div className="currentContext">
+              <span>{selectedLevelLabel}</span>
+              <span>{selectedTopicLabel}</span>
+            </div>
           </div>
 
           <div className="stats">
             <span>Known: {knownCount}</span>
-            <span>Saved: {reviewIds.length}</span>
-            <span>{shuffleOn ? "Shuffle: On" : "Shuffle: Off"}</span>
+            <span>Saved review: {reviewIds.length}</span>
           </div>
         </section>
 
         <section className="controls">
           <label>
-            Level
-            <select value={levelMode} onChange={changeLevel}>
-              <option value="SL">SL</option>
-              <option value="HL">HL</option>
+            Study level
+            <select value={levelMode} onChange={changeLevel} disabled={studyMode === "review"}>
+              <option value="SL">Standard Level (SL)</option>
+              <option value="HL">Higher Level (HL): SL + HL extras</option>
             </select>
           </label>
 
           <label>
             Topic
-            <select value={selectedTopic} onChange={changeTopic}>
-              {topics.map((topic) => (
-                <option key={topic} value={topic}>
-                  {topic}
-                </option>
-              ))}
+            <select value={selectedSubtopic} onChange={changeSubtopic} disabled={studyMode === "review"}>
+              <option value="All topics">All topics</option>
+              {Object.entries(topicOptions).map(([group, items]) =>
+                items.length ? (
+                  <optgroup label={THEME_LABELS[group] || group} key={group}>
+                    {items.map((item) => (
+                      <option key={item.code} value={item.code}>
+                        {item.label.startsWith(item.code)
+                          ? item.label
+                          : `${item.code} — ${item.label}`}
+                      </option>
+                    ))}
+                  </optgroup>
+                ) : null
+              )}
             </select>
           </label>
 
           <span className="cardCounter">
-            Card {index + 1} / {filteredCards.length}
+            Card {safeIndex + 1} / {filteredCards.length}
           </span>
         </section>
 
@@ -448,8 +526,8 @@ export default function App() {
               className={`flashcard ${flipped ? "isFlipped" : ""}`}
               onClick={() => setFlipped(!flipped)}
             >
-              <CardFace card={card} side="front" saved={reviewIds.includes(card.id)} />
-              <CardFace card={card} side="back" saved={reviewIds.includes(card.id)} />
+              <CardFace card={card} side="front" studyMode={studyMode} isSaved={isSaved} />
+              <CardFace card={card} side="back" studyMode={studyMode} isSaved={isSaved} />
             </button>
           </div>
         </section>
@@ -457,13 +535,12 @@ export default function App() {
         <section className="buttons">
           <button onClick={previousCard}>Previous</button>
           <button onClick={() => setFlipped(!flipped)}>Flip</button>
-          <button onClick={nextCard}>Next</button>
-
+          <button onClick={goToNext}>Next</button>
           <button
-            className={shuffleOn ? "toggleOn" : ""}
+            className={shuffleOn ? "activeButton" : ""}
             onClick={() => setShuffleOn((value) => !value)}
           >
-            Shuffle {shuffleOn ? "On" : "Off"}
+            Shuffle: {shuffleOn ? "On" : "Off"}
           </button>
         </section>
 
@@ -472,14 +549,16 @@ export default function App() {
             {studyMode === "review" ? "I know this — remove" : "I know this"}
           </button>
 
-          <button onClick={saveToReviewLater}>Save to review later</button>
+          <button className={isSaved ? "savedButton" : ""} onClick={saveForReviewLater}>
+            {isSaved ? "Saved to review later" : "Save to review later"}
+          </button>
 
-          <button onClick={startReviewQuiz} disabled={savedForCurrentLevelCount === 0}>
+          <button onClick={startReviewQuiz} disabled={reviewIds.length === 0}>
             Start review quiz
           </button>
 
           <button onClick={clearReviewList} disabled={reviewIds.length === 0}>
-            Clear saved cards
+            Clear review list
           </button>
         </section>
       </section>
