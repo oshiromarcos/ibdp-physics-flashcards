@@ -48163,16 +48163,12 @@
     "topic": "Motion in Electromagnetic Fields",
     "subtopicFull": "D.3 Motion in Electromagnetic Fields: Charged particles in fields.",
     "front": "<strong>True or False?</strong>\nIn a magnetic field of strength, <em>B</em>, all particles with the same charge-to-mass ratio,\n, will follow paths of equal radius, <em>r</em>.",
-    "back": "<strong>False.</strong>\nThe radius of a charged particle in a magnetic field is:\nTherefore, to follow paths of equal radius, all particles must have the <strong>same velocity</strong>, <em>v</em>, as well as the same charge-to-mass ratio,\n.",
+    "back": "False.\n\nFor a charged particle moving perpendicular to a uniform magnetic field, the radius of the circular path is:\n\n\\[\nr = \\frac{mv}{|q|B}\n\\]\n\nSo, in the same magnetic field \\(B\\), equal radius requires the same value of:\n\n\\[\n\\frac{mv}{|q|}\n\\]\n\nor equivalently the same value of:\n\n\\[\n\\frac{v}{|q|/m}\n\\]\n\nTherefore, having the same charge-to-mass ratio alone is not enough unless the particles also have the same speed.",
     "frontImage": "/images/sl-d3-motion-in-electromagnetic-fields/sl-d3-039-front-01.png",
-    "backImage": "/images/sl-d3-motion-in-electromagnetic-fields/sl-d3-039-back-01.png",
     "frontImages": [
       "/images/sl-d3-motion-in-electromagnetic-fields/sl-d3-039-front-01.png"
     ],
-    "backImages": [
-      "/images/sl-d3-motion-in-electromagnetic-fields/sl-d3-039-back-01.png",
-      "/images/sl-d3-motion-in-electromagnetic-fields/sl-d3-039-back-02.png"
-    ],
+    "backImages": [],
     "sourceFile": "d3_motion_in_em_fields_flashcards_6_per_page.docx",
     "topicOrder": 21,
     "bookletFormulas": []

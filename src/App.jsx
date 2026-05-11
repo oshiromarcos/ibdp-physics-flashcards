@@ -264,7 +264,7 @@ function CardFace({ card, side, studyMode, isSaved }) {
         {!isFront && <FormulaList formulas={card.bookletFormulas} />}
       </div>
 
-      <div className="tapHint">Click card to flip</div>
+      <div className="tapHint">Click card to flip • scroll inside card if needed</div>
     </div>
   );
 }

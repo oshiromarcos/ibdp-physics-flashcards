@@ -647,3 +647,28 @@ select {
 .cardCodeBadge:active {
   transform: translateY(0);
 }
+
+
+/* Keep answer images from overpowering the explanation text. */
+.cardFace img {
+  max-width: min(94%, 900px);
+  max-height: min(34vh, 320px);
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Make scrollability more obvious and stable. */
+.cardFace {
+  scrollbar-gutter: stable both-edges;
+  overscroll-behavior: contain;
+}
+
+@media (max-width: 700px) {
+  .cardFace img {
+    max-height: 26vh;
+  }
+}
