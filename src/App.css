@@ -583,3 +583,44 @@ select {
   font-size: 0.9em;
   color: #475569;
 }
+
+
+/* FIX: safe scrolling for long flashcards */
+.mathText,
+.cardText,
+.cardBody,
+.cardContent,
+.faceContent {
+  min-height: 0;
+  max-height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-gutter: stable;
+  justify-content: safe center !important;
+  align-items: safe center !important;
+}
+
+.cardBack .mathText,
+.cardBack .cardText,
+.cardBack .cardBody,
+.cardBack .cardContent,
+.cardBack .faceContent {
+  padding-top: 0.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.mathText:has(.inlineFormula),
+.mathText:has(ul),
+.mathText:has(ol),
+.cardText:has(.inlineFormula),
+.cardText:has(ul),
+.cardText:has(ol),
+.cardContent:has(.inlineFormula),
+.cardContent:has(ul),
+.cardContent:has(ol) {
+  justify-content: flex-start !important;
+}
+
+.inlineFormula {
+  flex-shrink: 0;
+}
