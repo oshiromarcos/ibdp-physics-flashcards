@@ -76,7 +76,7 @@
     "topic": "D - Fields",
     "subtopicFull": "General Physics",
     "front": "Define \"field\".",
-    "back": "A field is a physical quantity defined at every point in a region of space.\n\nIt is not technically a <strong>force</strong> itself. Instead, a field describes how an object or particle would experience an interaction at each point in space.\n\nFor example, a gravitational field can cause a mass to experience a force, and an electric field can cause a charge to experience a force.",
+    "back": "A field is a physical quantity that has a value at every point in space, and sometimes also at every moment in time.\n\nThe value of a field can be a <strong>scalar</strong>, such as temperature, or a <strong>vector</strong>, such as gravitational field strength or electric field strength.\n\nA field describes how an influence, such as gravity or electromagnetism, extends through space and affects objects placed there.\n\nThis allows physicists to model interactions without saying that objects act instantly on each other at a distance.",
     "frontImage": "",
     "backImage": "/images/anki-hl/1652652178976.jpg",
     "frontImages": [],
