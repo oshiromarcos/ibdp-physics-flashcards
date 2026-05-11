@@ -1,0 +1,1972 @@
+[
+  {
+    "id": "sl-a1-001",
+    "level": "SL",
+    "topicCode": "A1",
+    "topic": "Kinematics",
+    "front": "Define distance.",
+    "back": "Distance is the total length travelled by an object.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a1-002",
+    "level": "SL",
+    "topicCode": "A1",
+    "topic": "Kinematics",
+    "front": "Define displacement.",
+    "back": "Displacement is the distance from a reference point in a specified direction.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a1-003",
+    "level": "SL",
+    "topicCode": "A1",
+    "topic": "Kinematics",
+    "front": "What is the difference between distance and displacement?",
+    "back": "The difference between distance and displacement is:\n• distance is a scalar quantity, with magnitude but no direction\n• displacement is a vector quantity, with magnitude and direction.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a1-004",
+    "level": "SL",
+    "topicCode": "A1",
+    "topic": "Kinematics",
+    "front": "True or False?\nDistance describes how far an object is from where it started and in what direction.",
+    "back": "False.\nDisplacement describes how far an object is from where it started and in what direction.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a1-005",
+    "level": "SL",
+    "topicCode": "A1",
+    "topic": "Kinematics",
+    "front": "Define speed.",
+    "back": "Speed is the distance an object travels per unit time.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a1-006",
+    "level": "SL",
+    "topicCode": "A1",
+    "topic": "Kinematics",
+    "front": "True or False?\nSpeed is a scalar quantity with magnitude but no direction.",
+    "back": "True.\nSpeed is a scalar quantity with magnitude but no direction.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a1-007",
+    "level": "SL",
+    "topicCode": "A1",
+    "topic": "Kinematics",
+    "front": "Define velocity.",
+    "back": "Velocity is the rate of change of displacement.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a1-008",
+    "level": "SL",
+    "topicCode": "A1",
+    "topic": "Kinematics",
+    "front": "True or False?\nVelocity is speed in a given direction.",
+    "back": "True.\nVelocity is speed in a given direction.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a1-009",
+    "level": "SL",
+    "topicCode": "A1",
+    "topic": "Kinematics",
+    "front": "Define instantaneous speed.",
+    "back": "Instantaneous speed is the speed of an object at any given point in time.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a1-010",
+    "level": "SL",
+    "topicCode": "A1",
+    "topic": "Kinematics",
+    "front": "How is instantaneous velocity found from a displacement-time graph?",
+    "back": "To find instantaneous velocity from a displacement-time graph:\n• draw a tangent to the curve at the required time\n• calculate the gradient of the tangent",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a1-011",
+    "level": "SL",
+    "topicCode": "A1",
+    "topic": "Kinematics",
+    "front": "State the equation for average velocity.",
+    "back": "Average velocity: \\(\\bar{v} = \\frac{\\Delta x}{\\Delta t}\\)\nFor uniform acceleration: \\(\\bar{v} = \\frac{u + v}{2}\\)\nv̄ average velocity (\\(\\mathrm{m\\,s^{-1}}\\)); Δx change in position (m); Δt time (s); u initial velocity; v final velocity.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a1-012",
+    "level": "SL",
+    "topicCode": "A1",
+    "topic": "Kinematics",
+    "front": "Define acceleration.",
+    "back": "Acceleration is the rate of change of velocity.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a1-013",
+    "level": "SL",
+    "topicCode": "A1",
+    "topic": "Kinematics",
+    "front": "Is acceleration a scalar or vector quantity?",
+    "back": "Acceleration is a vector quantity with both magnitude and direction.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a1-014",
+    "level": "SL",
+    "topicCode": "A1",
+    "topic": "Kinematics",
+    "front": "State the equation for average acceleration.",
+    "back": "Average acceleration: \\(a = \\frac{\\Delta v}{\\Delta t}\\)\na average acceleration (\\(\\mathrm{m\\,s^{-2}}\\)); Δv change in velocity (\\(\\mathrm{m\\,s^{-1}}\\)); Δt time interval (s).",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a1-015",
+    "level": "SL",
+    "topicCode": "A1",
+    "topic": "Kinematics",
+    "front": "State the equation for change in velocity.",
+    "back": "Change in velocity: \\(\\Delta v = v - u\\)\nΔv change in velocity; v final velocity; u initial velocity. All velocities are measured in \\(\\mathrm{m\\,s^{-1}}\\).",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a1-016",
+    "level": "SL",
+    "topicCode": "A1",
+    "topic": "Kinematics",
+    "front": "Define instantaneous acceleration.",
+    "back": "Instantaneous acceleration is the acceleration of an object at a given point in time.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a1-017",
+    "level": "SL",
+    "topicCode": "A1",
+    "topic": "Kinematics",
+    "front": "True or False?\nIf an object changes direction at a constant speed, the object is accelerating.",
+    "back": "True.\nIf an object changes direction at a constant speed, the object is accelerating.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a1-018",
+    "level": "SL",
+    "topicCode": "A1",
+    "topic": "Kinematics",
+    "front": "What are the kinematic equations used for?",
+    "back": "The kinematic equations are used for describing the motion of objects undergoing uniform acceleration.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a1-019",
+    "level": "SL",
+    "topicCode": "A1",
+    "topic": "Kinematics",
+    "front": "State the kinematic equation for calculating final velocity, v, from acceleration, a, and time, t.",
+    "back": "Final velocity: \\(v = u + at\\)\nv final velocity; u initial velocity; a acceleration; t time.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a1-020",
+    "level": "SL",
+    "topicCode": "A1",
+    "topic": "Kinematics",
+    "front": "State the kinematic equation for calculating displacement, s, from acceleration, a, and time, t.",
+    "back": "Displacement: \\(s = ut + \\frac{1}{2}at^2\\)\ns displacement; u initial velocity; t time; a acceleration.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a1-021",
+    "level": "SL",
+    "topicCode": "A1",
+    "topic": "Kinematics",
+    "front": "State the kinematic equation for calculating displacement, s, from initial velocity, u, and final velocity, v.",
+    "back": "Displacement: \\(s = \\frac{v + u}{2}t\\)\ns displacement; v final velocity; u initial velocity; t time.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a1-022",
+    "level": "SL",
+    "topicCode": "A1",
+    "topic": "Kinematics",
+    "front": "State the kinematic equation for calculating final velocity, v, from acceleration, a, and displacement, s.",
+    "back": "Final velocity from displacement: \\(v^2 = u^2 + 2as\\)\nv final velocity; u initial velocity; a acceleration; s displacement.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a1-023",
+    "level": "SL",
+    "topicCode": "A1",
+    "topic": "Kinematics",
+    "front": "What does it mean if an object starts from rest?",
+    "back": "If an object starts from rest, it means that its initial velocity is zero.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a1-024",
+    "level": "SL",
+    "topicCode": "A1",
+    "topic": "Kinematics",
+    "front": "What are the three types of motion graph?",
+    "back": "The three types of motion graphs are:\n• displacement-time\n• velocity-time\n• acceleration-time",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a1-025",
+    "level": "SL",
+    "topicCode": "A1",
+    "topic": "Kinematics",
+    "front": "What does the gradient of a displacement-time graph represent?",
+    "back": "The gradient of a displacement-time graph represents the velocity of the object.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a1-026",
+    "level": "SL",
+    "topicCode": "A1",
+    "topic": "Kinematics",
+    "front": "True or False?\nThe y intercept of a displacement-time graph is equal to the initial displacement.",
+    "back": "True.\nThe y intercept of a displacement-time graph is equal to the initial displacement.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a1-027",
+    "level": "SL",
+    "topicCode": "A1",
+    "topic": "Kinematics",
+    "front": "True or False?\nThe area under a displacement-time graph is equal to the distance travelled.",
+    "back": "False.\nThe area under a velocity-time graph is equal to the distance travelled. The area under a distance-time graph is meaningless.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a1-028",
+    "level": "SL",
+    "topicCode": "A1",
+    "topic": "Kinematics",
+    "front": "What does the gradient of a velocity-time graph represent?",
+    "back": "The gradient of a velocity-time graph represents the acceleration of the object.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a1-029",
+    "level": "SL",
+    "topicCode": "A1",
+    "topic": "Kinematics",
+    "front": "True or False?\nThe y intercept of a velocity-time graph is equal to the initial displacement.",
+    "back": "False.\nThe y intercept of a velocity-time graph is equal to the initial velocity.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a1-030",
+    "level": "SL",
+    "topicCode": "A1",
+    "topic": "Kinematics",
+    "front": "True or False?\nThe area under a velocity-time graph is equal to the displacement.",
+    "back": "True.\nThe area under a velocity-time graph is equal to the displacement.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a1-031",
+    "level": "SL",
+    "topicCode": "A1",
+    "topic": "Kinematics",
+    "front": "What does the gradient of an acceleration-time graph represent?",
+    "back": "The gradient of an acceleration-time graph is meaningless.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a1-032",
+    "level": "SL",
+    "topicCode": "A1",
+    "topic": "Kinematics",
+    "front": "True or False?\nThe y intercept of an acceleration-time graph is equal to the initial acceleration.",
+    "back": "True.\nThe y intercept of an acceleration-time graph is equal to the initial acceleration.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a1-033",
+    "level": "SL",
+    "topicCode": "A1",
+    "topic": "Kinematics",
+    "front": "True or False?\nThe area under an acceleration-time graph is equal to the acceleration.",
+    "back": "False.\nThe area under an acceleration-time graph is equal to the change in velocity.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a1-034",
+    "level": "SL",
+    "topicCode": "A1",
+    "topic": "Kinematics",
+    "front": "What is a projectile?",
+    "back": "A projectile is a particle that moves freely under gravity in a two-dimensional plane.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a1-035",
+    "level": "SL",
+    "topicCode": "A1",
+    "topic": "Kinematics",
+    "front": "Define the time of flight of a projectile.",
+    "back": "The time of flight of a projectile is the total time it is in the air.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a1-036",
+    "level": "SL",
+    "topicCode": "A1",
+    "topic": "Kinematics",
+    "front": "Define the range of a projectile.",
+    "back": "The range of a projectile is the horizontal distance it travels.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a1-037",
+    "level": "SL",
+    "topicCode": "A1",
+    "topic": "Kinematics",
+    "front": "Define the maximum height attained by a projectile.",
+    "back": "The maximum height attained by a projectile is the height at which it is momentarily at rest, where the vertical velocity component equals zero.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a1-038",
+    "level": "SL",
+    "topicCode": "A1",
+    "topic": "Kinematics",
+    "front": "True or False?\nThe vertical velocity component of an object in projectile motion at maximum height is zero.",
+    "back": "True.\nThe vertical velocity component of the velocity of an object in projectile motion is zero at maximum height.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a1-039",
+    "level": "SL",
+    "topicCode": "A1",
+    "topic": "Kinematics",
+    "front": "What is the equation for the vertical component of the velocity of an object in projectile motion.",
+    "back": "Vertical component: \\(v_y = u\\sin\\theta\\)\nv_y vertical velocity component; u resultant velocity; θ angle to the horizontal.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a1-040",
+    "level": "SL",
+    "topicCode": "A1",
+    "topic": "Kinematics",
+    "front": "What is the equation for the horizontal component of the velocity of an object in projectile motion?",
+    "back": "Horizontal component: \\(v_x = u\\cos\\theta\\)\nv_x horizontal velocity component; u resultant velocity; θ angle to the horizontal.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a1-041",
+    "level": "SL",
+    "topicCode": "A1",
+    "topic": "Kinematics",
+    "front": "How do you calculate the horizontal distance, D, travelled by an object in projectile motion?",
+    "back": "Horizontal distance: \\(D = ut\\)\nu initial horizontal velocity (\\(\\mathrm{m\\,s^{-1}}\\)); t time of flight (s).",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a1-042",
+    "level": "SL",
+    "topicCode": "A1",
+    "topic": "Kinematics",
+    "front": "What is the vertical component of acceleration of an object in projectile motion?",
+    "back": "The vertical component of acceleration is the acceleration due to gravity.\n• moving upwards: \\(g = -9.8\\) \\(\\mathrm{m\\,s^{-2}}\\)\n• moving downwards: \\(g = +9.8\\) \\(\\mathrm{m\\,s^{-2}}\\)",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a1-043",
+    "level": "SL",
+    "topicCode": "A1",
+    "topic": "Kinematics",
+    "front": "Which set of equations are used to evaluate the horizontal and vertical components of projectile motion?",
+    "back": "The kinematic equations are used to evaluate horizontal and vertical components of projectile motion.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a1-044",
+    "level": "SL",
+    "topicCode": "A1",
+    "topic": "Kinematics",
+    "front": "Define fluid resistance.",
+    "back": "Fluid resistance is a frictional force that opposes the motion of an object moving through a fluid.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a1-045",
+    "level": "SL",
+    "topicCode": "A1",
+    "topic": "Kinematics",
+    "front": "Define the term fluid.",
+    "back": "A fluid is a gas or a liquid. The particles in a fluid are free to move around.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a1-046",
+    "level": "SL",
+    "topicCode": "A1",
+    "topic": "Kinematics",
+    "front": "True or False?\nFluid resistance is the same as viscous drag.",
+    "back": "True.\nFluid resistance is another name for viscous drag.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a1-047",
+    "level": "SL",
+    "topicCode": "A1",
+    "topic": "Kinematics",
+    "front": "True or False?\nFrictional forces always act to oppose the motion of the object.",
+    "back": "True.\nFrictional forces always act to oppose the motion of the object.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a1-048",
+    "level": "SL",
+    "topicCode": "A1",
+    "topic": "Kinematics",
+    "front": "True or False?\nFrictional forces never transfer energy away from the moving object.",
+    "back": "False.\nFrictional forces always transfer energy away from the moving object.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a1-049",
+    "level": "SL",
+    "topicCode": "A1",
+    "topic": "Kinematics",
+    "front": "True or False?\nFluid resistance increases as the speed of the object increases.",
+    "back": "True.\nFluid resistance increases as the speed of the object increases.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a1-050",
+    "level": "SL",
+    "topicCode": "A1",
+    "topic": "Kinematics",
+    "front": "Name the factors affected by fluid resistance in projectile motion.",
+    "back": "The factors affected by fluid resistance in projectile motion are:\n• time of flight\n• horizontal velocity\n• horizontal acceleration\n• range\n• shape of trajectory",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a1-051",
+    "level": "SL",
+    "topicCode": "A1",
+    "topic": "Kinematics",
+    "front": "True or False?\nAir resistance decreases the horizontal component of the velocity of a projectile so both its range and maximum height will decrease compared to an identical situation with no air resistance.",
+    "back": "True.\nAir resistance decreases the horizontal component of the velocity of a projectile, so both its range and maximum height will decrease compared to an identical situation with no air resistance (like a vacuum).",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a1-052",
+    "level": "SL",
+    "topicCode": "A1",
+    "topic": "Kinematics",
+    "front": "True or False?\nAir resistance increases the time of flight of a projectile.",
+    "back": "False.\nAir resistance decreases the time of flight of a projectile.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a1-053",
+    "level": "SL",
+    "topicCode": "A1",
+    "topic": "Kinematics",
+    "front": "True or False?\nAir resistance changes the shape of the trajectory of a projectile.",
+    "back": "True.\nAir resistance changes the shape of the trajectory of a projectile; it is no longer a parabola, and its path is steeper on the way down than it is on the way up.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a1-054",
+    "level": "SL",
+    "topicCode": "A1",
+    "topic": "Kinematics",
+    "front": "True or False?\nFor an object in free fall in a vacuum, the only force acting on it is weight.",
+    "back": "True.\nFor an object in free fall in a vacuum, the only force acting on it is weight.\nIn a vacuum, there are no particles, so there are no drag forces to oppose the motion.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a1-055",
+    "level": "SL",
+    "topicCode": "A1",
+    "topic": "Kinematics",
+    "front": "True or False?\nFor an object in free fall, viscous drag increases as the object accelerates.",
+    "back": "True.\nFor an object in free fall, viscous drag increases as the object accelerates.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a1-056",
+    "level": "SL",
+    "topicCode": "A1",
+    "topic": "Kinematics",
+    "front": "Explain how an object in free fall reaches terminal speed.",
+    "back": "Object reaches terminal speed:\nweight > drag → resultant force downward → accelerates → drag increases with speed → drag = weight → resultant force = 0 → constant terminal speed.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a1-057",
+    "level": "SL",
+    "topicCode": "A1",
+    "topic": "Kinematics",
+    "front": "Explain how a skydiver in free fall at terminal speed achieves a new terminal speed after opening their parachute.",
+    "back": "After the parachute opens:\ndrag increases → drag > weight → resultant force upward → decelerates → drag decreases → drag = weight → resultant force = 0 → new slower terminal speed.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a1-058",
+    "level": "SL",
+    "topicCode": "A1",
+    "topic": "Kinematics",
+    "front": "True or False?\nWhen a skydiver deploys a parachute, their direction of motion changes, and they accelerate upward.",
+    "back": "False.\nWhen a skydiver deploys a parachute, the direction of the resultant force changes, and they decelerate while still falling downward. Their direction of motion does not change.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-001",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "True or False?\nWhen drawing free-body force diagrams, objects can be represented as point particles placed at the object's centre of mass.",
+    "back": "True.\nWhen drawing free-body force diagrams, objects are represented as point particles placed at the object's centre of mass.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-002",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "True or False?\nFree-body force diagrams show forces acting on multiple objects or systems.",
+    "back": "False.\nFree-body force diagrams show multiple forces acting on one object or one system.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-003",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "State two quantities that a force arrow represents.",
+    "back": "The two quantities that a force arrow represents are:\n• the magnitude of the force\n• the direction of the force",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-004",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "Define the term resultant force.",
+    "back": "A resultant force is the vector sum of all the forces exerted on an object, which describes the combined action of all the forces.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-005",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "True or False?\nWhen forces are balanced, they produce a non-zero resultant force.",
+    "back": "False.\nWhen forces are balanced, they produce a resultant force of zero.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-006",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "When two forces in different planes act on an object, how can the resultant force be found?",
+    "back": "When two forces act on an object in different planes, the resultant force can be found by resolving vectors.\nThis can be done by using: Pythagoras' theorem; trigonometry; vector diagrams (triangle or quadrilateral method)",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-007",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "Draw a free-body force diagram for the object on Earth in this situation.",
+    "back": "The free-body force diagram for this situation should look like:",
+    "frontImage": "/images/a2-forces-momentum/sl-a2-007-front-01.png",
+    "backImage": "/images/a2-forces-momentum/sl-a2-007-back-01.png"
+  },
+  {
+    "id": "sl-a2-008",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "A car accelerates in the positive direction. The thrust force from the engine on the car is 1000 N, the air resistance on the car is 50 N and the friction from the road on the car is 500 N. What is the resultant force on the car?",
+    "back": "The thrust force from engine on the car is 1000 N\nThe combined frictional forces are \\((-50) + (-500) = -550\\ \\mathrm{N}\\)\nTherefore, the resultant force is \\(F = 1000 + (-550) = 450\\ \\mathrm{N}\\) (in the positive direction).",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-009",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "True or False?\nAn object moving at a constant velocity has no resultant force acting on it.",
+    "back": "True.\nAn object moving at a constant velocity has no resultant force acting on it.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-010",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "Define Newton's first law of motion.",
+    "back": "Newton's first law of motion states that a body will remain at rest or move with constant velocity unless acted on by a resultant force.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-011",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "True or False?\nAccording to Newton's first law of motion, an object at rest will remain at rest unless acted upon by a resultant force.",
+    "back": "True.\nAccording to Newton's first law of motion, an object at rest will remain at rest unless acted upon by a resultant force.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-012",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "Define the term translational equilibrium.",
+    "back": "An object is in translational equilibrium if the vector sum of all the forces acting on it are zero, and therefore there is no resultant force.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-013",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "According to Newton's first law, what would happen to a body that is travelling at a constant velocity if no resultant force acted on it?",
+    "back": "According to Newton's first law, a body travelling at a constant velocity would remain travelling at that constant velocity if no resultant force acted upon it. There would be no change in the object's motion.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-014",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "What are the three ways that a resultant force can change an object's motion?",
+    "back": "The three ways that a resultant force can change an object's motion are:\n• speed it up (accelerate)\n• slow it down (decelerate)\n• change its direction",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-015",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "Define Newton's second law of motion.",
+    "back": "Newton's second law of motion states that the resultant force on an object is directly proportional to its acceleration.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-016",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "State the equation for Newton's second law of motion.",
+    "back": "The equation for Newton's second law of motion is \\(F = ma\\)\nWhere:\n• F = force, measured in newtons (N)\n• m = mass, measured in kilograms (kg)\n• a = acceleration, measured in metres per second squared (\\(\\mathrm{m\\,s^{-2}}\\)).",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-017",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "A resultant force acts in the direction of motion of an object.\nDescribe the change in the object's motion.",
+    "back": "If a resultant force acts in the direction of motion of an object, then the object will speed up/ accelerate in the direction of motion.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-018",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "A resultant force opposes the direction of motion of an object.\nDescribe the change in the object's motion.",
+    "back": "If a resultant force opposes the direction of motion of an object, then the object will slow down/ decelerate.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-019",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "A resultant force acts at an angle to the direction of motion of an object.\nDescribe the change in the object's motion.",
+    "back": "If a resultant force acts at an angle to the direction of motion of an object, then the object will change direction.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-020",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "True or False?\nAcceleration always acts in the same direction as the resultant force.",
+    "back": "True.\nAcceleration does always act in the same direction as the resultant force.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-021",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "True or False?\nIf no drag forces are present, then the acceleration of a falling object is independent of its mass.",
+    "back": "True.\nIf no drag forces are present, then the acceleration of a falling object is independent of its mass. Astronauts on the Moon dropped a feather and a hammer from equal heights and found that they landed at the same time.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-022",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "State Newton's second law of motion in terms of momentum.",
+    "back": "Newton's second law, in terms of momentum, states that the resultant force on an object is equal to its rate of change of momentum.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-023",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "True or False?\nNewton's first and second laws of motion can involve multiple forces acting on one object.",
+    "back": "True.\nNewton's first and second laws of motion can involve multiple forces acting on one object.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-024",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "True or False?\nNewton's third law of motion involves two objects exerting the same type of force on each other.",
+    "back": "True.\nNewton's third law of motion involves two objects exerting the same type of force on each other.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-025",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "State Newton's third law of motion.",
+    "back": "Newton's third law states that if one body (Object A) exerts a force on another body (Object B), the second body (Object B) will exert a force on the first body (Object A) which is equal in magnitude but opposite in direction.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-026",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "Name four characteristics of a Newton's third law force pair.",
+    "back": "The four characteristics of a third law force pair are: the same type of force; equal in magnitude; opposite in direction; acting on different objects",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-027",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "True or False?\nWeight and normal contact force are an example of a third law pair.",
+    "back": "False.\nWeight and normal contact force are not a third law pair because they:\n• are not the same type of force\n• act on the same object",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-028",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "True or False?\nAccording to Newton's third law of motion, if two forces are equal in magnitude and opposite in direction, they are a third law force pair.",
+    "back": "False.\nTwo forces that are equal in magnitude and opposite in direction are not necessarily a third law force pair.\nThey must also be the same type of force, exerted by two different objects on each other.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-029",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "A car drives at a constant velocity on a road.\nName a third law force pair in this situation.",
+    "back": "Two examples of third law force pairs for a car driving at a constant velocity on a road are: normal contact forces due to the car pushing on the road and the road pushing back on the car; weight due to the gravitational pull of the Earth on the car and the gravitational pull of the car on the Earth",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-030",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "Define the term contact force.",
+    "back": "A contact force is defined as a force that acts between objects that are physically touching.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-031",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "Give one example of a contact force.",
+    "back": "Examples of contact forces are: surface friction; fluid resistance / viscous drag; tension; normal reaction force",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-032",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "What is surface friction?",
+    "back": "Surface friction is a force that opposes the motion of an object moving over a solid surface.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-033",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "What is viscous drag?",
+    "back": "Viscous drag is a type of frictional force that occurs when an object moves through a fluid (a liquid or a gas).",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-034",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "Define tension force.",
+    "back": "Tension is a force that occurs within an object when a pulling force is applied to both ends.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-035",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "What is the normal reaction force?",
+    "back": "The normal reaction force is the component of the contact force acting perpendicular to the surface.\nReaction forces act on objects supported by a surface.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-036",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "Define the term fluid in relation to physics.",
+    "back": "In physics, a fluid is a liquid or a gas. The particles in a fluid are free to move around.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-037",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "Define a non-contact force.",
+    "back": "A non-contact force is a force which acts at a distance without any physical contact between bodies due to the action of a field.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-038",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "State one example of a non-contact force.",
+    "back": "Examples of non-contact forces are:\n• gravitational force (weight)\n• electrostatic force\n• magnetic force",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-039",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "What is the gravitational force?",
+    "back": "The gravitational force, or weight, is the attractive force experienced by two objects with mass in a gravitational field.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-040",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "What is the electrostatic force?",
+    "back": "The electrostatic force is an attractive or repulsive force experienced by charged objects in an electric field.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-041",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "What is the magnetic force?",
+    "back": "The magnetic force is an attractive or repulsive force experienced between magnetic poles in a magnetic field.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-042",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "True or False?\nAir resistance is a non-contact force.",
+    "back": "False.\nAir resistance is a type of fluid resistance or viscous drag caused by collisions with air particles. Therefore, air resistance is a contact force.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-043",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "True or False?\nWhen a frictional force is exerted on an object, energy is transferred.",
+    "back": "True.\nWhen a frictional force is exerted on an object, energy is transferred.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-044",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "True or False?\nWhen a frictional force is exerted on an object, the temperature of the object decreases.",
+    "back": "False.\nWhen a frictional force is exerted on an object, the temperature of the object increases because energy is transferred to the object by heating.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-045",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "What causes surface friction?",
+    "back": "Surface friction is caused by imperfections in the surfaces of two objects that rub against one another.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-046",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "Define the term static friction.",
+    "back": "Static friction is a type of surface friction that occurs when an object is stationary on a surface.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-047",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "Define the term dynamic friction.",
+    "back": "Dynamic friction is a type of surface friction that occurs when an object is moving across a surface.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-048",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "True or False?\nSurface friction always acts parallel to the plane of contact between the object and the surface.",
+    "back": "True.\nSurface friction always acts parallel to the plane of contact between the object and the surface.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-049",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "True or False?\nStatic friction decreases in magnitude until movement begins.",
+    "back": "False.\nStatic friction increases in magnitude until movement begins.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-050",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "True or False?\nFor any given situation, static friction will reach a maximum value that is larger than that of dynamic friction.",
+    "back": "True.\nFor any given situation, static friction will reach a maximum value that is larger than that of dynamic friction.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-051",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "True or False?\nFor a constant pushing force, dynamic friction will be constant.",
+    "back": "True.\nFor a constant pushing force, dynamic friction will be constant. This is known as the coefficient of dynamic friction.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-052",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "State the equation for static friction.",
+    "back": "The equation for static friction is \\(F_f \\le \\mu_s F_N\\)\nWhere:\n• Ff = frictional force, measured in newtons (N)\n• μs = coefficient of static friction\n• FN = normal reaction force, measured in newtons (N)",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-053",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "State the equation for dynamic friction.",
+    "back": "The equation for dynamic friction is \\(F_f = \\mu_d F_N\\)\nWhere:\n• Ff = frictional force, measured in newtons (N)\n• μd = coefficient of dynamic friction\n• FN = normal reaction force, measured in newtons (N)",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-054",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "State Hooke's law.",
+    "back": "A material obeys Hooke’s law if the extension of the material is directly proportional to the applied force up to the limit of proportionality.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-055",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "State the equation for Hooke's law.",
+    "back": "The equation for Hooke's law is \\(F_H = -kx\\)\nWhere:\n• FH = elastic restoring force, measured in newtons (N)\n• k = spring constant, measured in newtons per metre (\\(\\mathrm{N\\,m^{-1}}\\))\n• x = extension, measured in metres (m)",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-056",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "Define the term spring constant.",
+    "back": "The spring constant is a property of the material being stretched and describes the stiffness of the material.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-057",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "True or False?\nThe stiffer the spring, the smaller the spring constant.",
+    "back": "False.\nThe stiffer the spring, the greater the spring constant.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-058",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "True or False?\nHooke's law applies to extensions and compressions.",
+    "back": "True.\nHooke's law does apply to extensions and compressions.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-059",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "What does the linear portion of a force-extension graph represent?",
+    "back": "The linear portion of a force-extension graph shows that the force applied is directly proportional to the extension, and so the material obeys Hooke's law.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-060",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "What does the gradient of the linear region of a force-extension graph represent?",
+    "back": "The gradient of the linear region of a force-extension graph represents the spring constant, k.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-061",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "What does the gradient of the linear region of an extension-force graph represent?",
+    "back": "The gradient of the linear region of an extension-force graph represents 1/k.\nWhere:\n• k = spring constant, measured in newtons per metre (\\(\\mathrm{N\\,m^{-1}}\\))",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-062",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "State the equation for Stokes' law.",
+    "back": "The equation for Stokes' law is \\(F_d = 6\\pi\\eta rv\\)\nWhere: Fd = viscous drag force, measured in newtons (N); η = fluid viscosity, measured in newton seconds per metres squared (\\(\\mathrm{N\\,s\\,m^{-2}}\\)) or pascal seconds (Pa s); r = radius of sphere, measured in metres (m); v = velocity of sphere through fluid, measured in metres per second (\\(\\mathrm{m\\,s^{-1}}\\))",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-063",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "Define the term viscosity.",
+    "back": "The viscosity of a fluid is its resistance to movement.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-064",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "True or False?\nThe rate of flow of a fluid is inversely proportional to its coefficient of viscosity.",
+    "back": "True.\nThe rate of flow of a fluid is inversely proportional to its coefficient of viscosity.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-065",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "True or False?\nThe magnitude of the viscous drag force is dependent on the speed of the object moving through the fluid.",
+    "back": "True.\nThe magnitude of the viscous drag force is dependent on the speed of the object moving through the fluid.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-066",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "True or False?\nThe magnitude of the viscous drag force is independent of the volume of the object moving through the fluid.",
+    "back": "False.\nThe magnitude of the viscous drag force is dependent on the volume of the object moving through the fluid.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-067",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "True or False?\nThe magnitude of the viscous drag force is dependent on the shape of the object moving through the fluid.",
+    "back": "True.\nThe magnitude of the viscous drag force is dependent on the shape of the object moving through the fluid.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-068",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "True or False?\nThe force of buoyancy is only exerted on objects that are immersed in liquids.",
+    "back": "False.\nThe force of buoyancy is exerted on objects that are immersed in fluids (liquids and gases), not just liquids.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-069",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "True or False?\nThe buoyancy force is exerted on a body due to the displacement of the fluid it is immersed in.",
+    "back": "True.\nThe buoyancy force is exerted on a body due to the displacement of the fluid it is immersed in.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-070",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "State the equation for the buoyancy force.",
+    "back": "The equation for the buoyancy force is \\(F_b = \\rho Vg\\)\nWhere: Fb = buoyancy force, measured in newtons (N); ρ = density of fluid, measured in kilograms per cubic metre (\\(\\mathrm{kg\\,m^{-3}}\\)); V = volume of the fluid displaced, measured in cubic metres (\\(\\mathrm{m^3}\\)); g = acceleration of free fall, measured in metres per second squared (\\(\\mathrm{m\\,s^{-2}}\\))",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-071",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "State the equation for the weight of a sphere of volume V and density ρ.",
+    "back": "The weight of a sphere is \\(W_s = \\rho_s V_s g\\)\nWhere: Ws = weight of sphere, measured in newtons (N); ρ = density of sphere, measured in kilograms per cubic metre (\\(\\mathrm{kg\\,m^{-3}}\\)); V = volume of sphere, measured in cubic metres (\\(\\mathrm{m^3}\\)); g = acceleration of free fall, measured in metres per second squared (\\(\\mathrm{m\\,s^{-2}}\\))",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-072",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "True or False?\nThe terminal velocity of a sphere falling through a fluid is indirectly proportional to the square of the radius of the sphere.",
+    "back": "False.\nThe terminal velocity of a sphere falling through a fluid is directly proportional to the square of the radius of the sphere.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-073",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "True or False?\nThe terminal velocity of a sphere falling through a fluid is directly proportional to the viscosity of the fluid.",
+    "back": "False.\nThe terminal velocity of a sphere falling through a fluid is indirectly proportional to the viscosity of the fluid.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-074",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "Define linear momentum.",
+    "back": "Linear momentum is the momentum of an object that is moving in only one dimension.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-075",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "True or False?\nThe linear momentum of an object remains constant, unless the system is acted upon by an external resultant force.",
+    "back": "True.\nThe linear momentum of an object does remain constant unless the system is acted upon by an external resultant force.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-076",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "State the equation for linear momentum.",
+    "back": "The equation for linear momentum is \\(p = mv\\)\nWhere:\n• p = momentum, measured in kilogram metres per second (\\(\\mathrm{kg\\,m\\,s^{-1}}\\))\n• m = mass, measured in kilograms (kg)\n• v = velocity, measured in metres per second (\\(\\mathrm{m\\,s^{-1}}\\))",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-077",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "True or False?\nLinear momentum is a vector quantity.",
+    "back": "True.\nLinear momentum is a vector quantity with both magnitude and direction.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-078",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "State the principle of linear momentum.",
+    "back": "The principle of linear momentum states that the total linear momentum before a collision is equal to the total linear momentum after a collision. Unless the system is acted on by a resultant external force.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-079",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "True or False?\nLinear momentum is always conserved.",
+    "back": "True.\nLinear momentum is always conserved.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-080",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "A toy car of mass 0.2 kg travels with a velocity of 0.1 \\(\\mathrm{m\\,s^{-1}}\\).\nWhat is the linear momentum of the toy car?",
+    "back": "The linear momentum of a toy car of mass 0.2 kg that travels with a velocity of 0.1 \\(\\mathrm{m\\,s^{-1}}\\) is 0.02 \\(\\mathrm{kg\\,m\\,s^{-1}}\\).\n• \\(p = mv\\)\n• \\(p = 0.2 \\times 0.1 = 0.02\\ \\mathrm{kg\\,m\\,s^{-1}}\\)",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-081",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "Moving object A collides with stationary object B. After the collision, they move in opposite directions.\nWrite equations for the momentum before and after the collision.",
+    "back": "The equations for the momentum before and after a collision between moving object A and stationary object B are:\n• \\(p_{\\mathrm{before}} = m_Au_A + 0\\)\n• \\(p_{\\mathrm{after}} = -m_Av_A + m_Bv_B\\)",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-082",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "Define impulse.",
+    "back": "Impulse is when an external resultant force acts on an object for a very short time and changes the object's motion.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-083",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "What is the symbol for impulse?",
+    "back": "The symbol for impulse is J.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-084",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "State the equation for the impulse of a force.",
+    "back": "The equation for the impulse of a force is \\(J = F\\Delta t\\)\nWhere: J = impulse, measured in newton seconds (N s); F = resultant external force applied, measured in newtons (N); Δt = change in time over which the force acts, measured in seconds (s)",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-085",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "True or False?\nImpulse is equal to change in momentum.",
+    "back": "True.\nImpulse is equal to change in momentum. Therefore, change in momentum can be used to indirectly measure impulse.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-086",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "True or False?\nImpulse always acts in the opposite direction to the external resultant force.",
+    "back": "False.\nImpulse always acts in the same direction as the external resultant force.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-087",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "True or False?\nA larger force exerted for a short time has the same effect as a smaller force exerted for a longer time.",
+    "back": "True.\nA larger force exerted for a short time has the same effect as a smaller force exerted for a longer time.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-088",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "True or False?\nIncreasing the time over which a change in momentum occurs reduces the force applied to the object.",
+    "back": "True.\nIncreasing the time over which a change in momentum occurs reduces the force experienced by the object.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-089",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "Write an expression for the impulse of the force acting for a time T.",
+    "back": "The impulse of the force is \\(J = \\frac{1}{2}F_{\\max}T\\).\nImpulse is the area under a force-time graph, therefore:\n• \\(J = \\left(\\frac{1}{2}F_{\\max}\\frac{T}{2}\\right) + \\left(\\frac{1}{2}F_{\\max}\\frac{T}{2}\\right)\\)\n• \\(J = \\frac{1}{2}F_{\\max}T\\)",
+    "frontImage": "/images/a2-forces-momentum/sl-a2-089-front-01.png",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-090",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "True or False?\nThe equation \\(F = \\frac{\\Delta p}{\\Delta t}\\) can only be used when mass is constant.",
+    "back": "False.\nThe equation \\(F = \\frac{\\Delta p}{\\Delta t}\\) can also be used when the mass of the object is not constant.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-091",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "A toy car collides with a skirting board. The toy car exerts a force of 4.5 N on the skirting board.\nState the magnitude and direction of the force exerted by the skirting board on the car.",
+    "back": "The force exerted by the skirting board on the car is –4.5 N.\nAccording to Newton's third law: the car exerts a force of 4.5 N on the skirting board; therefore, the skirting board exerts an equal and opposite force of -4.5 N on the car",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-092",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "A student of mass 50 kg sits on a chair.\nState the magnitude of the force exerted by the chair on the student.",
+    "back": "The magnitude of the force exerted by the chair on the student is 490 N.\nThe student exerts a normal reaction force on the chair that is equal to the student's weight. \\(W = mg = 50 \\times 9.8 = 490\\ \\mathrm{N}\\)\nAccording to Newton's third law, the chair exerts a normal reaction force on the student that is equal in magnitude but opposite in direction.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-093",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "True or False?\nThe equation \\(F = ma\\) can be used when mass is not constant.",
+    "back": "False.\nThe equation \\(F = ma\\) can only be used when mass is constant.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-094",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "How can force, as the rate of change of momentum, be derived from Newton's second law of motion?",
+    "back": "Force, as the rate of change of momentum, be derived from Newton's second law of motion as follows:\n• \\(\\(F = ma\\) = \\frac{m(v-u)}{t} = \\frac{mv-mu}{t} = \\frac{\\Delta p}{\\Delta t}\\)",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-095",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "Define the term collision.",
+    "back": "A collision is when two or more moving objects come together and exert a force on one another for a relatively short time.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-096",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "Define the term explosion.",
+    "back": "An explosion is when two or more objects that are initially at rest, are propelled apart from one another.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-097",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "True or False?\nMomentum is conserved in all collisions and all explosions.",
+    "back": "True.\nMomentum is always conserved in collisions and explosions.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-098",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "True or False?\nKinetic energy is conserved in all collisions and all explosions.",
+    "back": "False.\nKinetic energy is only conserved in elastic collisions and explosions.\nHowever, kinetic energy is not conserved if the collision or explosion is inelastic.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-099",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "Define the term elastic collision.",
+    "back": "An elastic collision is a collision in which both the momentum and kinetic energy are conserved.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-100",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "Define the term inelastic collision.",
+    "back": "An inelastic collision is a collision in which the momentum is conserved but the kinetic energy is not.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-101",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "True or False?\nPerfectly elastic collisions only occur between particles.",
+    "back": "True.\nPerfectly elastic collisions only occur between particles. However, the theoretical idea of an elastic collision can be used in exam questions.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-102",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "How do you determine if a collision is elastic or inelastic?",
+    "back": "To determine whether a collision is elastic or inelastic, compare the kinetic energy before and after the collision. If kinetic energy is conserved, then the collision is elastic.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-103",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "True or False?\nObjects always stick together after an inelastic collision.",
+    "back": "False.\nA totally inelastic collision is a special case of an inelastic collision where the colliding bodies stick together and move as one body.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-104",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "Define a radian.",
+    "back": "A radian is the angle subtended at the centre of a circle by an arc equal in length to the radius of the circle.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-105",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "What is the angle in radians for a complete circle in terms of π?",
+    "back": "A complete circle is \\(2\\pi\\) radians.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-106",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "State the equation used to convert degrees to radians.",
+    "back": "The equation used to convert degrees to radians is \\(\\theta_{\\mathrm{rad}} = \\theta^{\\circ} \\times \\frac{\\pi}{180}\\).",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-107",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "What is the angle in radians for a half circle in terms of π?",
+    "back": "A half circle is \\(\\pi\\) radians.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-108",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "State the equation used to convert radians to degrees.",
+    "back": "The equation used to convert radians to degrees is \\(\\theta^{\\circ} = \\theta_{\\mathrm{rad}} \\times \\frac{180}{\\pi}\\).",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-109",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "What is 90° in radians in terms of π?",
+    "back": "90° is \\(\\frac{\\pi}{2}\\) radians.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-110",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "Define angular displacement.",
+    "back": "Angular displacement is the change in angle, in radians, of a body as it rotates around a circle.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-111",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "What is 270° in radians in terms of π?",
+    "back": "270° is \\(\\frac{3\\pi}{2}\\) radians.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-112",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "Define angular speed.",
+    "back": "Angular speed is the change in angular displacement with respect to time.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-113",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "How is angular speed different to angular velocity?",
+    "back": "Angular speed is a scalar quantity, and angular velocity is a vector quantity. Angular speed is the magnitude of angular velocity.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-114",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "State the equation linking linear speed, and angular speed.",
+    "back": "The equation linking linear speed, and angular speed is \\(v = r\\omega\\)\nWhere: v = linear speed, measured in metres per second (\\(\\mathrm{m\\,s^{-1}}\\)); r = radius of circle, measured in metres (m); ω = angular speed, measured in radians per second (rad s⁻¹)",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-115",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "State the equation linking angular speed and time period.",
+    "back": "The equation linking angular speed and time period is \\(\\omega = \\frac{2\\pi}{T}\\)\nWhere:\n• \\(\\omega\\) = angular speed, measured in radians per second (\\(\\mathrm{rad\\,s^{-1}}\\))\n• T = time period, measured in seconds (s)",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-116",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "An object in circular motion experiences a centripetal force.\nDefine the term centripetal.",
+    "back": "Centripetal means acting toward the centre of the circular path.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-117",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "True or False?\nAn object in uniform circular motion travels at a constant speed but with a changing velocity.",
+    "back": "True.\nAn object in uniform circular motion travels at a constant speed but with a changing velocity. Velocity is a vector quantity, so a change in direction is a change in velocity.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-118",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "Define the term centripetal force.",
+    "back": "Centripetal force is defined as the resultant force required to keep a body in a uniform circular motion that acts towards the centre of the circle, perpendicular to the velocity.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-119",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "State the equation linking centripetal force and linear speed.",
+    "back": "The equation linking centripetal force and linear speed is \\(F = \\frac{mv^2}{r}\\)\nWhere: F = centripetal force, measured in newtons (N); m = mass, measured in kilograms (kg); v = linear speed, measured in metres per second (\\(\\mathrm{m\\,s^{-1}}\\)); r = radius of orbit, measured in metres (m)",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-120",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "State the equation linking centripetal force and angular speed.",
+    "back": "The equation linking centripetal force and angular speed is \\(F = mr\\omega^2\\)\nWhere: F = centripetal force, measured in newtons (N); m = mass, measured in kilograms (kg); r = radius of orbit, measured in metres (m); ω = angular speed, measured in radians per second (rad s⁻¹)",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-121",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "True or False?\nThe direction of the centripetal force is the same direction as the acceleration.",
+    "back": "True.\nThe direction of the centripetal force is the same direction as the acceleration. Centripetal force is a resultant force. Acceleration always occurs in the direction of the resultant force.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-122",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "State the centripetal force for the Earth orbiting the Sun.",
+    "back": "The centripetal force for the Earth orbiting the Sun is the gravitational force.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-123",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "State the centripetal force for a ball on a rope moving in a circle.",
+    "back": "The centripetal force for a ball on a rope moving in a circle is tension.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-124",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "State the centripetal force for a car going around a circular track.",
+    "back": "The centripetal force for a car going around a circular track is friction.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-125",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "True or False?\nFor an object in circular motion, there is no work done.",
+    "back": "True.\nFor an object in circular motion, there is no work done because there is no change in kinetic energy.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-126",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "State the equation linking centripetal acceleration and linear speed.",
+    "back": "The equation linking centripetal acceleration and linear speed is \\(a = \\frac{v^2}{r}\\)\nWhere: a = centripetal acceleration, measured in metres per second squared (\\(\\mathrm{m\\,s^{-2}}\\)); v = linear speed, measured in metres per second (\\(\\mathrm{m\\,s^{-1}}\\)); r = radius of circular orbit, measured in metres (m)",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-127",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "Define centripetal acceleration.",
+    "back": "Centripetal acceleration is the acceleration of an object towards the centre of a circle when an object is in circular motion at a constant speed.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-128",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "State the equation linking centripetal acceleration and angular speed.",
+    "back": "The equation linking centripetal acceleration and angular speed is \\(a = \\omega^2r\\)\nWhere: a = centripetal acceleration, measured in metres per second squared (\\(\\mathrm{m\\,s^{-2}}\\)); ω = angular speed, measured in radians per second (rad s⁻¹); r = radius of circular orbit, measured in metres (m)",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-129",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "True or False?\nCentripetal acceleration is in the same direction as the centripetal force.",
+    "back": "True.\nCentripetal acceleration is in the same direction as the centripetal force. Centripetal force is a resultant force, acceleration always acts in the same direction as the resultant force.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-130",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "State the equation linking centripetal acceleration and time period.",
+    "back": "The equation linking centripetal acceleration and time period is \\(a = \\left(\\frac{2\\pi}{T}\\right)^2r = \\frac{4\\pi^2r}{T^2}\\)\nWhere: a = centripetal acceleration, measured in metres per second squared (\\(\\mathrm{m\\,s^{-2}}\\)); r = radius of circular orbit, measured in metres (m); T = time period, measured in seconds (s)",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-131",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "Define non-uniform circular motion.",
+    "back": "Non-uniform circular motion occurs when there is a changing resultant force on an object in circular motion, such as when an object moves in a vertical circle.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-132",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "State one example of an object in non-uniform circular motion.",
+    "back": "Examples of objects in non-uniform circular motion are:\n• a ball swinging on a string in a vertical circle\n• swinging a bucket of water in a vertical circle",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-133",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "True or False?\nFor a ball on a string swinging in a vertical circle, the tension force of the string on the ball is greater at the top of the circle than at the bottom.",
+    "back": "False.\nFor a ball on a string swinging in a vertical circle, the tension force of the string on the ball is greater at the bottom of the circle than at the top. This is because the tension has to overcome the weight force at the bottom of the circle.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-134",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "True or False?\nFor a ball on a string swinging in a vertical circle, the direction of the tension force will change continually.",
+    "back": "True.\nFor a ball on a string swinging in a vertical circle, the direction of the tension force will change continually. This is because tension is the centripetal force and is always directed to the centre of the circle.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-135",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "True or False?\nFor a ball on a string swinging in a vertical circle, the magnitude of the tension force will be constant.",
+    "back": "False.\nFor a ball on a string swinging in a vertical circle, the magnitude of the tension force will change continuously. This is because tension is the centripetal force, which is greater at the bottom because it also has to overcome the weight force at the bottom of the circle.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-136",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "For an object in non-uniform circular motion, when in the circle is the centripetal force at a maximum and a minimum?",
+    "back": "For an object in non-uniform circular motion, the centripetal force is at a maximum at the bottom of the circle and a minimum at the top of the circle.",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-137",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "State the equation for the centripetal force on a ball swinging in a vertical circle when the ball is at the top of the circle.",
+    "back": "The equation for the centripetal force on a ball swinging in a vertical circle when the ball is at the top of the circle is \\(F = \\frac{mv^2}{r} + mg\\)\nWhere: F = centripetal force / tension measured in newtons (N); m = mass, measured in kilograms (kg); v = velocity, measured in metres per second (\\(\\mathrm{m\\,s^{-1}}\\)); r = radius of orbit, measured in metres (m); g = gravitational field strength, measured in newtons per kilogram (\\(\\mathrm{N\\,kg^{-1}}\\))",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-138",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "State the equation for the centripetal force on a ball swinging in a vertical circle when the ball is at the bottom of the circle.",
+    "back": "The equation for the centripetal force on a ball swinging in a vertical circle when the ball is at the bottom of the circle is \\(F = \\frac{mv^2}{r} - mg\\)\nWhere: F = centripetal force / tension, measured in newtons (N); m = mass, measured in kilograms (kg); v = velocity, measured in metres per second (\\(\\mathrm{m\\,s^{-1}}\\)); r = radius of orbit, measured in metres (m); g = gravitational field strength, measured in newtons per kilogram (\\(\\mathrm{N\\,kg^{-1}}\\))",
+    "frontImage": "",
+    "backImage": ""
+  },
+  {
+    "id": "sl-a2-139",
+    "level": "SL",
+    "topicCode": "A2",
+    "topic": "Forces and Momentum",
+    "front": "True or False?\nFor a ball on a string swinging in a vertical circle, the speed of the ball will be slower at the bottom of the circle than at the top.",
+    "back": "False.\nFor a ball on a string swinging in a vertical circle, the speed of the ball will be faster at the bottom of the circle than at the top, because the acceleration is greater at the bottom.",
+    "frontImage": "",
+    "backImage": ""
+  }
+]
