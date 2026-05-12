@@ -43871,9 +43871,11 @@
     "front": "What is <strong>charging by induction</strong>?",
     "back": "Charging by induction is the <strong>separation of charge </strong>caused by the influence of a nearby charged object <strong>without </strong>any physical contact.\nThe charged object causes electrons near the surface of the uncharged substance to be either <strong>repelled </strong>or <strong>attracted</strong>.",
     "frontImage": "",
-    "backImage": "",
+    "backImage": "/images/custom/charging-by-induction-d2-021.png",
     "frontImages": [],
-    "backImages": [],
+    "backImages": [
+      "/images/custom/charging-by-induction-d2-021.png"
+    ],
     "sourceFile": "d2_electric_magnetic_fields_flashcards_HL.docx",
     "topicOrder": 20,
     "bookletFormulas": []
@@ -46029,9 +46031,11 @@
     "front": "What is <strong>charging by induction</strong>?",
     "back": "Charging by induction is the <strong>separation of charge </strong>caused by the influence of a nearby charged object <strong>without </strong>any physical contact.\nThe charged object causes electrons near the surface of the uncharged substance to be either <strong>repelled </strong>or <strong>attracted</strong>.",
     "frontImage": "",
-    "backImage": "",
+    "backImage": "/images/custom/charging-by-induction-d2-021.png",
     "frontImages": [],
-    "backImages": [],
+    "backImages": [
+      "/images/custom/charging-by-induction-d2-021.png"
+    ],
     "sourceFile": "d2_electric_magnetic_fields_flashcards_6_per_page.docx",
     "topicOrder": 20,
     "bookletFormulas": []
