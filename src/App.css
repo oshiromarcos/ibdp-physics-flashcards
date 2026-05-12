@@ -172,10 +172,11 @@ select:disabled {
   cursor: pointer;
   position: relative;
   transform-style: preserve-3d;
-  transform: translateX(var(--swipe-x, 0px)) rotateY(0deg);
-  transition: transform 650ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  transform: translateX(var(--swipe-x, 0px)) rotateZ(calc(var(--swipe-x, 0px) * 0.012deg)) rotateY(0deg);
+  transition: transform 520ms cubic-bezier(0.2, 0.8, 0.2, 1);
   touch-action: pan-y;
   user-select: text;
+  will-change: transform, opacity;
 }
 
 .flashcard.swipe-dragging {
@@ -184,7 +185,7 @@ select:disabled {
 
 .flashcard.swipe-exiting {
   opacity: 0.25;
-  transition: transform 170ms ease-out, opacity 170ms ease-out;
+  transition: transform 150ms ease-out, opacity 150ms ease-out;
 }
 
 .flashcard:focus-visible {
@@ -194,7 +195,7 @@ select:disabled {
 }
 
 .flashcard.isFlipped {
-  transform: translateX(var(--swipe-x, 0px)) rotateY(180deg);
+  transform: translateX(var(--swipe-x, 0px)) rotateZ(calc(var(--swipe-x, 0px) * -0.012deg)) rotateY(180deg);
 }
 
 .cardFace {

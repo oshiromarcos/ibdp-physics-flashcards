@@ -42,6 +42,12 @@ const REVIEW_THEME = {
   glow: "rgba(251, 146, 60, 0.28)",
 };
 
+const SWIPE_ACTIVATION_PX = 5;
+const SWIPE_MIN_DISTANCE_PX = 24;
+const SWIPE_DISTANCE_RATIO = 0.08;
+const SWIPE_VELOCITY_PX_PER_MS = 0.28;
+const SWIPE_EXIT_MS = 150;
+
 function themeForTopic(topicCode, studyMode) {
   if (studyMode === "review") return REVIEW_THEME;
 
@@ -516,7 +522,8 @@ export default function App() {
   function navigateAfterSwipe(direction) {
     window.clearTimeout(swipeTimerRef.current);
     setSwipeMotion("exiting");
-    setSwipeOffset(direction === "next" ? -420 : 420);
+    const exitDistance = Math.max(420, window.innerWidth * 0.9);
+    setSwipeOffset(direction === "next" ? -exitDistance : exitDistance);
 
     swipeTimerRef.current = window.setTimeout(() => {
       if (direction === "next") {
@@ -526,7 +533,7 @@ export default function App() {
       }
       setSwipeMotion("");
       setSwipeOffset(0);
-    }, 170);
+    }, SWIPE_EXIT_MS);
   }
 
   function handleCardPointerDown(event) {
@@ -538,9 +545,17 @@ export default function App() {
     pointerStartRef.current = {
       x: event.clientX,
       y: event.clientY,
+      lastX: event.clientX,
+      lastTime: event.timeStamp,
+      time: event.timeStamp,
       pointerId: event.pointerId,
       pointerType: event.pointerType,
+      swiping: false,
     };
+
+    if (event.pointerType === "touch") {
+      event.currentTarget.setPointerCapture?.(event.pointerId);
+    }
   }
 
   function handleCardPointerMove(event) {
@@ -553,9 +568,15 @@ export default function App() {
     const absX = Math.abs(deltaX);
     const absY = Math.abs(deltaY);
 
-    if (absX > 8 && absX > absY * 1.1) {
+    start.lastX = event.clientX;
+    start.lastTime = event.timeStamp;
+
+    if (absX > SWIPE_ACTIVATION_PX && absX > absY * 0.85) {
+      start.swiping = true;
+      event.preventDefault();
       setSwipeMotion("dragging");
-      setSwipeOffset(Math.max(-120, Math.min(120, deltaX * 0.58)));
+      const maxDrag = Math.max(160, window.innerWidth * 0.42);
+      setSwipeOffset(Math.max(-maxDrag, Math.min(maxDrag, deltaX * 0.96)));
     }
   }
 
@@ -569,9 +590,18 @@ export default function App() {
     const deltaY = event.clientY - start.y;
     const absX = Math.abs(deltaX);
     const absY = Math.abs(deltaY);
-    const swipeThreshold = start.pointerType === "touch" ? 42 : 58;
-    const isSwipe = absX > swipeThreshold && absX > absY * 1.2;
-    const isTap = absX < 10 && absY < 10;
+    const elapsed = Math.max(1, event.timeStamp - start.time);
+    const velocity = absX / elapsed;
+    const cardWidth = event.currentTarget.offsetWidth || window.innerWidth;
+    const swipeThreshold = start.pointerType === "touch"
+      ? Math.max(SWIPE_MIN_DISTANCE_PX, cardWidth * SWIPE_DISTANCE_RATIO)
+      : 58;
+    const isMostlyHorizontal = absX > absY * 0.75;
+    const isSwipe = isMostlyHorizontal && (
+      absX > swipeThreshold ||
+      (absX > SWIPE_MIN_DISTANCE_PX && velocity > SWIPE_VELOCITY_PX_PER_MS)
+    );
+    const isTap = !start.swiping && absX < 10 && absY < 10;
 
     if (isSwipe) {
       navigateAfterSwipe(deltaX < 0 ? "next" : "previous");
