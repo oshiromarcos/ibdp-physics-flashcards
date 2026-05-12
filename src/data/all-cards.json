@@ -48904,7 +48904,7 @@
     "topic": "Induction",
     "subtopicFull": "D.4 Induction: Faraday’s law, Lenz’s law, electromagnetic induction.",
     "front": "What <strong>three </strong>changes to a coil in a magnetic field can induce an e.m.f in it?",
-    "back": "An e.m.f is induced in a coil when there is a change in:\n<strong>• </strong>magnetic flux density, <em>B</em>\n<strong>• </strong>area of coil within the field, <em>A</em>\n<strong>• </strong>angle between the coil and field, <em>θ</em>",
+    "back": "An e.m.f is induced in a coil when there is a change in:\n<strong>• </strong>magnetic flux density, \\(B\\)\n<strong>• </strong>area of coil within the field, \\(A\\)\n<strong>• </strong>angle between the coil and field, \\(\\theta\\)\n\nFor a coil, the induced e.m.f is:\n\n\\[\n\\varepsilon = -N\\frac{\\Delta \\Phi}{\\Delta t}\n\\]\n\nwhere the magnetic flux through one turn is:\n\n\\[\n\\Phi = BA\\cos\\theta\n\\]",
     "frontImage": "",
     "backImage": "",
     "frontImages": [],
