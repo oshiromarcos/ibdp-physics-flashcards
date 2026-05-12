@@ -55304,7 +55304,7 @@
     "topic": "Radioactive Decay",
     "subtopicFull": "E.3 Radioactive Decay: Decay laws, isotopes, radioactivity.",
     "front": "What does the y-intercept of a decay curve represent?",
-    "back": "The y-intercept of a decay curve represents the <strong>initial value</strong> of the measured quantity, such as\n<strong>• </strong> <em>N</em><em><sub>0</sub></em>  = initial number of undecayed nuclei\n<strong>• </strong> <em>A</em><em><sub>0</sub></em>  = initial activity of the sample (Bq)\n<strong>• </strong> <em>C</em><em><sub>0</sub></em> = initial count rate (cpm)",
+    "back": "The y-intercept of a decay curve represents the <strong>initial value</strong> of the measured quantity, such as\n<strong>• </strong>\\(N_0\\) = initial number of undecayed nuclei\n<strong>• </strong>\\(A_0\\) = initial activity of the sample (Bq)\n<strong>• </strong>\\(C_0\\) = initial count rate (cpm)\n\nBoth the number of nuclei and activity decrease exponentially over time:\n\n\\[\nN = N_0 e^{-\\lambda t}\n\\]\n\n\\[\nA = A_0 e^{-\\lambda t}\n\\]",
     "frontImage": "",
     "backImage": "",
     "frontImages": [],
