@@ -20584,7 +20584,7 @@
     "topic": "Greenhouse Effect",
     "subtopicFull": "B.2 Greenhouse Effect: Radiation, energy balance of the Earth.",
     "front": "What is the emissivity value for a perfect black body?",
-    "back": "The emissivity value for a perfect black body is <strong>1</strong>.\n\nUseful formula — Stefan–Boltzmann law:\n\\[\nP = \\sigma A T^4\n\\]",
+    "back": "The emissivity value for a perfect black body is <strong>1</strong>.\n\nUseful formula — Stefan–Boltzmann law:\n\\[\nP = \\varepsilon \\sigma A T^4\n\\]\n\nFor a perfect black body, \\(\\varepsilon = 1\\).",
     "frontImage": "",
     "backImage": "",
     "frontImages": [],
