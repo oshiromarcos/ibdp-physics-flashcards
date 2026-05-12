@@ -149,6 +149,9 @@ select:disabled {
 .cardArea {
   display: flex;
   justify-content: center;
+  align-items: center;
+  position: relative;
+  gap: 16px;
 }
 
 .flipScene {
@@ -158,17 +161,26 @@ select:disabled {
   perspective: 1500px;
 }
 
+.imageCardScene {
+  height: clamp(620px, 74vh, 820px);
+}
+
 .flashcard {
   width: 100%;
   height: 100%;
-  border: 0;
-  background: transparent;
   color: inherit;
-  padding: 0;
   cursor: pointer;
   position: relative;
   transform-style: preserve-3d;
   transition: transform 650ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  touch-action: pan-y;
+  user-select: text;
+}
+
+.flashcard:focus-visible {
+  outline: 4px solid color-mix(in srgb, var(--accent) 42%, white);
+  outline-offset: 10px;
+  border-radius: 38px;
 }
 
 .flashcard.isFlipped {
@@ -192,6 +204,8 @@ select:disabled {
     0 28px 70px rgba(15, 23, 42, 0.19),
     0 0 0 8px rgba(255, 255, 255, 0.24),
     inset 0 1px 0 rgba(255, 255, 255, 0.82);
+  user-select: text;
+  -webkit-user-select: text;
 }
 
 .cardFront {
@@ -259,6 +273,19 @@ select:disabled {
   align-items: center;
   text-align: center;
   gap: 10px;
+  cursor: text;
+  user-select: text;
+  -webkit-user-select: text;
+}
+
+.cardFace.hasImages .cardContent {
+  justify-content: flex-start;
+  gap: 14px;
+}
+
+.cardFace.hasImages .mathText {
+  flex: 0 0 auto;
+  max-height: 75%;
 }
 
 .cardContent::-webkit-scrollbar {
@@ -276,6 +303,9 @@ select:disabled {
   font-size: clamp(17px, 1.75vw, 23px);
   line-height: 1.35;
   text-align: center;
+  cursor: text;
+  user-select: text;
+  -webkit-user-select: text;
 }
 
 .mathText strong {
@@ -359,6 +389,40 @@ select:disabled {
   gap: 10px;
   flex-wrap: wrap;
   margin-top: 10px;
+}
+
+.sideNav {
+  position: absolute;
+  top: 50%;
+  z-index: 5;
+  width: 56px;
+  height: 96px;
+  border: 1px solid rgba(255, 255, 255, 0.88);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.68);
+  color: var(--accent);
+  cursor: pointer;
+  font: inherit;
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 1;
+  box-shadow: 0 18px 42px rgba(15, 23, 42, 0.16);
+  backdrop-filter: blur(16px);
+  transform: translateY(-50%);
+  transition: opacity 160ms ease, transform 160ms ease, background 160ms ease;
+}
+
+.sideNav:hover {
+  background: rgba(255, 255, 255, 0.9);
+  transform: translateY(-50%) scale(1.04);
+}
+
+.sideNavPrevious {
+  left: clamp(4px, 2vw, 26px);
+}
+
+.sideNavNext {
+  right: clamp(4px, 2vw, 26px);
 }
 
 .buttons button,
@@ -446,6 +510,11 @@ select:disabled {
     min-height: 500px;
   }
 
+  .imageCardScene {
+    height: min(78vh, 760px);
+    min-height: 600px;
+  }
+
   .cardFace {
     padding: 22px;
     border-radius: 28px;
@@ -456,12 +525,24 @@ select:disabled {
   }
 
   .buttons {
-    gap: 8px;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 6px;
   }
 
   .buttons button {
-    flex: 1 1 44%;
-    padding: 12px 12px;
+    min-width: 0;
+    padding: 11px 7px;
+    font-size: 13px;
+    white-space: nowrap;
+  }
+
+  .buttons.secondary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .sideNav {
+    display: none;
   }
 
   .formulaItem {
@@ -481,6 +562,11 @@ select:disabled {
   .flipScene {
     height: 70vh;
     min-height: 520px;
+  }
+
+  .imageCardScene {
+    height: 80vh;
+    min-height: 620px;
   }
 
   .cardFace {
@@ -508,7 +594,14 @@ select:disabled {
   }
 
   .buttons button {
-    flex: 1 1 100%;
+    padding-inline: 5px;
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 781px) {
+  .mobileCardNav {
+    display: none;
   }
 }
 

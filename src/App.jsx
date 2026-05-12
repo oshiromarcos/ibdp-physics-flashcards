@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import katex from "katex";
 import "katex/contrib/mhchem";
 import "katex/dist/katex.min.css";
@@ -216,6 +216,7 @@ function CardFace({ card, side, studyMode, isSaved }) {
   const isFront = side === "front";
   const text = isFront ? card.front : card.back;
   const images = isFront ? card.frontImages : card.backImages;
+  const hasImages = images.some(Boolean);
   const cardLevels = card.levels || (card.level === "HL" ? ["HL"] : ["SL", "HL"]);
   const levelLabel = cardLevels.includes("SL") && cardLevels.includes("HL")
     ? "SL + HL"
@@ -224,7 +225,7 @@ function CardFace({ card, side, studyMode, isSaved }) {
       : "SL";
 
   return (
-    <div className={`cardFace ${isFront ? "cardFront" : "cardBack"}`}>
+    <div className={`cardFace ${isFront ? "cardFront" : "cardBack"} ${hasImages ? "hasImages" : ""}`}>
       {isSaved && <div className="savedBadge">Saved</div>}
 
       <div className="cardTop">
@@ -264,7 +265,7 @@ function CardFace({ card, side, studyMode, isSaved }) {
         {!isFront && <FormulaList formulas={card.bookletFormulas} />}
       </div>
 
-      <div className="tapHint">Click card to flip • scroll inside card if needed</div>
+      <div className="tapHint">Tap to flip • swipe sideways for another card • drag text to copy</div>
     </div>
   );
 }
@@ -297,6 +298,7 @@ export default function App() {
   const [reviewIds, setReviewIds] = useState(loadReviewIds);
   const [studyMode, setStudyMode] = useState("all");
   const [shuffleOn, setShuffleOn] = useState(false);
+  const pointerStartRef = useRef(null);
 
   useEffect(() => {
     localStorage.setItem("ib-physics-review-ids", JSON.stringify(reviewIds));
@@ -342,6 +344,9 @@ export default function App() {
   const card = filteredCards[safeIndex] || filteredCards[0];
   const theme = themeForTopic(card?.topicCode || "A", studyMode);
   const isSaved = card ? reviewIds.includes(card.id) : false;
+  const cardHasImages = Boolean(
+    card && [...card.frontImages, ...card.backImages].some(Boolean)
+  );
   const flatTopicOptions = useMemo(
     () => Object.values(topicOptions).flat(),
     [topicOptions]
@@ -362,14 +367,6 @@ export default function App() {
       : selectedSubtopic === "All topics"
         ? "All topics"
         : (selectedTopicOption?.label || card?.subtopicFull || selectedSubtopic);
-
-  useEffect(() => {
-    if (index !== safeIndex) setIndex(safeIndex);
-  }, [index, safeIndex]);
-
-  function pushHistory(current) {
-    setHistory((items) => [...items, current].slice(-300));
-  }
 
   function goToNext() {
     if (filteredCards.length === 0) return;
@@ -487,6 +484,71 @@ export default function App() {
     resetPosition();
   }
 
+  function isInteractiveTarget(target) {
+    return Boolean(target.closest("button, select, option, input, textarea, a"));
+  }
+
+  function hasSelectedText() {
+    return Boolean(window.getSelection?.().toString().trim());
+  }
+
+  function handleCardPointerDown(event) {
+    if (isInteractiveTarget(event.target)) {
+      pointerStartRef.current = null;
+      return;
+    }
+
+    pointerStartRef.current = {
+      x: event.clientX,
+      y: event.clientY,
+      pointerId: event.pointerId,
+    };
+  }
+
+  function handleCardPointerUp(event) {
+    const start = pointerStartRef.current;
+    pointerStartRef.current = null;
+
+    if (!start || start.pointerId !== event.pointerId || isInteractiveTarget(event.target)) return;
+
+    const deltaX = event.clientX - start.x;
+    const deltaY = event.clientY - start.y;
+    const absX = Math.abs(deltaX);
+    const absY = Math.abs(deltaY);
+    const isSwipe = absX > 70 && absX > absY * 1.25;
+    const isTap = absX < 10 && absY < 10;
+
+    if (isSwipe) {
+      if (deltaX < 0) {
+        goToNext();
+      } else {
+        previousCard();
+      }
+      return;
+    }
+
+    if (isTap && !hasSelectedText()) {
+      setFlipped((value) => !value);
+    }
+  }
+
+  function handleCardKeyDown(event) {
+    if (isInteractiveTarget(event.target)) return;
+
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      setFlipped((value) => !value);
+    }
+
+    if (event.key === "ArrowLeft") {
+      previousCard();
+    }
+
+    if (event.key === "ArrowRight") {
+      goToNext();
+    }
+  }
+
   if (!card) {
     return (
       <main
@@ -582,22 +644,47 @@ export default function App() {
         </section>
 
         <section className="cardArea">
-          <div className="flipScene">
-            <button
-              type="button"
+          <button
+            type="button"
+            className="sideNav sideNavPrevious"
+            aria-label="Previous card"
+            onClick={previousCard}
+          >
+            ‹
+          </button>
+
+          <div className={`flipScene ${cardHasImages ? "imageCardScene" : ""}`}>
+            <div
+              role="button"
+              tabIndex={0}
+              aria-label={flipped ? "Flashcard answer. Tap to show question." : "Flashcard question. Tap to show answer."}
               className={`flashcard ${flipped ? "isFlipped" : ""}`}
-              onClick={() => setFlipped(!flipped)}
+              onPointerDown={handleCardPointerDown}
+              onPointerUp={handleCardPointerUp}
+              onPointerCancel={() => {
+                pointerStartRef.current = null;
+              }}
+              onKeyDown={handleCardKeyDown}
             >
               <CardFace card={card} side="front" studyMode={studyMode} isSaved={isSaved} />
               <CardFace card={card} side="back" studyMode={studyMode} isSaved={isSaved} />
-            </button>
+            </div>
           </div>
+
+          <button
+            type="button"
+            className="sideNav sideNavNext"
+            aria-label="Next card"
+            onClick={goToNext}
+          >
+            ›
+          </button>
         </section>
 
         <section className="buttons">
-          <button onClick={previousCard}>Previous</button>
+          <button className="mobileCardNav" onClick={previousCard}>Previous</button>
           <button onClick={() => setFlipped(!flipped)}>Flip</button>
-          <button onClick={goToNext}>Next</button>
+          <button className="mobileCardNav" onClick={goToNext}>Next</button>
           <button
             className={shuffleOn ? "activeButton" : ""}
             onClick={() => setShuffleOn((value) => !value)}
