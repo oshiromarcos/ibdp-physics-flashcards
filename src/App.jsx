@@ -43,10 +43,11 @@ const REVIEW_THEME = {
 };
 
 const SWIPE_ACTIVATION_PX = 5;
-const SWIPE_MIN_DISTANCE_PX = 24;
-const SWIPE_DISTANCE_RATIO = 0.08;
-const SWIPE_VELOCITY_PX_PER_MS = 0.28;
+const SWIPE_MIN_DISTANCE_PX = 18;
+const SWIPE_DISTANCE_RATIO = 0.055;
+const SWIPE_VELOCITY_PX_PER_MS = 0.18;
 const SWIPE_EXIT_MS = 150;
+const TEXT_SELECTION_HOLD_MS = 260;
 
 function themeForTopic(topicCode, studyMode) {
   if (studyMode === "review") return REVIEW_THEME;
@@ -501,6 +502,10 @@ export default function App() {
     return Boolean(target.closest("button, select, option, input, textarea, a"));
   }
 
+  function isTextSelectionTarget(target) {
+    return Boolean(target.closest(".mathText, .cardContent, .cardMeta, .subtopicTitle"));
+  }
+
   function hasSelectedText() {
     return Boolean(window.getSelection?.().toString().trim());
   }
@@ -551,6 +556,8 @@ export default function App() {
       pointerId: event.pointerId,
       pointerType: event.pointerType,
       swiping: false,
+      cancelSwipe: false,
+      startedOnText: isTextSelectionTarget(event.target),
     };
 
     if (event.pointerType === "touch") {
@@ -561,22 +568,30 @@ export default function App() {
   function handleCardPointerMove(event) {
     const start = pointerStartRef.current;
     if (!start || start.pointerId !== event.pointerId || start.pointerType !== "touch") return;
-    if (hasSelectedText()) return;
 
     const deltaX = event.clientX - start.x;
     const deltaY = event.clientY - start.y;
     const absX = Math.abs(deltaX);
     const absY = Math.abs(deltaY);
+    const elapsed = Math.max(1, event.timeStamp - start.time);
 
     start.lastX = event.clientX;
     start.lastTime = event.timeStamp;
 
-    if (absX > SWIPE_ACTIVATION_PX && absX > absY * 0.85) {
+    if (hasSelectedText() || (start.startedOnText && elapsed > TEXT_SELECTION_HOLD_MS && !start.swiping)) {
+      start.cancelSwipe = true;
+      resetSwipeMotion(0);
+      return;
+    }
+
+    if (start.cancelSwipe) return;
+
+    if (absX > SWIPE_ACTIVATION_PX && absX > absY * 0.55) {
       start.swiping = true;
       event.preventDefault();
       setSwipeMotion("dragging");
-      const maxDrag = Math.max(160, window.innerWidth * 0.42);
-      setSwipeOffset(Math.max(-maxDrag, Math.min(maxDrag, deltaX * 0.96)));
+      const maxDrag = Math.max(180, window.innerWidth * 0.5);
+      setSwipeOffset(Math.max(-maxDrag, Math.min(maxDrag, deltaX)));
     }
   }
 
@@ -585,6 +600,11 @@ export default function App() {
     pointerStartRef.current = null;
 
     if (!start || start.pointerId !== event.pointerId || isInteractiveTarget(event.target)) return;
+
+    if (start.cancelSwipe || hasSelectedText()) {
+      resetSwipeMotion(0);
+      return;
+    }
 
     const deltaX = event.clientX - start.x;
     const deltaY = event.clientY - start.y;
@@ -596,7 +616,7 @@ export default function App() {
     const swipeThreshold = start.pointerType === "touch"
       ? Math.max(SWIPE_MIN_DISTANCE_PX, cardWidth * SWIPE_DISTANCE_RATIO)
       : 58;
-    const isMostlyHorizontal = absX > absY * 0.75;
+    const isMostlyHorizontal = absX > absY * 0.55;
     const isSwipe = isMostlyHorizontal && (
       absX > swipeThreshold ||
       (absX > SWIPE_MIN_DISTANCE_PX && velocity > SWIPE_VELOCITY_PX_PER_MS)
