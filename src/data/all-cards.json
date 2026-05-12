@@ -49963,7 +49963,7 @@
     "topic": "Structure of the Atom",
     "subtopicFull": "E.1 Structure of the Atom: Atomic structure, binding energy.",
     "front": "What were the <strong>three </strong>main observations from Rutherford's alpha scattering experiment?",
-    "back": "An alpha particle is a helium nucleus:\n\n\\[\n{}^{4}_{2}\\mathrm{He}^{2+}\n\\]\n\nIt contains <strong>2 protons</strong> and <strong>2 neutrons</strong>, so it has charge \\(+2e\\).",
+    "back": "Deviations from Rutherford's scattering predictions, which assume purely electrostatic (Coulomb) repulsion between an alpha particle and a point-like nucleus, occur mainly when alpha particles possess high energy or when targeting lighter nuclei. The primary cause is the strong nuclear force, which becomes significant at very close distances \\((<1.5\\text{ fm})\\), causing scattering to diverge from the predicted inverse square law.\n\nAn alpha particle is a helium nucleus:\n\n\\[\n{}^{4}_{2}\\mathrm{He}^{2+}\n\\]\n\nIt contains <strong>2 protons</strong> and <strong>2 neutrons</strong>, so it has charge \\(+2e\\).",
     "frontImage": "",
     "backImage": "",
     "frontImages": [],
