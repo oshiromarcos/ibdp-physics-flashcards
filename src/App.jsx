@@ -42,12 +42,12 @@ const REVIEW_THEME = {
   glow: "rgba(251, 146, 60, 0.28)",
 };
 
-const SWIPE_ACTIVATION_PX = 5;
-const SWIPE_MIN_DISTANCE_PX = 18;
-const SWIPE_DISTANCE_RATIO = 0.055;
-const SWIPE_VELOCITY_PX_PER_MS = 0.18;
+const SWIPE_ACTIVATION_PX = 3;
+const SWIPE_MIN_DISTANCE_PX = 12;
+const SWIPE_DISTANCE_RATIO = 0.035;
+const SWIPE_VELOCITY_PX_PER_MS = 0.08;
 const SWIPE_EXIT_MS = 150;
-const TEXT_SELECTION_HOLD_MS = 260;
+const TEXT_SELECTION_HOLD_MS = 320;
 
 function themeForTopic(topicCode, studyMode) {
   if (studyMode === "review") return REVIEW_THEME;
@@ -308,6 +308,7 @@ export default function App() {
   const [swipeOffset, setSwipeOffset] = useState(0);
   const [swipeMotion, setSwipeMotion] = useState("");
   const pointerStartRef = useRef(null);
+  const touchStartRef = useRef(null);
   const swipeTimerRef = useRef(null);
 
   useEffect(() => {
@@ -542,6 +543,11 @@ export default function App() {
   }
 
   function handleCardPointerDown(event) {
+    if (event.pointerType === "touch") {
+      pointerStartRef.current = null;
+      return;
+    }
+
     if (isInteractiveTarget(event.target)) {
       pointerStartRef.current = null;
       return;
@@ -559,10 +565,6 @@ export default function App() {
       cancelSwipe: false,
       startedOnText: isTextSelectionTarget(event.target),
     };
-
-    if (event.pointerType === "touch") {
-      event.currentTarget.setPointerCapture?.(event.pointerId);
-    }
   }
 
   function handleCardPointerMove(event) {
@@ -633,6 +635,94 @@ export default function App() {
     if (isTap && !hasSelectedText()) {
       setFlipped((value) => !value);
     }
+  }
+
+  function touchPoint(event) {
+    return event.changedTouches?.[0] || event.touches?.[0];
+  }
+
+  function handleCardTouchStart(event) {
+    if (event.touches.length !== 1 || isInteractiveTarget(event.target)) {
+      touchStartRef.current = null;
+      return;
+    }
+
+    const touch = touchPoint(event);
+    touchStartRef.current = {
+      x: touch.clientX,
+      y: touch.clientY,
+      time: event.timeStamp,
+      swiping: false,
+      cancelSwipe: false,
+      startedOnText: isTextSelectionTarget(event.target),
+    };
+  }
+
+  function handleCardTouchMove(event) {
+    const start = touchStartRef.current;
+    const touch = touchPoint(event);
+    if (!start || !touch) return;
+
+    const deltaX = touch.clientX - start.x;
+    const deltaY = touch.clientY - start.y;
+    const absX = Math.abs(deltaX);
+    const absY = Math.abs(deltaY);
+    const elapsed = Math.max(1, event.timeStamp - start.time);
+
+    if (hasSelectedText() || (start.startedOnText && elapsed > TEXT_SELECTION_HOLD_MS && absX < 18)) {
+      start.cancelSwipe = true;
+      resetSwipeMotion(0);
+      return;
+    }
+
+    if (start.cancelSwipe) return;
+
+    if (absX > SWIPE_ACTIVATION_PX && absX > absY * 0.38) {
+      start.swiping = true;
+      event.preventDefault();
+      setSwipeMotion("dragging");
+      const maxDrag = Math.max(220, window.innerWidth * 0.62);
+      setSwipeOffset(Math.max(-maxDrag, Math.min(maxDrag, deltaX * 1.08)));
+    }
+  }
+
+  function handleCardTouchEnd(event) {
+    const start = touchStartRef.current;
+    touchStartRef.current = null;
+    const touch = touchPoint(event);
+
+    if (!start || !touch || isInteractiveTarget(event.target)) return;
+
+    if (start.cancelSwipe || hasSelectedText()) {
+      resetSwipeMotion(0);
+      return;
+    }
+
+    const deltaX = touch.clientX - start.x;
+    const deltaY = touch.clientY - start.y;
+    const absX = Math.abs(deltaX);
+    const absY = Math.abs(deltaY);
+    const elapsed = Math.max(1, event.timeStamp - start.time);
+    const velocity = absX / elapsed;
+    const cardWidth = event.currentTarget.offsetWidth || window.innerWidth;
+    const swipeThreshold = Math.max(SWIPE_MIN_DISTANCE_PX, cardWidth * SWIPE_DISTANCE_RATIO);
+    const isMostlyHorizontal = absX > absY * 0.38;
+    const isSwipe = isMostlyHorizontal && (
+      absX > swipeThreshold ||
+      (absX > 8 && velocity > SWIPE_VELOCITY_PX_PER_MS)
+    );
+
+    if (isSwipe) {
+      navigateAfterSwipe(deltaX < 0 ? "next" : "previous");
+      return;
+    }
+
+    resetSwipeMotion(swipeMotion ? 140 : 0);
+  }
+
+  function handleCardTouchCancel() {
+    touchStartRef.current = null;
+    resetSwipeMotion(swipeMotion ? 140 : 0);
   }
 
   function handleCardKeyDown(event) {
@@ -770,6 +860,10 @@ export default function App() {
                 pointerStartRef.current = null;
                 resetSwipeMotion(swipeMotion ? 160 : 0);
               }}
+              onTouchStart={handleCardTouchStart}
+              onTouchMove={handleCardTouchMove}
+              onTouchEnd={handleCardTouchEnd}
+              onTouchCancel={handleCardTouchCancel}
               onKeyDown={handleCardKeyDown}
             >
               <CardFace card={card} side="front" studyMode={studyMode} isSaved={isSaved} />
