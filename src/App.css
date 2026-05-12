@@ -172,7 +172,7 @@ select:disabled {
   cursor: pointer;
   position: relative;
   transform-style: preserve-3d;
-  transform: translateX(var(--swipe-x, 0px)) rotateZ(calc(var(--swipe-x, 0px) * 0.012deg)) rotateY(0deg);
+  transform: translateX(var(--swipe-x, 0px)) rotateY(0deg);
   transition: transform 520ms cubic-bezier(0.2, 0.8, 0.2, 1);
   touch-action: pan-y;
   user-select: text;
@@ -195,7 +195,7 @@ select:disabled {
 }
 
 .flashcard.isFlipped {
-  transform: translateX(var(--swipe-x, 0px)) rotateZ(calc(var(--swipe-x, 0px) * -0.012deg)) rotateY(180deg);
+  transform: translateX(var(--swipe-x, 0px)) rotateY(180deg);
 }
 
 .cardFace {
