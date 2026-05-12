@@ -47,6 +47,7 @@ const SWIPE_MIN_DISTANCE_PX = 12;
 const SWIPE_DISTANCE_RATIO = 0.035;
 const SWIPE_VELOCITY_PX_PER_MS = 0.08;
 const SWIPE_EXIT_MS = 150;
+const SWIPE_ENTER_MS = 210;
 const TEXT_SELECTION_HOLD_MS = 420;
 
 function themeForTopic(topicCode, studyMode) {
@@ -537,8 +538,19 @@ export default function App() {
       } else {
         previousCard();
       }
-      setSwipeMotion("");
-      setSwipeOffset(0);
+      setSwipeMotion("entering");
+      setSwipeOffset(direction === "next" ? exitDistance : -exitDistance);
+
+      window.requestAnimationFrame(() => {
+        window.requestAnimationFrame(() => {
+          setSwipeOffset(0);
+        });
+      });
+
+      swipeTimerRef.current = window.setTimeout(() => {
+        setSwipeMotion("");
+        setSwipeOffset(0);
+      }, SWIPE_ENTER_MS);
     }, SWIPE_EXIT_MS);
   }
 

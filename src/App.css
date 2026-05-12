@@ -190,8 +190,13 @@ select:disabled {
 }
 
 .flashcard.swipe-exiting {
-  opacity: 0.25;
+  opacity: 0.12;
   transition: transform 150ms ease-out, opacity 150ms ease-out;
+}
+
+.flashcard.swipe-entering {
+  opacity: 1;
+  transition: transform 210ms cubic-bezier(0.16, 1, 0.3, 1), opacity 210ms ease-out;
 }
 
 .flashcard:focus-visible {
