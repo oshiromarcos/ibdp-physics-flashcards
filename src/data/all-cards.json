@@ -22442,7 +22442,7 @@
     "topic": "Gas Laws",
     "subtopicFull": "B.3 Gas Laws: Moles, ideal gases, Boltzmann equation.",
     "front": "A low pressure sample of monatomic helium gas has an initial temperature of 450 K and a final temperature of 1800 K.\nBy what factor has its internal energy increased?",
-    "back": "For an ideal gas, internal energy is proportional to temperature. Temperature has increased by a factor of 4 so the internal energy has also increased by a factor of 4.",
+    "back": "For a monatomic ideal gas:\n\n\\[\nU = \\frac{3}{2}Nk_{B}T\n\\]\n\nSo, internal energy is proportional to temperature. Temperature has increased by a factor of 4, so the internal energy has also increased by a factor of 4.",
     "frontImage": "",
     "backImage": "",
     "frontImages": [],
