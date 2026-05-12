@@ -47,7 +47,7 @@ const SWIPE_MIN_DISTANCE_PX = 12;
 const SWIPE_DISTANCE_RATIO = 0.035;
 const SWIPE_VELOCITY_PX_PER_MS = 0.08;
 const SWIPE_EXIT_MS = 150;
-const TEXT_SELECTION_HOLD_MS = 320;
+const TEXT_SELECTION_HOLD_MS = 420;
 
 function themeForTopic(topicCode, studyMode) {
   if (studyMode === "review") return REVIEW_THEME;
@@ -711,6 +711,7 @@ export default function App() {
       absX > swipeThreshold ||
       (absX > 8 && velocity > SWIPE_VELOCITY_PX_PER_MS)
     );
+    const isTap = !start.swiping && absX < 12 && absY < 12 && elapsed < TEXT_SELECTION_HOLD_MS;
 
     if (isSwipe) {
       navigateAfterSwipe(deltaX < 0 ? "next" : "previous");
@@ -718,6 +719,10 @@ export default function App() {
     }
 
     resetSwipeMotion(swipeMotion ? 140 : 0);
+
+    if (isTap && !hasSelectedText()) {
+      setFlipped((value) => !value);
+    }
   }
 
   function handleCardTouchCancel() {
