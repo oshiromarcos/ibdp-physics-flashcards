@@ -10362,7 +10362,7 @@
     "topic": "Work, energy and power",
     "subtopicFull": "A.3 – Work, Energy And Power",
     "front": "Define \"work\".",
-    "back": "Energy transferred by an external force.",
+    "back": "Energy transferred by an external force.\n\n\\[\nW = Fd\n\\]",
     "frontImage": "",
     "backImage": "/images/anki-hl/paste-3a45b7f4580697e59a7bb2f8a172d2bb0c8c4147.jpg",
     "frontImages": [],
