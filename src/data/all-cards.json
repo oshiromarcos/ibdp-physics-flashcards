@@ -23633,7 +23633,7 @@
     "topic": "Thermodynamics",
     "subtopicFull": "B.4 Thermodynamics: First/second laws of thermodynamics, heat engines, entropy.",
     "front": "What is the sign of ΔU when a gas transfers heat to its surroundings and expands?",
-    "back": "When a gas transfers heat away, Q is negative and when it expands it does work so Wis negative. This means its internal energy decreases so ΔU is <strong>negative</strong>.",
+    "back": "Using the first law of thermodynamics:\n\n\\[\n\\Delta U = Q - W\n\\]\n\nWhen a gas transfers heat to its surroundings, \\(Q\\) is negative. When it expands, it does work on the surroundings, so \\(W\\) is positive. This means its internal energy decreases, so \\(\\Delta U\\) is <strong>negative</strong>.",
     "frontImage": "",
     "backImage": "",
     "frontImages": [],
