@@ -37122,16 +37122,12 @@
     "topicCode": "C4",
     "topic": "Standing Waves and Resonance",
     "subtopicFull": "C.4 Standing Waves and Resonance: Nodes, antinodes, standing waves on strings/in pipes.",
-    "front": "<strong>True or False?</strong>\nThe <em>n </em>th harmonic has nodes and <em>n </em>antinodes on a string fixed at both ends.",
-    "back": "<strong>True.</strong>\nThe <em>n </em>th harmonic has nodes and <em>n </em>antinodes on a string fixed at both ends.",
-    "frontImage": "/images/sl-c4-standing-waves-and-resonance/sl-c4-033-front-01.png",
-    "backImage": "/images/sl-c4-standing-waves-and-resonance/sl-c4-033-back-01.png",
-    "frontImages": [
-      "/images/sl-c4-standing-waves-and-resonance/sl-c4-033-front-01.png"
-    ],
-    "backImages": [
-      "/images/sl-c4-standing-waves-and-resonance/sl-c4-033-back-01.png"
-    ],
+    "front": "<strong>True or False?</strong>\nThe \\(n\\)th harmonic has \\(n+1\\) nodes and \\(n\\) antinodes on a string fixed at both ends.",
+    "back": "<strong>True.</strong>\nThe \\(n\\)th harmonic has \\(n+1\\) nodes and \\(n\\) antinodes on a string fixed at both ends.",
+    "frontImage": "",
+    "backImage": "",
+    "frontImages": [],
+    "backImages": [],
     "sourceFile": "c4_standing_waves_flashcards_6_per_page.docx",
     "topicOrder": 17,
     "bookletFormulas": []
