@@ -42463,19 +42463,15 @@
     "topicCode": "D1",
     "topic": "Gravitational Fields",
     "subtopicFull": "D.1 Gravitational Fields: Newton’s law of gravitation, gravitational potential.",
-    "front": "Sketch the graph of against and label the position of Earth.",
-    "back": "The graph of against is a straight line. Earth is at (1, 1) as the orbital period is in <strong>years </strong>and the orbital radius is in <strong>astronomical units </strong>(AU)",
+    "front": "Sketch the graph of \\(\\log T\\) against \\(\\log r\\) and label the position of Earth.",
+    "back": "The graph of \\(\\log T\\) against \\(\\log r\\) is a straight line. Earth is at (1, 1) as the orbital period is in <strong>years </strong>and the orbital radius is in <strong>astronomical units </strong>(AU)",
     "frontImage": "/images/sl-d1-gravitational-fields/sl-d1-034-front-01.png",
     "backImage": "/images/sl-d1-gravitational-fields/sl-d1-034-back-01.png",
     "frontImages": [
-      "/images/sl-d1-gravitational-fields/sl-d1-034-front-01.png",
-      "/images/sl-d1-gravitational-fields/sl-d1-034-front-02.png",
-      "/images/sl-d1-gravitational-fields/sl-d1-034-front-03.png"
+      "/images/sl-d1-gravitational-fields/sl-d1-034-front-01.png"
     ],
     "backImages": [
-      "/images/sl-d1-gravitational-fields/sl-d1-034-back-01.png",
-      "/images/sl-d1-gravitational-fields/sl-d1-034-back-02.png",
-      "/images/sl-d1-gravitational-fields/sl-d1-034-back-03.png"
+      "/images/sl-d1-gravitational-fields/sl-d1-034-back-01.png"
     ],
     "sourceFile": "d1_gravitational_fields_flashcards_6_per_page.docx",
     "topicOrder": 19,
