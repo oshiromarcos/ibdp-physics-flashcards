@@ -273,7 +273,7 @@ function CardFace({ card, side, studyMode, isSaved }) {
         {!isFront && <FormulaList formulas={card.bookletFormulas} />}
       </div>
 
-      <div className="tapHint">Tap to flip • swipe sideways for another card • drag text to copy</div>
+      <div className="tapHint">Tap to flip or swipe for another card</div>
     </div>
   );
 }
