@@ -13713,16 +13713,14 @@
     "topic": "Rigid Body Mechanics",
     "subtopicFull": "A.4 Rigid Body Mechanics: Rotational kinematics, torque, moment of inertia, angular momentum.",
     "front": "State the equation for angular impulse.",
-    "back": "The equation for angular impulse is\nWhere:\n• τ = torque, measured in Newton metres (N m)\n• ∆t = time interval, measured in seconds (s)",
+    "back": "The angular impulse is the change in angular momentum:\n\n\\[\n\\Delta L = \\tau \\Delta t\n\\]\n\nwhere \\(\\tau\\) is the torque and \\(\\Delta t\\) is the time interval.",
     "frontImage": "",
-    "backImage": "/images/hl-a4-rigid-body-mechanics/hl-a4-063-back-01.png",
     "frontImages": [],
-    "backImages": [
-      "/images/hl-a4-rigid-body-mechanics/hl-a4-063-back-01.png"
-    ],
+    "backImages": [],
     "sourceFile": "a4_rigid_body_flashcards_HL.docx",
     "topicOrder": 7,
-    "bookletFormulas": []
+    "bookletFormulas": [],
+    "backImage": ""
   },
   {
     "id": "hl-a4-064",
@@ -13949,16 +13947,14 @@
     "topic": "Rigid Body Mechanics",
     "subtopicFull": "A.4 Rigid Body Mechanics: Rotational kinematics, torque, moment of inertia, angular momentum.",
     "front": "What is the moment of inertia for a solid sphere?",
-    "back": "The moment of inertia for a solid sphere is\n<strong>Where:</strong>\nm = mass of object, measured in kilograms (kg)\nr = radius of the sphere, measured in metres (m)",
+    "back": "For a solid sphere rotating about its centre:\n\n\\[\nI = \\frac{2}{5}mr^2\n\\]\n\nwhere \\(m\\) is the mass and \\(r\\) is the radius of the sphere.",
     "frontImage": "",
-    "backImage": "/images/hl-a4-rigid-body-mechanics/hl-a4-075-back-01.png",
     "frontImages": [],
-    "backImages": [
-      "/images/hl-a4-rigid-body-mechanics/hl-a4-075-back-01.png"
-    ],
+    "backImages": [],
     "sourceFile": "a4_rigid_body_flashcards_HL.docx",
     "topicOrder": 7,
-    "bookletFormulas": []
+    "bookletFormulas": [],
+    "backImage": ""
   },
   {
     "id": "anki-hl-0305",
@@ -23567,16 +23563,14 @@
     "topic": "Thermodynamics",
     "subtopicFull": "B.4 Thermodynamics: First/second laws of thermodynamics, heat engines, entropy.",
     "front": "State the equation for the first law of thermodynamics.",
-    "back": "The first law of thermodynamics is\nWhere:\n• Q = energy supplied to the system by heating, measured in joules (J)\n• ΔU = change in internal energy, measured in joules (J)\n• W = work done on/by the system, measured in joules (J)",
+    "back": "The first law of thermodynamics can be written as:\n\n\\[\nQ = \\Delta U + W\n\\]\n\nwhere \\(Q\\) is the thermal energy supplied to the system, \\(\\Delta U\\) is the change in internal energy, and \\(W\\) is the work done by the system.\n\nThis means energy supplied by heating either increases the internal energy of the system or is used to do work.\n\nIf \\(W_{\\mathrm{on}}\\) means work done on the system, then:\n\n\\[\n\\Delta U = Q + W_{\\mathrm{on}}\n\\]",
     "frontImage": "",
-    "backImage": "/images/hl-b4-thermodynamics/hl-b4-006-back-01.png",
     "frontImages": [],
-    "backImages": [
-      "/images/hl-b4-thermodynamics/hl-b4-006-back-01.png"
-    ],
+    "backImages": [],
     "sourceFile": "b4_thermodynamics_flashcards_HLdocx.docx",
     "topicOrder": 12,
-    "bookletFormulas": []
+    "bookletFormulas": [],
+    "backImage": ""
   },
   {
     "id": "hl-b4-007",
@@ -23957,17 +23951,14 @@
     "topic": "Thermodynamics",
     "subtopicFull": "B.4 Thermodynamics: First/second laws of thermodynamics, heat engines, entropy.",
     "front": "What is the net change in thermal energy transferred for a <strong>reversible</strong> process?",
-    "back": "For a reversible process,  therefore change in heat transferred .",
+    "back": "For a reversible process:\n\n\\[\ndS = \\frac{\\delta Q_{\\mathrm{rev}}}{T}\n\\]\n\nso the reversible thermal energy transfer is:\n\n\\[\n\\delta Q_{\\mathrm{rev}} = T\\,dS\n\\]\n\nFor an isothermal reversible process, this becomes:\n\n\\[\nQ_{\\mathrm{rev}} = T\\Delta S\n\\]",
     "frontImage": "",
-    "backImage": "/images/hl-b4-thermodynamics/hl-b4-026-back-01.png",
     "frontImages": [],
-    "backImages": [
-      "/images/hl-b4-thermodynamics/hl-b4-026-back-01.png",
-      "/images/hl-b4-thermodynamics/hl-b4-026-back-02.png"
-    ],
+    "backImages": [],
     "sourceFile": "b4_thermodynamics_flashcards_HLdocx.docx",
     "topicOrder": 12,
-    "bookletFormulas": []
+    "bookletFormulas": [],
+    "backImage": ""
   },
   {
     "id": "hl-b4-027",
@@ -29713,16 +29704,14 @@
     "topic": "Simple Harmonic Motion",
     "subtopicFull": "C.1 Simple Harmonic Motion: Oscillations, pendulums, graphs.",
     "front": "State the equation for <strong>total energy</strong> in SHM.",
-    "back": "The equation for total energy in SHM is\nWhere:\n• m = mass of object, measured in kilograms (kg)\n• ω = angular frequency of oscillations, measured in radians per second (rad s<sup>−1</sup>)\n• x<sub>0</sub> = amplitude of oscillations, measured in metres (m)",
+    "back": "The total energy in simple harmonic motion is:\n\n\\[\nE_{\\mathrm{total}} = \\frac{1}{2}m\\omega^2x_0^2\n\\]\n\nwhere \\(m\\) is the mass, \\(\\omega\\) is the angular frequency, and \\(x_0\\) is the amplitude.",
     "frontImage": "",
-    "backImage": "/images/hl-c1-simple-harmonic-motion/hl-c1-059-back-01.png",
     "frontImages": [],
-    "backImages": [
-      "/images/hl-c1-simple-harmonic-motion/hl-c1-059-back-01.png"
-    ],
+    "backImages": [],
     "sourceFile": "c1_simple_harmonic_motion_flashcards_HL.docx",
     "topicOrder": 14,
-    "bookletFormulas": []
+    "bookletFormulas": [],
+    "backImage": ""
   },
   {
     "id": "hl-c1-060",
@@ -29774,16 +29763,14 @@
     "topic": "Simple Harmonic Motion",
     "subtopicFull": "C.1 Simple Harmonic Motion: Oscillations, pendulums, graphs.",
     "front": "What is the equation for maximum kinetic energy in SHM?",
-    "back": "The equation for maximum kinetic energy is\nWhere:\n• m = mass of object, measured in kilograms (kg)\n• ω = angular frequency of oscillations, measured in radians per second (rad s<sup>−1</sup>)\n• x<sub>0</sub> = amplitude of oscillations, measured in metres (m)\n\nUseful formula — Kinetic energy:\n\\[\nE_k = \\frac{1}{2}mv^2\n\\]",
+    "back": "The maximum kinetic energy in simple harmonic motion is:\n\n\\[\nE_{K,\\max} = \\frac{1}{2}m\\omega^2x_0^2\n\\]\n\nThis occurs at the equilibrium position, where the speed is maximum and the displacement is zero.",
     "frontImage": "",
-    "backImage": "/images/hl-c1-simple-harmonic-motion/hl-c1-062-back-01.png",
     "frontImages": [],
-    "backImages": [
-      "/images/hl-c1-simple-harmonic-motion/hl-c1-062-back-01.png"
-    ],
+    "backImages": [],
     "sourceFile": "c1_simple_harmonic_motion_flashcards_HL.docx",
     "topicOrder": 14,
-    "bookletFormulas": []
+    "bookletFormulas": [],
+    "backImage": ""
   },
   {
     "id": "hl-c1-063",
@@ -40487,7 +40474,7 @@
     "topic": "Gravitational Fields",
     "subtopicFull": "D.1 Gravitational Fields: Newton’s law of gravitation, gravitational potential.",
     "front": "What is the unit of gravitational potential?",
-    "back": "The unit of gravitational potential is <strong>J kg</strong><sup>-1</sup>.",
+    "back": "Kepler's third law states that, for objects orbiting the same central body:\n\n\\[\nT^2 \\propto r^3\n\\]\n\nor equivalently:\n\n\\[\n\\frac{T^2}{r^3} = \\text{constant}\n\\]\n\nwhere \\(T\\) is the orbital period and \\(r\\) is the orbital radius.",
     "frontImage": "",
     "backImage": "",
     "frontImages": [],
@@ -41431,16 +41418,14 @@
     "topic": "Gravitational Fields",
     "subtopicFull": "D.1 Gravitational Fields: Newton’s law of gravitation, gravitational potential.",
     "front": "State the equation for escape speed.",
-    "back": "The equation for escape speed is:\nWhere:\n<strong>• </strong><em>G</em> = gravitational constant (6.67 × 10<sup>-11</sup> N m<sup>2</sup> kg<sup>–2</sup>)\n<strong>• </strong><em>M</em> = mass of the object to be escaped from, measured in kilograms (kg)\n<strong>• </strong><em>r</em> = distance from the centre of mass, measured in metres (m)",
+    "back": "The escape speed from a spherical body is:\n\n\\[\nv_{\\mathrm{esc}} = \\sqrt{\\frac{2GM}{r}}\n\\]\n\nwhere \\(G\\) is the gravitational constant, \\(M\\) is the mass of the body being escaped from, and \\(r\\) is the distance from its centre of mass.",
     "frontImage": "",
-    "backImage": "/images/hl-d1-gravitational-fields/hl-d1-075-back-01.png",
     "frontImages": [],
-    "backImages": [
-      "/images/hl-d1-gravitational-fields/hl-d1-075-back-01.png"
-    ],
+    "backImages": [],
     "sourceFile": "d1_gravitational_fields_flashcards_HL.docx",
     "topicOrder": 19,
-    "bookletFormulas": []
+    "bookletFormulas": [],
+    "backImage": ""
   },
   {
     "id": "hl-d1-076",
@@ -42378,14 +42363,10 @@
     "topic": "Gravitational Fields",
     "subtopicFull": "D.1 Gravitational Fields: Newton’s law of gravitation, gravitational potential.",
     "front": "State <strong>Kepler's third law</strong>.",
-    "back": "Kepler's third law states that for planets or satellites in a circular orbit about the same central body, the <strong>square </strong>of the <strong>time period </strong>is proportional to the <strong>cube </strong>of the <strong>orbital radius</strong>.\n<strong>• </strong>or",
+    "back": "Kepler's third law states that, for planets or satellites orbiting the same central body:\n\n\\[\nT^2 \\propto r^3\n\\]\n\nor equivalently:\n\n\\[\n\\frac{T^2}{r^3} = \\text{constant}\n\\]\n\nFor two objects orbiting the same central body:\n\n\\[\n\\frac{T_1^2}{r_1^3} = \\frac{T_2^2}{r_2^3}\n\\]\n\nwhere \\(T\\) is the orbital period and \\(r\\) is the orbital radius.",
     "frontImage": "",
-    "backImage": "/images/sl-d1-gravitational-fields/sl-d1-028-back-01.png",
     "frontImages": [],
-    "backImages": [
-      "/images/sl-d1-gravitational-fields/sl-d1-028-back-01.png",
-      "/images/sl-d1-gravitational-fields/sl-d1-028-back-02.png"
-    ],
+    "backImages": [],
     "sourceFile": "d1_gravitational_fields_flashcards_6_per_page.docx",
     "topicOrder": 19,
     "bookletFormulas": []
@@ -47782,16 +47763,14 @@
     "topic": "Motion in Electromagnetic Fields",
     "subtopicFull": "D.3 Motion in Electromagnetic Fields: Charged particles in fields.",
     "front": "What is the <strong>radius</strong>, <em>r</em>, of the path of a charged particle in a perpendicular magnetic field?",
-    "back": "The radius of the path of a charged particle in a magnetic field is:\nWhere: <em>m </em>= mass of the particle (kg); <em>v </em>= velocity of the charge (m s<sup>−1</sup>); <em>B </em>= magnetic field strength (T); <em>q </em>= charge of the particle (C)",
+    "back": "For a charged particle moving perpendicular to a uniform magnetic field:\n\n\\[\nr = \\frac{mv}{|q|B}\n\\]\n\nwhere \\(m\\) is the particle mass, \\(v\\) is its speed, \\(q\\) is its charge, and \\(B\\) is the magnetic flux density.\n\nA larger mass or speed gives a larger radius. A larger charge or magnetic field gives a smaller radius.",
     "frontImage": "",
-    "backImage": "/images/sl-d3-motion-in-electromagnetic-fields/sl-d3-021-back-01.png",
     "frontImages": [],
-    "backImages": [
-      "/images/sl-d3-motion-in-electromagnetic-fields/sl-d3-021-back-01.png"
-    ],
+    "backImages": [],
     "sourceFile": "d3_motion_in_em_fields_flashcards_6_per_page.docx",
     "topicOrder": 21,
-    "bookletFormulas": []
+    "bookletFormulas": [],
+    "backImage": ""
   },
   {
     "id": "sl-d3-022",
@@ -49875,9 +49854,7 @@
     "topic": "Structure of the atom",
     "subtopicFull": "E.1 – Structure Of The Atom",
     "front": "An alpha particle with energy 25MeV is fired directly towards a stationary gold atom, \\(\\ce{^{197}_{79}Au}\\). Determine the distance of the closest approach.",
-    "back": "An alpha particle is a helium nucleus:\n\n\\[\n{}^{4}_{2}\\mathrm{He}^{2+}\n\\]\n\nIt contains <strong>2 protons</strong> and <strong>2 neutrons</strong>, so it has charge \\(+2e\\).",
-    "frontImage": "",
-    "backImage": "",
+    "back": "At the distance of closest approach, the alpha particle has momentarily stopped, so its initial kinetic energy has been converted into electric potential energy.\n\n\\[\nE_k = \\frac{1}{4\\pi\\varepsilon_0}\\frac{q_\\alpha q_{\\mathrm{Au}}}{r_{\\min}}\n\\]\n\nFor an alpha particle:\n\n\\[\nq_\\alpha = +2e\n\\]\n\nFor gold:\n\n\\[\nq_{\\mathrm{Au}} = +79e\n\\]\n\nSo:\n\n\\[\nr_{\\min}=\n\\frac{1}{4\\pi\\varepsilon_0}\n\\frac{(2e)(79e)}{25\\,\\mathrm{MeV}}\n\\]\n\nUsing:\n\n\\[\n\\frac{e^2}{4\\pi\\varepsilon_0}=1.44\\,\\mathrm{MeV\\,fm}\n\\]\n\n\\[\nr_{\\min}=\n\\frac{2\\times79\\times1.44}{25}\\,\\mathrm{fm}\n\\]\n\n\\[\nr_{\\min}\\approx 9.1\\,\\mathrm{fm}\n\\]\n\nTherefore:\n\n\\[\nr_{\\min}\\approx 9.1\\times10^{-15}\\,\\mathrm{m}\n\\]\n\nassuming the gold nucleus is effectively stationary because it is much more massive than the alpha particle.",
     "frontImages": [],
     "backImages": [],
     "source": {
@@ -50075,9 +50052,7 @@
     "topic": "Structure of the Atom",
     "subtopicFull": "E.1 Structure of the Atom: Atomic structure, binding energy.",
     "front": "What does the observation that a tiny number of alpha particles deflect by large angles in Rutherford's alpha scattering experiment suggest about the structure of the atom?",
-    "back": "An alpha particle is a helium nucleus:\n\n\\[\n{}^{4}_{2}\\mathrm{He}^{2+}\n\\]\n\nIt contains <strong>2 protons</strong> and <strong>2 neutrons</strong>, so it has charge \\(+2e\\).",
-    "frontImage": "",
-    "backImage": "",
+    "back": "Large-angle deflections of a tiny number of alpha particles suggest that the atom contains a very small, dense, positively charged nucleus.\n\nMost alpha particles pass straight through because most of the atom is empty space.\n\nA small number are deflected through large angles because they pass close to the nucleus and experience a strong electrostatic repulsion from its positive charge.\n\nSo this observation supports the nuclear model of the atom: most of the atom's mass and positive charge are concentrated in a tiny central nucleus.",
     "frontImages": [],
     "backImages": [],
     "sourceFile": "e1_structure_of_the_atom_flashcards_HL.docx",
@@ -51005,7 +50980,7 @@
     "topic": "Structure of the Atom",
     "subtopicFull": "E.1 Structure of the Atom: Atomic structure, binding energy.",
     "front": "What does the observation that some alpha particles deflect by small angles in Rutherford's alpha scattering experiment suggest about the structure of the atom?",
-    "back": "An alpha particle is a helium nucleus:\n\n\\[\n{}^{4}_{2}\\mathrm{He}^{2+}\n\\]\n\nIt contains <strong>2 protons</strong> and <strong>2 neutrons</strong>, so it has charge \\(+2e\\).",
+    "back": "Small deflections of alpha particles in the Rutherford gold foil experiment suggest that the atom contains a small, concentrated, positively charged nucleus.",
     "frontImage": "",
     "backImage": "",
     "frontImages": [],
@@ -52090,12 +52065,9 @@
     "front": "State the photoelectric equation. in terms of the energy of the incident photon.",
     "back": "The photoelectric equation is\nWhere:\n<strong>• </strong>   = Planck constant, measured in joule seconds (J s)\n<strong>• </strong>   = frequency of photon, measured in hertz (Hz)\n<strong>• </strong> <em>Φ</em>  = work function of metal, measured in joules (J) or electronvolts (eV)\n<strong>• </strong> <em>E</em><em><sub>kmax</sub></em>  = kinetic energy of photoelectron, measured in joules (J)\n\nUseful formula — Photoelectric effect:\n\\[\nE_{k,\\max} = hf - \\phi\n\\]",
     "frontImage": "",
-    "backImage": "/images/hl-e2-quantum-physics/hl-e2-013-back-01.png",
     "frontImages": [],
     "backImages": [
-      "/images/hl-e2-quantum-physics/hl-e2-013-back-01.png",
-      "/images/hl-e2-quantum-physics/hl-e2-013-back-02.png",
-      "/images/hl-e2-quantum-physics/hl-e2-013-back-03.png"
+      "/images/hl-e2-quantum-physics/hl-e2-013-back-01.png"
     ],
     "sourceFile": "e2_quantum_physics_flashcards_HL.docx",
     "topicOrder": 24,
@@ -52345,9 +52317,8 @@
     "topic": "Quantum Physics",
     "subtopicFull": "E.2 Quantum Physics: Photoelectric effect, wave function, uncertainty principle, tunneling.",
     "front": "Define <strong>stopping potential</strong> in relation to the photoelectric effect.",
-    "back": "<strong>Stopping potential</strong> is the potential difference required to stop photoelectron emission from occurring.\n\nUseful formula — Photoelectric effect:\n\\[\nE_{k,\\max} = hf - \\phi\n\\]",
+    "back": "The stopping potential (\\(V_{0}\\)) for photoelectrons depends primarily on the frequency of the incident radiation and the work function (material) of the photocathode.\n\nIt is directly proportional to the maximum kinetic energy of the emitted electrons:\n\n\\[\nK_{\\max} = eV_{0} = h\\nu - \\phi\n\\]\n\nand is independent of the light's intensity.",
     "frontImage": "",
-    "backImage": "",
     "frontImages": [],
     "backImages": [],
     "sourceFile": "e2_quantum_physics_flashcards_HL.docx",
@@ -53031,17 +53002,14 @@
     "topic": "Quantum Physics",
     "subtopicFull": "E.2 Quantum Physics: Photoelectric effect, wave function, uncertainty principle, tunneling.",
     "front": "Write an expression for the conservation of energy in Compton scattering.",
-    "back": "Conservation of energy in Compton scattering:\n<strong>• </strong>energy before = initial photon energy =  <em>E</em><em><sub>i</sub></em>\n<strong>• </strong>energy after = final photon energy + electron energy =\n<strong>• </strong>energy before = energy after, or",
+    "back": "For Compton scattering, energy is conserved.\n\nIf an incoming photon transfers some energy to an initially stationary electron, then:\n\n\\[\nhf = hf' + K_e\n\\]\n\nwhere \\(hf\\) is the energy of the incoming photon, \\(hf'\\) is the energy of the scattered photon, and \\(K_e\\) is the kinetic energy gained by the electron.",
     "frontImage": "",
-    "backImage": "/images/hl-e2-quantum-physics/hl-e2-061-back-01.png",
     "frontImages": [],
-    "backImages": [
-      "/images/hl-e2-quantum-physics/hl-e2-061-back-01.png",
-      "/images/hl-e2-quantum-physics/hl-e2-061-back-02.png"
-    ],
+    "backImages": [],
     "sourceFile": "e2_quantum_physics_flashcards_HL.docx",
     "topicOrder": 24,
-    "bookletFormulas": []
+    "bookletFormulas": [],
+    "backImage": ""
   },
   {
     "id": "anki-hl-0104",
@@ -53704,7 +53672,7 @@
     "topic": "Radioactive decay",
     "subtopicFull": "E.3 – Radioactive Decay",
     "front": "What factors affect the rate of radioactive decay ?",
-    "back": "None that have been discovered.\n\nUseful formula — Radioactive decay:\n\\[\nN = N_0 e^{-\\lambda t}\n\\]",
+    "back": "None that have been discovered.",
     "frontImage": "",
     "backImage": "",
     "frontImages": [],
@@ -54221,22 +54189,10 @@
     "topicCode": "E3",
     "topic": "Radioactive Decay",
     "subtopicFull": "E.3 Radioactive Decay: Decay laws, isotopes, radioactivity.",
-    "front": "<strong>True or False?</strong>\nThe following atoms are all possible isotopes of iron (symbol Fe):\n,   ,   ,",
-    "back": "<strong>True.</strong>\nThe atoms   ,   ,   ,    are all possible isotopes of iron as they have the <strong>same </strong>atomic number but <strong>different </strong>mass numbers.",
-    "frontImage": "/images/hl-e3-radioactive-decay/hl-e3-005-front-01.png",
-    "backImage": "/images/hl-e3-radioactive-decay/hl-e3-005-back-01.png",
-    "frontImages": [
-      "/images/hl-e3-radioactive-decay/hl-e3-005-front-01.png",
-      "/images/hl-e3-radioactive-decay/hl-e3-005-front-02.png",
-      "/images/hl-e3-radioactive-decay/hl-e3-005-front-03.png",
-      "/images/hl-e3-radioactive-decay/hl-e3-005-front-04.png"
-    ],
-    "backImages": [
-      "/images/hl-e3-radioactive-decay/hl-e3-005-back-01.png",
-      "/images/hl-e3-radioactive-decay/hl-e3-005-back-02.png",
-      "/images/hl-e3-radioactive-decay/hl-e3-005-back-03.png",
-      "/images/hl-e3-radioactive-decay/hl-e3-005-back-04.png"
-    ],
+    "front": "True or False? The following nuclides are all possible isotopes of iron:\n\n\\[\n{}^{54}_{26}\\mathrm{Fe},\\quad\n{}^{56}_{26}\\mathrm{Fe},\\quad\n{}^{57}_{26}\\mathrm{Fe},\\quad\n{}^{58}_{26}\\mathrm{Fe}\n\\]",
+    "back": "True.\n\nThey are all possible isotopes of iron because they all have the same atomic number:\n\n\\[\nZ = 26\n\\]\n\nso they all contain 26 protons.\n\nThey have different mass numbers, so they contain different numbers of neutrons.",
+    "frontImages": [],
+    "backImages": [],
     "sourceFile": "e3_radioactive_decay_flashcards_HL.docx",
     "topicOrder": 25,
     "bookletFormulas": []
@@ -54721,7 +54677,7 @@
     "topic": "Radioactive Decay",
     "subtopicFull": "E.3 Radioactive Decay: Decay laws, isotopes, radioactivity.",
     "front": "<strong>True or False?</strong>\nAn electron neutrino is emitted when a proton turns into a neutron.",
-    "back": "<strong>True.</strong>\nAn electron neutrino is emitted along with a <strong>beta-plus</strong> particle when a proton turns into a neutron.",
+    "back": "True.\n\nIn beta-plus decay, a proton changes into a neutron and emits a positron and an electron neutrino:\n\n\\[\np \\rightarrow n + e^+ + \\nu_e\n\\]\n\nSo yes, an electron neutrino is emitted when a proton turns into a neutron.",
     "frontImage": "",
     "backImage": "",
     "frontImages": [],
@@ -56659,7 +56615,7 @@
     "topic": "Radioactive Decay",
     "subtopicFull": "E.3 Radioactive Decay: Decay laws, isotopes, radioactivity.",
     "front": "What effect does <strong>alpha </strong>decay have on a nucleus?",
-    "back": "An alpha particle is a helium nucleus:\n\n\\[\n{}^{4}_{2}\\mathrm{He}^{2+}\n\\]\n\nIt contains <strong>2 protons</strong> and <strong>2 neutrons</strong>, so it has charge \\(+2e\\).",
+    "back": "Alpha decay reduces a parent nucleus's mass number by 4 and atomic number by 2, transforming it into a new, more stable element (daughter nucleus) by emitting an alpha particle (2 protons and 2 neutrons).",
     "frontImage": "",
     "backImage": "",
     "frontImages": [],
@@ -56839,9 +56795,8 @@
     "topic": "Radioactive Decay",
     "subtopicFull": "E.3 Radioactive Decay: Decay laws, isotopes, radioactivity.",
     "front": "<strong>True or False?</strong>\nAn electron neutrino is emitted when a proton turns into a neutron.",
-    "back": "<strong>True.</strong>\nAn electron neutrino is emitted along with a <strong>beta-plus </strong>particle when a proton turns into a neutron.",
+    "back": "True.\n\nWhen a proton turns into a neutron, a positron and an electron neutrino are emitted:\n\n\\[\np \\rightarrow n + e^+ + \\nu_e\n\\]\n\nIn nuclear notation for beta-plus decay:\n\n\\[\n{}^{A}_{Z}X \\rightarrow {}^{A}_{Z-1}Y + {}^{0}_{+1}e + \\nu_e\n\\]\n\nSo the atomic number decreases by 1, but the mass number stays the same.",
     "frontImage": "",
-    "backImage": "",
     "frontImages": [],
     "backImages": [],
     "sourceFile": "e3_radioactive_decay_flashcards_6_per_page.docx",
