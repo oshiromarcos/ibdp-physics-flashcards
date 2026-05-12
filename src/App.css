@@ -429,7 +429,7 @@ select:disabled {
 
 .sideNav {
   position: absolute;
-  top: 50%;
+  top: 250px;
   z-index: 5;
   width: 56px;
   height: 96px;
