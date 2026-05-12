@@ -298,11 +298,18 @@ export default function App() {
   const [reviewIds, setReviewIds] = useState(loadReviewIds);
   const [studyMode, setStudyMode] = useState("all");
   const [shuffleOn, setShuffleOn] = useState(false);
+  const [swipeOffset, setSwipeOffset] = useState(0);
+  const [swipeMotion, setSwipeMotion] = useState("");
   const pointerStartRef = useRef(null);
+  const swipeTimerRef = useRef(null);
 
   useEffect(() => {
     localStorage.setItem("ib-physics-review-ids", JSON.stringify(reviewIds));
   }, [reviewIds]);
+
+  useEffect(() => () => {
+    window.clearTimeout(swipeTimerRef.current);
+  }, []);
 
   const availableCards = useMemo(
     () => cards.filter((card) => card.levels.includes(levelMode)),
@@ -492,6 +499,36 @@ export default function App() {
     return Boolean(window.getSelection?.().toString().trim());
   }
 
+  function resetSwipeMotion(delay = 0) {
+    window.clearTimeout(swipeTimerRef.current);
+    if (delay === 0) {
+      setSwipeMotion("");
+      setSwipeOffset(0);
+      return;
+    }
+
+    swipeTimerRef.current = window.setTimeout(() => {
+      setSwipeMotion("");
+      setSwipeOffset(0);
+    }, delay);
+  }
+
+  function navigateAfterSwipe(direction) {
+    window.clearTimeout(swipeTimerRef.current);
+    setSwipeMotion("exiting");
+    setSwipeOffset(direction === "next" ? -420 : 420);
+
+    swipeTimerRef.current = window.setTimeout(() => {
+      if (direction === "next") {
+        goToNext();
+      } else {
+        previousCard();
+      }
+      setSwipeMotion("");
+      setSwipeOffset(0);
+    }, 170);
+  }
+
   function handleCardPointerDown(event) {
     if (isInteractiveTarget(event.target)) {
       pointerStartRef.current = null;
@@ -502,7 +539,24 @@ export default function App() {
       x: event.clientX,
       y: event.clientY,
       pointerId: event.pointerId,
+      pointerType: event.pointerType,
     };
+  }
+
+  function handleCardPointerMove(event) {
+    const start = pointerStartRef.current;
+    if (!start || start.pointerId !== event.pointerId || start.pointerType !== "touch") return;
+    if (hasSelectedText()) return;
+
+    const deltaX = event.clientX - start.x;
+    const deltaY = event.clientY - start.y;
+    const absX = Math.abs(deltaX);
+    const absY = Math.abs(deltaY);
+
+    if (absX > 8 && absX > absY * 1.1) {
+      setSwipeMotion("dragging");
+      setSwipeOffset(Math.max(-120, Math.min(120, deltaX * 0.58)));
+    }
   }
 
   function handleCardPointerUp(event) {
@@ -515,17 +569,16 @@ export default function App() {
     const deltaY = event.clientY - start.y;
     const absX = Math.abs(deltaX);
     const absY = Math.abs(deltaY);
-    const isSwipe = absX > 70 && absX > absY * 1.25;
+    const swipeThreshold = start.pointerType === "touch" ? 42 : 58;
+    const isSwipe = absX > swipeThreshold && absX > absY * 1.2;
     const isTap = absX < 10 && absY < 10;
 
     if (isSwipe) {
-      if (deltaX < 0) {
-        goToNext();
-      } else {
-        previousCard();
-      }
+      navigateAfterSwipe(deltaX < 0 ? "next" : "previous");
       return;
     }
+
+    resetSwipeMotion(swipeMotion ? 160 : 0);
 
     if (isTap && !hasSelectedText()) {
       setFlipped((value) => !value);
@@ -658,11 +711,14 @@ export default function App() {
               role="button"
               tabIndex={0}
               aria-label={flipped ? "Flashcard answer. Tap to show question." : "Flashcard question. Tap to show answer."}
-              className={`flashcard ${flipped ? "isFlipped" : ""}`}
+              className={`flashcard ${flipped ? "isFlipped" : ""} ${swipeMotion ? `swipe-${swipeMotion}` : ""}`}
+              style={{ "--swipe-x": `${swipeOffset}px` }}
               onPointerDown={handleCardPointerDown}
+              onPointerMove={handleCardPointerMove}
               onPointerUp={handleCardPointerUp}
               onPointerCancel={() => {
                 pointerStartRef.current = null;
+                resetSwipeMotion(swipeMotion ? 160 : 0);
               }}
               onKeyDown={handleCardKeyDown}
             >

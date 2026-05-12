@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 220" role="img" aria-labelledby="title desc">
+  <title id="title">Variable resistor circuit symbol</title>
+  <desc id="desc">A resistor circuit symbol with a diagonal arrow through it.</desc>
+  <rect width="520" height="220" fill="white"/>
+  <g fill="none" stroke="#111827" stroke-width="14" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M30 110 H110"/>
+    <path d="M110 110 L135 70 L175 150 L215 70 L255 150 L295 70 L335 150 L370 110"/>
+    <path d="M370 110 H490"/>
+    <path d="M150 178 L345 42"/>
+    <path d="M345 42 L318 45"/>
+    <path d="M345 42 L334 68"/>
+  </g>
+</svg>
