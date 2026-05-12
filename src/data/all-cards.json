@@ -55648,7 +55648,7 @@
     "topic": "Radioactive Decay",
     "subtopicFull": "E.3 Radioactive Decay: Decay laws, isotopes, radioactivity.",
     "front": "<strong>True or False? </strong>\nThe term <strong>mass defect</strong> can be used to describe any change in mass that occurs in a nuclear reaction.",
-    "back": "<strong>False.</strong>\nThe term <strong>mass defect </strong>can <strong>only</strong> be used to describe the change in mass when<strong> all </strong>the nucleons are separated (equivalent to binding energy).\nThe decrease in mass which occurs during nuclear reactions (e.g. radioactive decay) should <strong>not </strong>be described as a mass defect.\n\nUseful formula — Binding energy:\n\\[\nE_b = \\Delta m c^2\n\\]",
+    "back": "<strong>False.</strong>\nThe term <strong>mass defect </strong>can <strong>only</strong> be used to describe the change in mass when<strong> all </strong>the nucleons are separated (equivalent to binding energy).\nThe decrease in mass which occurs during nuclear reactions (e.g. radioactive decay) should <strong>not </strong>be described as a mass defect.\n\nUseful formula — Binding energy:\n\\[\nE_b = \\Delta m c^2\n\\]\n\nTherefore, while mass defect is specifically defined as the total binding energy of a nucleus, the principle it represents—mass-energy equivalence causing a decrease in total rest mass—is directly applicable to and responsible for the energy released in radioactive decay and other nuclear reactions.",
     "frontImage": "",
     "backImage": "",
     "frontImages": [],
