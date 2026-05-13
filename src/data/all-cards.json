@@ -33907,7 +33907,7 @@
     "topic": "Wave Phenomena",
     "subtopicFull": "C.3 Wave Phenomena: Diffraction, interference, single-slit, diffraction gratings.",
     "front": "Define <strong>path difference</strong>.",
-    "back": "<strong>Path difference</strong> is the difference in the distance travelled by two waves from their sources to the point at which they meet.",
+    "back": "<strong>Path difference</strong> is the difference in the distance travelled by two waves from their sources to the point at which they meet.\n\n\\[\n\\Delta d = x_2 - x_1\n\\]",
     "frontImage": "",
     "backImage": "",
     "frontImages": [],
