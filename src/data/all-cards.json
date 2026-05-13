@@ -12831,7 +12831,7 @@
     "topic": "Rigid Body Mechanics",
     "subtopicFull": "A.4 Rigid Body Mechanics: Rotational kinematics, torque, moment of inertia, angular momentum.",
     "front": "What is the unit of angular displacement?",
-    "back": "The unit of angular displacement is radians (or degrees).",
+    "back": "The unit of angular displacement, \\(\\delta \\theta\\), is radians (or degrees).",
     "frontImage": "",
     "backImage": "",
     "frontImages": [],
