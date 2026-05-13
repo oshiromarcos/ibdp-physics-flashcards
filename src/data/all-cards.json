@@ -27630,7 +27630,7 @@
     "topic": "Current and Circuits",
     "subtopicFull": "B.5 Current and Circuits: Resistance, Ohm’s law, series/parallel circuits.",
     "front": "Define <strong>terminal potential difference</strong>.",
-    "back": "Terminal potential difference is the potential difference across the terminals of a source of electrical energy when it is supplying a current to a circuit.\n\nUseful formula — Potential difference:\n\\[\nV = \\frac{W}{q}\n\\]",
+    "back": "Terminal potential difference is the potential difference across the terminals of a source of electrical energy when it is supplying a current to a circuit.\n\n\\[\n\\text{p.d.} = V_b - V_a\n\\]\n\n\\[\n\\mathbf{V} = V_b - V_a\n\\]",
     "frontImage": "",
     "backImage": "",
     "frontImages": [],
