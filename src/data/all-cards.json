@@ -60157,9 +60157,11 @@
     "front": "<strong>True or False?</strong>\nAll stars form from a cloud of dust and gas which becomes a protostar and then a main sequence star.",
     "back": "<strong>True.</strong>\nAll stars follow the same initial stages in their life cycle:\n<strong>• </strong><strong>Nebula </strong>(cloud of dust and gas)\n<strong>• </strong><strong>Protostar</strong>\n<strong>• </strong><strong>Main sequence star</strong>\nThe stages that follow depend on the mass of the main sequence star that forms.",
     "frontImage": "",
-    "backImage": "",
+    "backImage": "/images/custom/massive-star-life-cycle-e5-013.png",
     "frontImages": [],
-    "backImages": [],
+    "backImages": [
+      "/images/custom/massive-star-life-cycle-e5-013.png"
+    ],
     "sourceFile": "e5_fusion_stars_flashcards_6_per_page.docx",
     "topicOrder": 27,
     "bookletFormulas": []
