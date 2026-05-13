@@ -54609,14 +54609,11 @@
     "topic": "Radioactive Decay",
     "subtopicFull": "E.3 Radioactive Decay: Decay laws, isotopes, radioactivity.",
     "front": "Why are beta particles affected <strong>more </strong>than alpha particles when they pass through the same <strong>magnetic</strong> field?",
-    "back": "An alpha particle is a helium nucleus:\n\n\\[\n{}^{4}_{2}\\mathrm{He}^{2+}\n\\]\n\nIt contains <strong>2 protons</strong> and <strong>2 neutrons</strong>, so it has charge \\(+2e\\).",
+    "back": "Beta particles are deflected more than alpha particles in a magnetic field primarily due to their significantly lower mass and higher charge-to-mass ratio.",
     "frontImage": "",
-    "backImage": "/images/hl-e3-radioactive-decay/hl-e3-028-back-01.png",
+    "backImage": "",
     "frontImages": [],
-    "backImages": [
-      "/images/hl-e3-radioactive-decay/hl-e3-028-back-01.png",
-      "/images/hl-e3-radioactive-decay/hl-e3-028-back-02.png"
-    ],
+    "backImages": [],
     "sourceFile": "e3_radioactive_decay_flashcards_HL.docx",
     "topicOrder": 25,
     "bookletFormulas": []
@@ -56719,7 +56716,7 @@
     "topic": "Radioactive Decay",
     "subtopicFull": "E.3 Radioactive Decay: Decay laws, isotopes, radioactivity.",
     "front": "Why are beta particles affected <strong>more </strong>than alpha particles when they pass through the same <strong>magnetic </strong>field?",
-    "back": "An alpha particle is a helium nucleus:\n\n\\[\n{}^{4}_{2}\\mathrm{He}^{2+}\n\\]\n\nIt contains <strong>2 protons</strong> and <strong>2 neutrons</strong>, so it has charge \\(+2e\\).",
+    "back": "Beta particles are deflected more than alpha particles in a magnetic field primarily due to their significantly lower mass and higher charge-to-mass ratio.",
     "frontImage": "",
     "backImage": "",
     "frontImages": [],
