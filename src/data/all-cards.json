@@ -42404,9 +42404,11 @@
     "front": "At what point in a comet's orbit does it travel <strong>fastest</strong>?",
     "back": "Comets travel <strong>fastest </strong>when they are at the <strong>closest </strong>point to the Sun in their elliptical orbit.",
     "frontImage": "",
-    "backImage": "",
+    "backImage": "/images/sl-d1-gravitational-fields/sl-d1-031-back-01.gif",
     "frontImages": [],
-    "backImages": [],
+    "backImages": [
+      "/images/sl-d1-gravitational-fields/sl-d1-031-back-01.gif"
+    ],
     "sourceFile": "d1_gravitational_fields_flashcards_6_per_page.docx",
     "topicOrder": 19,
     "bookletFormulas": []
