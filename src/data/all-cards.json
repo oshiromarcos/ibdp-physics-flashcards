@@ -48794,9 +48794,11 @@
     "front": "<strong>True or False? </strong>\nMagnetic flux is zero when the magnetic field lines are parallel to the area.",
     "back": "<strong>True.</strong>\nMagnetic flux is <strong>zero </strong>when the magnetic field lines are <strong>parallel </strong>to the area.",
     "frontImage": "",
-    "backImage": "",
+    "backImage": "/images/hl-d4-induction/hl-d4-013-back-01.png",
     "frontImages": [],
-    "backImages": [],
+    "backImages": [
+      "/images/hl-d4-induction/hl-d4-013-back-01.png"
+    ],
     "sourceFile": "d4_induction_flashcard_HL.docx",
     "topicOrder": 22,
     "bookletFormulas": []
