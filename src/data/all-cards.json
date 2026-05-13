@@ -2324,7 +2324,7 @@
     "topic": "Experimental techniques",
     "subtopicFull": "T.1 – Experimental Techniques",
     "front": "State the equation(s) for misc functions on uncertainties.",
-    "back": "[image]",
+    "back": "[image]\n\n\\[\n\\tan\\theta = 0.68 \\pm 0.03\n\\]",
     "frontImage": "",
     "backImage": "/images/anki-hl/paste-8f3961adb3dc35d8ac2892e23e1a99e101af9248.jpg",
     "frontImages": [],
