@@ -48556,7 +48556,7 @@
     "topic": "Induction",
     "subtopicFull": "D.4 Induction: Faraday’s law, Lenz’s law, electromagnetic induction.",
     "front": "Define <strong>electromagnetic induction</strong>.",
-    "back": "Electromagnetic induction is the process in which an <strong>e.m.f or current is induced </strong>in a closed circuit due to changes in magnetic flux.",
+    "back": "Electromagnetic induction is the process in which an <strong>e.m.f or current is induced </strong>in a closed circuit due to changes in magnetic flux.\n\nFor a coil, Faraday's law gives the induced e.m.f:\n\n\\[\n\\varepsilon = -N\\frac{\\Delta \\Phi}{\\Delta t}\n\\]\n\nor, in differential form:\n\n\\[\n\\varepsilon = -N\\frac{d\\Phi}{dt}\n\\]",
     "frontImage": "",
     "backImage": "",
     "frontImages": [],
