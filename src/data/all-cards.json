@@ -39987,13 +39987,11 @@
     "topic": "Gravitational Fields",
     "subtopicFull": "D.1 Gravitational Fields: Newton’s law of gravitation, gravitational potential.",
     "front": "What is the relationship between gravitational force and distance?",
-    "back": "The relationship between gravitational force and distance is an <strong>inverse square law</strong>.\nThis means that when the distance between two point masses doubles, the gravitational force between them falls by .",
+    "back": "The relationship between gravitational force and distance is an <strong>inverse square law</strong>.\n\n\\[\nF_g \\propto \\frac{1}{d^2}\n\\]\n\nThis means that when the distance between two point masses doubles, the gravitational force between them falls by \\(\\frac{1}{4}\\).",
     "frontImage": "",
-    "backImage": "/images/hl-d1-gravitational-fields/hl-d1-005-back-01.png",
+    "backImage": "",
     "frontImages": [],
-    "backImages": [
-      "/images/hl-d1-gravitational-fields/hl-d1-005-back-01.png"
-    ],
+    "backImages": [],
     "sourceFile": "d1_gravitational_fields_flashcards_HL.docx",
     "topicOrder": 19,
     "bookletFormulas": []
