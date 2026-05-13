@@ -41352,7 +41352,7 @@
     "topic": "Gravitational Fields",
     "subtopicFull": "D.1 Gravitational Fields: Newton’s law of gravitation, gravitational potential.",
     "front": "Define <strong>escape speed</strong>.",
-    "back": "Escape speed is the <strong>minimum speed</strong> that will allow an object to <strong>escape </strong>a gravitational field with no further energy input.",
+    "back": "Escape speed is the <strong>minimum speed</strong> that will allow an object to <strong>escape </strong>a gravitational field with no further energy input.\n\n\\[\nv_{esc} = \\sqrt{\\frac{2GM}{R}}\n\\]",
     "frontImage": "",
     "backImage": "",
     "frontImages": [],
