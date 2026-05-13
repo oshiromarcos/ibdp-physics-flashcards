@@ -50431,9 +50431,12 @@
     "front": "What happens to an atom when it <strong>absorbs </strong>a photon?",
     "back": "When an atom <strong>absorbs </strong>a photon, an electron moves to a higher energy level.\nThe atom is said to be in an <strong>excited state</strong>.",
     "frontImage": "",
-    "backImage": "",
+    "backImage": "/images/custom/absorption-emission-e1-029.png",
     "frontImages": [],
-    "backImages": [],
+    "backImages": [
+      "/images/custom/absorption-emission-e1-029.png",
+      "/images/custom/ground-excited-state-e1-029.png"
+    ],
     "sourceFile": "e1_structure_of_the_atom_flashcards_HL.docx",
     "topicOrder": 23,
     "bookletFormulas": []
