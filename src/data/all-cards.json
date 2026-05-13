@@ -27166,7 +27166,7 @@
     "topic": "Current and Circuits",
     "subtopicFull": "B.5 Current and Circuits: Resistance, Ohm’s law, series/parallel circuits.",
     "front": "<strong>True or False?</strong>\nWork is done when energy is transferred by moving charges in a circuit.",
-    "back": "<strong>True.</strong>\nWork is done when <strong>energy is transferred </strong>by <strong>moving charges </strong>in a circuit.\n\nUseful formula — Work done:\n\\[\nW = Fs\\cos\\theta\n\\]",
+    "back": "<strong>True.</strong>\nWork is done when <strong>energy is transferred </strong>by <strong>moving charges </strong>in a circuit.\n\n\\[\nV = \\frac{W}{Q}\n\\]\n\n\\[\nI = \\frac{Q}{t}\n\\]",
     "frontImage": "",
     "backImage": "",
     "frontImages": [],
