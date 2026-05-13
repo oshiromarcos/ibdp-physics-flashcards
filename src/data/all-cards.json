@@ -1880,9 +1880,11 @@
     "front": "Define a<strong> line of best fit</strong>.",
     "back": "A line of best fit is a line that passes as close to all plotted points as possible on a graph.",
     "frontImage": "",
-    "backImage": "",
+    "backImage": "/images/common-tool-3-mathematics/tool3-073-back-01.png",
     "frontImages": [],
-    "backImages": [],
+    "backImages": [
+      "/images/common-tool-3-mathematics/tool3-073-back-01.png"
+    ],
     "sourceFile": "tool3_mathematics_flashcards_6_per_page(1).docx",
     "topicOrder": 3,
     "bookletFormulas": []
