@@ -505,7 +505,7 @@ select:disabled {
 .cardContent {
   flex: 1;
   overflow: auto;
-  padding: 0 8px;
+  padding: 6px 8px 12px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -524,7 +524,7 @@ select:disabled {
 
 .cardFace.hasImages .mathText {
   flex: 0 0 auto;
-  max-height: 75%;
+  max-height: none;
 }
 
 .cardContent::-webkit-scrollbar {
@@ -1135,7 +1135,6 @@ select {
 
 
 /* FIX: safe scrolling for long flashcards */
-.mathText,
 .cardText,
 .cardBody,
 .cardContent,
@@ -1149,13 +1148,24 @@ select {
   align-items: safe center !important;
 }
 
-.cardBack .mathText,
 .cardBack .cardText,
 .cardBack .cardBody,
 .cardBack .cardContent,
 .cardBack .faceContent {
   padding-top: 0.5rem;
   padding-bottom: 1.5rem;
+}
+
+.mathText {
+  min-height: auto;
+  max-height: none;
+  overflow: visible;
+  scrollbar-gutter: auto;
+}
+
+.cardFace.hasImages .cardContent {
+  justify-content: flex-start !important;
+  align-items: center !important;
 }
 
 .mathText:has(.inlineFormula),
