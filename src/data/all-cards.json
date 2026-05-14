@@ -54279,7 +54279,7 @@
     "topic": "Structure of the Atom",
     "subtopicFull": "E.1 Structure of the Atom: Atomic structure, binding energy.",
     "front": "Why were <strong>gold atoms </strong>chosen as the target in Rutherford's alpha scattering experiment?",
-    "back": "Beta particles are deflected more because they have a much larger <strong>charge-to-mass ratio</strong> than alpha particles.\n\nIn the same electric field, the electric force is:\n\n\\[\nF = qE\n\\]\n\nAn alpha particle has charge \\(+2e\\), while a beta minus particle has charge \\(-e\\). However, an alpha particle is thousands of times more massive than a beta particle. Since:\n\n\\[\na = \\frac{F}{m} = \\frac{qE}{m}\n\\]\n\nthe beta particle has a much greater acceleration, so its path bends more strongly. Beta minus particles bend toward the positive plate; alpha particles bend toward the negative plate.",
+    "back": "Rutherford chose gold because it is highly malleable, allowing it to be hammered into extremely thin foils (only a few hundred atoms thick). This minimized multiple scattering, ensuring alpha particles interacted with single atoms. Additionally, gold's large nucleus provided a strong positive charge to clearly deflect the particles.",
     "frontImage": "",
     "backImage": "",
     "frontImages": [],
@@ -54288,7 +54288,7 @@
     "topicOrder": 23,
     "bookletFormulas": [],
     "frontZh": "为什么卢瑟福的α散射实验选择<strong>金原子</strong>作为目标？",
-    "backZh": "β 粒子偏转更多，因为它们具有比 α 粒子大得多的<strong>荷质比</strong>。\n\n在同一电场下，电动势为：\\[\nF = qE\n\\]α 粒子的电荷为\\(+2e\\)，而 β 负粒子的电荷为\\(-e\\)。然而，α粒子的质量是β粒子的数千倍。自：\\[\na = \\frac{F}{m} = \\frac{qE}{m}\n\\]β粒子的加速度更大，因此它的路径弯曲得更厉害。 β负粒子向正极板弯曲； α粒子向负极板弯曲。"
+    "backZh": "卢瑟福选择金，是因为金具有很高的延展性，可以被锤打成极薄的箔片（厚度只有几百个原子）。这最大限度地减少了多次散射，确保 α 粒子与单个原子相互作用。此外，金的大原子核提供了很强的正电荷，使粒子发生明显偏转。"
   },
   {
     "id": "hl-e1-004",
@@ -55321,7 +55321,7 @@
     "topic": "Structure of the Atom",
     "subtopicFull": "E.1 Structure of the Atom: Atomic structure, binding energy.",
     "front": "Why were <strong>gold atoms </strong>chosen as the target in Rutherford's alpha scattering experiment?",
-    "back": "An alpha particle is a helium nucleus:\n\n\\[\n{}^{4}_{2}\\mathrm{He}^{2+}\n\\]\n\nIt contains <strong>2 protons</strong> and <strong>2 neutrons</strong>, so it has charge \\(+2e\\).",
+    "back": "Rutherford chose gold because it is highly malleable, allowing it to be hammered into extremely thin foils (only a few hundred atoms thick). This minimized multiple scattering, ensuring alpha particles interacted with single atoms. Additionally, gold's large nucleus provided a strong positive charge to clearly deflect the particles.",
     "frontImage": "",
     "backImage": "",
     "frontImages": [],
@@ -55330,7 +55330,7 @@
     "topicOrder": 23,
     "bookletFormulas": [],
     "frontZh": "为什么卢瑟福的α散射实验选择<strong>金原子</strong>作为目标？",
-    "backZh": "α粒子是氦核：\\[\n{}^{4}_{2}\\mathrm{He}^{2+}\n\\]它含有<strong>2 个质子</strong>和<strong>2 个中子</strong>，因此它带电荷\\(+2e\\)。"
+    "backZh": "卢瑟福选择金，是因为金具有很高的延展性，可以被锤打成极薄的箔片（厚度只有几百个原子）。这最大限度地减少了多次散射，确保 α 粒子与单个原子相互作用。此外，金的大原子核提供了很强的正电荷，使粒子发生明显偏转。"
   },
   {
     "id": "sl-e1-004",
