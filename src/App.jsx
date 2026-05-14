@@ -360,17 +360,19 @@ function CardFace({ card, side, studyMode, isSaved, languageMode }) {
         {!isFront && <FormulaList formulas={card.bookletFormulas} />}
       </div>
 
-      <div className="tapHint">Tap to flip or swipe for another card</div>
-      <button
-        type="button"
-        className="reportIssueButton"
-        onClick={(event) => {
-          event.stopPropagation();
-          openIssueForCard(card);
-        }}
-      >
-        Report issue
-      </button>
+      <div className="cardFooter">
+        <div className="tapHint">Tap to flip or swipe for another card</div>
+        <button
+          type="button"
+          className="reportIssueButton"
+          onClick={(event) => {
+            event.stopPropagation();
+            openIssueForCard(card);
+          }}
+        >
+          Report issue
+        </button>
+      </div>
     </div>
   );
 }
