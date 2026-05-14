@@ -40,6 +40,7 @@ const DEFAULT_PROGRESS = {
   knownIds: [],
   studyMode: "all",
   shuffleOn: false,
+  darkMode: false,
 };
 
 const cards = rawCards.map((card, index) => ({
@@ -382,6 +383,7 @@ function loadStudyProgress() {
       knownIds,
       studyMode,
       shuffleOn: typeof stored?.shuffleOn === "boolean" ? stored.shuffleOn : DEFAULT_PROGRESS.shuffleOn,
+      darkMode: typeof stored?.darkMode === "boolean" ? stored.darkMode : DEFAULT_PROGRESS.darkMode,
     };
   } catch {
     return {
@@ -404,6 +406,7 @@ export default function App() {
   const [reviewIds, setReviewIds] = useState(initialProgress.reviewIds);
   const [studyMode, setStudyMode] = useState(initialProgress.studyMode);
   const [shuffleOn, setShuffleOn] = useState(initialProgress.shuffleOn);
+  const [darkMode, setDarkMode] = useState(initialProgress.darkMode);
   const [swipeOffset, setSwipeOffset] = useState(0);
   const [swipeMotion, setSwipeMotion] = useState("");
   const pointerStartRef = useRef(null);
@@ -421,11 +424,12 @@ export default function App() {
         knownIds,
         studyMode,
         shuffleOn,
+        darkMode,
       }));
     } catch {
       // Ignore storage failures so private browsing or full storage does not break study mode.
     }
-  }, [index, knownIds, languageMode, levelMode, reviewIds, selectedSubtopic, shuffleOn, studyMode]);
+  }, [darkMode, index, knownIds, languageMode, levelMode, reviewIds, selectedSubtopic, shuffleOn, studyMode]);
 
   useEffect(() => () => {
     window.clearTimeout(swipeTimerRef.current);
@@ -495,6 +499,18 @@ export default function App() {
       : selectedSubtopic === "All topics"
         ? "All topics"
         : (selectedTopicOption?.label || card?.subtopicFull || selectedSubtopic);
+
+  const displayTheme = darkMode
+    ? {
+        ...theme,
+        accentSoft: "rgba(148, 163, 184, 0.18)",
+        pageStart: "#020617",
+        pageEnd: "#111827",
+        cardFront: "#111827",
+        cardBack: "#0f172a",
+        glow: "rgba(15, 23, 42, 0.58)",
+      }
+    : theme;
 
   function goToNext() {
     if (filteredCards.length === 0) return;
@@ -632,6 +648,7 @@ export default function App() {
     setReviewIds(DEFAULT_PROGRESS.reviewIds);
     setStudyMode(DEFAULT_PROGRESS.studyMode);
     setShuffleOn(DEFAULT_PROGRESS.shuffleOn);
+    setDarkMode(DEFAULT_PROGRESS.darkMode);
     resetPosition();
   }
 
@@ -919,15 +936,15 @@ export default function App() {
 
   return (
     <main
-      className={`appShell ${studyMode === "review" ? "reviewShell" : ""}`}
+      className={`appShell ${studyMode === "review" ? "reviewShell" : ""} ${darkMode ? "darkShell" : ""}`}
       style={{
-        "--accent": theme.accent,
-        "--accent-soft": theme.accentSoft,
-        "--page-start": theme.pageStart,
-        "--page-end": theme.pageEnd,
-        "--card-front": theme.cardFront,
-        "--card-back": theme.cardBack,
-        "--glow": theme.glow,
+        "--accent": displayTheme.accent,
+        "--accent-soft": displayTheme.accentSoft,
+        "--page-start": displayTheme.pageStart,
+        "--page-end": displayTheme.pageEnd,
+        "--card-front": displayTheme.cardFront,
+        "--card-back": displayTheme.cardBack,
+        "--glow": displayTheme.glow,
       }}
     >
       <section className="app">
@@ -951,6 +968,14 @@ export default function App() {
           <div className="stats">
             <span>Known: {knownCount}</span>
             <span>Saved review: {reviewIds.length}</span>
+            <button
+              type="button"
+              className={`darkModeToggle ${darkMode ? "activeButton" : ""}`}
+              aria-pressed={darkMode}
+              onClick={() => setDarkMode((value) => !value)}
+            >
+              {darkMode ? "Dark: On" : "Dark: Off"}
+            </button>
           </div>
         </section>
 
