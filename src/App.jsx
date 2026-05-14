@@ -29,6 +29,19 @@ const LANGUAGE_MODES = [
   { value: "both", label: "English + Chinese" },
 ];
 
+const STORAGE_KEY = "ib-physics-flashcards:study-progress:v1";
+const LEGACY_REVIEW_IDS_KEY = "ib-physics-review-ids";
+const DEFAULT_PROGRESS = {
+  levelMode: "SL",
+  languageMode: "en",
+  selectedSubtopic: "All topics",
+  currentCardIndex: 0,
+  reviewIds: [],
+  knownIds: [],
+  studyMode: "all",
+  shuffleOn: false,
+};
+
 const cards = rawCards.map((card, index) => ({
   ...card,
   id: card.id || `card-${index + 1}`,
@@ -37,6 +50,9 @@ const cards = rawCards.map((card, index) => ({
   backImages: card.backImages || (card.backImage ? [card.backImage] : []),
   bookletFormulas: card.bookletFormulas || [],
 }));
+
+const cardIds = new Set(cards.map((card) => card.id));
+const topicCodes = new Set(cards.map((card) => card.topicCode));
 
 const REVIEW_THEME = {
   accent: "#7c2d12",
@@ -327,26 +343,67 @@ function randomIndex(length, currentIndex = -1) {
   return next;
 }
 
-function loadReviewIds() {
+function uniqueValidCardIds(value) {
+  if (!Array.isArray(value)) return [];
+  return [...new Set(value.filter((id) => cardIds.has(id)))];
+}
+
+function loadLegacyReviewIds() {
   try {
-    return JSON.parse(localStorage.getItem("ib-physics-review-ids") || "[]");
+    return uniqueValidCardIds(JSON.parse(localStorage.getItem(LEGACY_REVIEW_IDS_KEY) || "[]"));
   } catch {
     return [];
   }
 }
 
+function loadStudyProgress() {
+  try {
+    const stored = JSON.parse(localStorage.getItem(STORAGE_KEY) || "null");
+    const reviewIds = uniqueValidCardIds(stored?.reviewIds || loadLegacyReviewIds());
+    const knownIds = uniqueValidCardIds(stored?.knownIds);
+    const selectedSubtopic = stored?.selectedSubtopic === "All topics" || topicCodes.has(stored?.selectedSubtopic)
+      ? stored.selectedSubtopic
+      : DEFAULT_PROGRESS.selectedSubtopic;
+    const studyMode = stored?.studyMode === "review" && reviewIds.length
+      ? "review"
+      : DEFAULT_PROGRESS.studyMode;
+
+    return {
+      ...DEFAULT_PROGRESS,
+      levelMode: stored?.levelMode === "HL" ? "HL" : DEFAULT_PROGRESS.levelMode,
+      languageMode: LANGUAGE_MODES.some((mode) => mode.value === stored?.languageMode)
+        ? stored.languageMode
+        : DEFAULT_PROGRESS.languageMode,
+      selectedSubtopic,
+      currentCardIndex: Number.isInteger(stored?.currentCardIndex) && stored.currentCardIndex >= 0
+        ? stored.currentCardIndex
+        : DEFAULT_PROGRESS.currentCardIndex,
+      reviewIds,
+      knownIds,
+      studyMode,
+      shuffleOn: typeof stored?.shuffleOn === "boolean" ? stored.shuffleOn : DEFAULT_PROGRESS.shuffleOn,
+    };
+  } catch {
+    return {
+      ...DEFAULT_PROGRESS,
+      reviewIds: loadLegacyReviewIds(),
+    };
+  }
+}
+
 export default function App() {
-  const [levelMode, setLevelMode] = useState("SL");
-  const [languageMode, setLanguageMode] = useState("en");
-  const [selectedSubtopic, setSelectedSubtopic] = useState("All topics");
-  const [index, setIndex] = useState(0);
+  const [initialProgress] = useState(loadStudyProgress);
+  const [levelMode, setLevelMode] = useState(initialProgress.levelMode);
+  const [languageMode, setLanguageMode] = useState(initialProgress.languageMode);
+  const [selectedSubtopic, setSelectedSubtopic] = useState(initialProgress.selectedSubtopic);
+  const [index, setIndex] = useState(initialProgress.currentCardIndex);
   const [history, setHistory] = useState([]);
   const [future, setFuture] = useState([]);
   const [flipped, setFlipped] = useState(false);
-  const [knownCount, setKnownCount] = useState(0);
-  const [reviewIds, setReviewIds] = useState(loadReviewIds);
-  const [studyMode, setStudyMode] = useState("all");
-  const [shuffleOn, setShuffleOn] = useState(false);
+  const [knownIds, setKnownIds] = useState(initialProgress.knownIds);
+  const [reviewIds, setReviewIds] = useState(initialProgress.reviewIds);
+  const [studyMode, setStudyMode] = useState(initialProgress.studyMode);
+  const [shuffleOn, setShuffleOn] = useState(initialProgress.shuffleOn);
   const [swipeOffset, setSwipeOffset] = useState(0);
   const [swipeMotion, setSwipeMotion] = useState("");
   const pointerStartRef = useRef(null);
@@ -354,8 +411,21 @@ export default function App() {
   const swipeTimerRef = useRef(null);
 
   useEffect(() => {
-    localStorage.setItem("ib-physics-review-ids", JSON.stringify(reviewIds));
-  }, [reviewIds]);
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify({
+        levelMode,
+        languageMode,
+        selectedSubtopic,
+        currentCardIndex: index,
+        reviewIds,
+        knownIds,
+        studyMode,
+        shuffleOn,
+      }));
+    } catch {
+      // Ignore storage failures so private browsing or full storage does not break study mode.
+    }
+  }, [index, knownIds, languageMode, levelMode, reviewIds, selectedSubtopic, shuffleOn, studyMode]);
 
   useEffect(() => () => {
     window.clearTimeout(swipeTimerRef.current);
@@ -401,6 +471,7 @@ export default function App() {
   const card = filteredCards[safeIndex] || filteredCards[0];
   const theme = themeForTopic(card?.topicCode || "A", studyMode);
   const isSaved = card ? reviewIds.includes(card.id) : false;
+  const knownCount = knownIds.length;
   const cardHasImages = Boolean(
     card && [...card.frontImages, ...card.backImages].some(Boolean)
   );
@@ -496,7 +567,10 @@ export default function App() {
   function markKnown() {
     if (!card) return;
 
-    setKnownCount((count) => count + 1);
+    setKnownIds((current) => {
+      if (current.includes(card.id)) return current;
+      return [...current, card.id];
+    });
 
     if (studyMode === "review") {
       const currentCardId = card.id;
@@ -538,6 +612,26 @@ export default function App() {
     setReviewIds([]);
     setStudyMode("all");
     setSelectedSubtopic("All topics");
+    resetPosition();
+  }
+
+  function resetProgress() {
+    if (!window.confirm("Reset all saved review cards and study progress on this device?")) return;
+
+    try {
+      localStorage.removeItem(STORAGE_KEY);
+      localStorage.removeItem(LEGACY_REVIEW_IDS_KEY);
+    } catch {
+      // Ignore storage failures; resetting in-memory state still gives the user a clean session.
+    }
+
+    setLevelMode(DEFAULT_PROGRESS.levelMode);
+    setLanguageMode(DEFAULT_PROGRESS.languageMode);
+    setSelectedSubtopic(DEFAULT_PROGRESS.selectedSubtopic);
+    setKnownIds(DEFAULT_PROGRESS.knownIds);
+    setReviewIds(DEFAULT_PROGRESS.reviewIds);
+    setStudyMode(DEFAULT_PROGRESS.studyMode);
+    setShuffleOn(DEFAULT_PROGRESS.shuffleOn);
     resetPosition();
   }
 
@@ -995,6 +1089,10 @@ export default function App() {
 
           <button onClick={clearReviewList} disabled={reviewIds.length === 0}>
             Clear review list
+          </button>
+
+          <button className="resetProgressButton" onClick={resetProgress}>
+            Reset progress
           </button>
         </section>
       </section>

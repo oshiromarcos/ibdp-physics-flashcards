@@ -593,6 +593,14 @@ select:disabled {
   color: white;
 }
 
+.buttons .resetProgressButton {
+  color: #7f1d1d;
+}
+
+.buttons .resetProgressButton:hover {
+  background: #fee2e2;
+}
+
 .emptyState {
   max-width: 640px;
   margin: 100px auto;
