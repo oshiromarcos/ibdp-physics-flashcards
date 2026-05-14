@@ -38,6 +38,17 @@ body {
     linear-gradient(135deg, #fff7ed, #fae8ff 58%, #fef3c7);
 }
 
+.darkShell {
+  color: #e5e7eb;
+}
+
+.darkShell.reviewShell {
+  background:
+    radial-gradient(circle at 18% 16%, rgba(251, 146, 60, 0.18), transparent 28%),
+    radial-gradient(circle at 82% 10%, rgba(129, 140, 248, 0.18), transparent 30%),
+    linear-gradient(135deg, #020617, #111827 58%, #1f2937);
+}
+
 .app {
   max-width: 1080px;
   margin: 0 auto;
@@ -78,6 +89,10 @@ body {
   font-size: 17px;
 }
 
+.darkShell .header p {
+  color: #cbd5e1;
+}
+
 .currentContext {
   margin-top: 12px;
   display: flex;
@@ -94,6 +109,13 @@ body {
   font-weight: 850;
   font-size: 13px;
   box-shadow: 0 10px 28px rgba(15, 23, 42, 0.06);
+}
+
+.darkShell .currentContext span {
+  background: rgba(15, 23, 42, 0.74);
+  color: #e5e7eb;
+  border-color: rgba(148, 163, 184, 0.32);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.22);
 }
 
 .stats {
@@ -114,6 +136,46 @@ body {
   box-shadow: 0 10px 28px rgba(15, 23, 42, 0.08);
 }
 
+.darkShell .stats span {
+  background: rgba(15, 23, 42, 0.74);
+  color: #e5e7eb;
+  border-color: rgba(148, 163, 184, 0.32);
+}
+
+.darkModeToggle {
+  border: 1px solid rgba(255, 255, 255, 0.92);
+  border-radius: 999px;
+  padding: 9px 13px;
+  font: inherit;
+  font-weight: 950;
+  color: #111827;
+  background: rgba(255, 255, 255, 0.74);
+  cursor: pointer;
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.08);
+  transition: background 160ms ease, color 160ms ease, transform 160ms ease;
+}
+
+.darkModeToggle:hover {
+  transform: translateY(-1px);
+}
+
+.darkModeToggle.activeButton {
+  color: #e5e7eb;
+  background: #111827;
+  border-color: rgba(148, 163, 184, 0.42);
+}
+
+.darkShell .darkModeToggle {
+  color: #e5e7eb;
+  background: rgba(15, 23, 42, 0.74);
+  border-color: rgba(148, 163, 184, 0.32);
+}
+
+.darkShell .darkModeToggle.activeButton {
+  background: var(--accent);
+  color: white;
+}
+
 .controls {
   display: grid;
   grid-template-columns: minmax(150px, 0.5fr) minmax(240px, 1.25fr) minmax(260px, 0.95fr) auto;
@@ -129,6 +191,11 @@ body {
   color: #374151;
 }
 
+.darkShell .controls label,
+.darkShell .languageToggle legend {
+  color: #cbd5e1;
+}
+
 select {
   font: inherit;
   padding: 12px 14px;
@@ -137,6 +204,13 @@ select {
   background: rgba(255, 255, 255, 0.84);
   min-width: 100%;
   box-shadow: 0 10px 28px rgba(15, 23, 42, 0.07);
+}
+
+.darkShell select,
+.darkShell .languageOptions {
+  color: #e5e7eb;
+  background: rgba(15, 23, 42, 0.8);
+  border-color: rgba(148, 163, 184, 0.3);
 }
 
 select:disabled {
@@ -281,6 +355,14 @@ select:disabled {
   transition: transform 520ms cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
+.darkShell .cardFace {
+  border-color: rgba(148, 163, 184, 0.28);
+  box-shadow:
+    0 28px 70px rgba(0, 0, 0, 0.4),
+    0 0 0 8px rgba(15, 23, 42, 0.34),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
 .cardFront {
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.72), transparent 40%),
@@ -338,11 +420,20 @@ select:disabled {
   font-weight: 950;
 }
 
+.darkShell .cardMeta span {
+  background: rgba(148, 163, 184, 0.16);
+  color: #e5e7eb;
+}
+
 .subtopicTitle {
   color: var(--accent);
   font-size: 15px;
   font-weight: 950;
   line-height: 1.25;
+}
+
+.darkShell .subtopicTitle {
+  color: #bfdbfe;
 }
 
 .cardContent {
@@ -411,6 +502,11 @@ select:disabled {
   border: 1px solid rgba(148, 163, 184, 0.22);
 }
 
+.darkShell .translationStack.hasTranslations .translationBlock {
+  background: rgba(15, 23, 42, 0.36);
+  border-color: rgba(148, 163, 184, 0.2);
+}
+
 .translationLabel {
   margin-bottom: 8px;
   color: var(--accent);
@@ -464,6 +560,11 @@ select:disabled {
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.92);
 }
 
+.darkShell .formulaBox {
+  background: rgba(15, 23, 42, 0.54);
+  border-color: rgba(148, 163, 184, 0.24);
+}
+
 .formulaTitle {
   font-size: 13px;
   font-weight: 950;
@@ -492,6 +593,12 @@ select:disabled {
   font-weight: 900;
 }
 
+.darkShell .formulaLabel,
+.darkShell .formulaSource,
+.darkShell .formulaNote {
+  color: #cbd5e1;
+}
+
 .formulaMath {
   overflow-x: auto;
   font-size: 1.02rem;
@@ -507,6 +614,10 @@ select:disabled {
   font-size: 14px;
   font-weight: 800;
   text-align: center;
+}
+
+.darkShell .tapHint {
+  color: #94a3b8;
 }
 
 .reportIssueButton {
@@ -608,6 +719,18 @@ select:disabled {
   backdrop-filter: blur(14px);
 }
 
+.darkShell .buttons.secondary button {
+  background: rgba(15, 23, 42, 0.74);
+  color: #e5e7eb;
+  border-color: rgba(148, 163, 184, 0.32);
+}
+
+.darkShell .buttons .activeButton,
+.darkShell .buttons .savedButton {
+  background: var(--accent);
+  color: white;
+}
+
 .buttons .activeButton {
   background: #111827;
   color: white;
@@ -616,6 +739,14 @@ select:disabled {
 .buttons .savedButton {
   background: #111827;
   color: white;
+}
+
+.buttons .resetProgressButton {
+  color: #7f1d1d;
+}
+
+.buttons .resetProgressButton:hover {
+  background: #fee2e2;
 }
 
 .emptyState {
