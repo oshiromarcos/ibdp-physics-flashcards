@@ -55,6 +55,8 @@ body {
 }
 
 .focusShell {
+  --focus-card-width: min(90vw, 1180px);
+  --focus-side-offset: max(8px, calc((100vw - var(--focus-card-width)) / 2 + 12px));
   min-height: 100vh;
   padding: 16px clamp(66px, 8vw, 104px);
 }
@@ -310,7 +312,7 @@ select:disabled {
 }
 
 .focusShell .flipScene {
-  width: min(100%, 90vw, 1180px);
+  width: min(100%, var(--focus-card-width));
   height: clamp(620px, 90svh, 980px);
   min-height: 0;
 }
@@ -799,16 +801,16 @@ select:disabled {
 }
 
 .focusShell .sideNavPrevious {
-  left: clamp(8px, 2vw, 28px);
+  left: var(--focus-side-offset);
 }
 
 .focusShell .sideNavNext {
-  right: clamp(8px, 2vw, 28px);
+  right: var(--focus-side-offset);
 }
 
 .focusExitButton {
   position: fixed;
-  right: clamp(8px, 2vw, 28px);
+  right: var(--focus-side-offset);
   top: calc(50% + 72px);
   z-index: 6;
   max-width: 86px;
@@ -945,6 +947,8 @@ select:disabled {
   }
 
   .focusShell {
+    --focus-card-width: min(90vw, 760px);
+    --focus-side-offset: max(6px, calc((100vw - var(--focus-card-width)) / 2 + 6px));
     padding: 10px 52px;
   }
 
@@ -953,7 +957,7 @@ select:disabled {
   }
 
   .focusShell .flipScene {
-    width: min(100%, 90vw, 760px);
+    width: min(100%, var(--focus-card-width));
     height: clamp(560px, 88svh, 860px);
     min-height: 0;
   }
@@ -1028,15 +1032,6 @@ select:disabled {
     font-size: 36px;
   }
 
-  .focusShell .sideNavPrevious {
-    left: 6px;
-  }
-
-  .focusShell .sideNavNext,
-  .focusExitButton {
-    right: 6px;
-  }
-
   .focusExitButton {
     top: calc(50% + 58px);
     max-width: 58px;
@@ -1050,6 +1045,11 @@ select:disabled {
 }
 
 @media (max-width: 480px) {
+  .focusShell {
+    --focus-card-width: min(90vw, 430px);
+    --focus-side-offset: max(6px, calc((100vw - var(--focus-card-width)) / 2 + 4px));
+  }
+
   .appShell {
     padding-inline: 10px;
   }
@@ -1064,7 +1064,7 @@ select:disabled {
   }
 
   .focusShell .flipScene {
-    width: min(100%, 90vw, 430px);
+    width: min(100%, var(--focus-card-width));
     height: clamp(540px, 88svh, 780px);
     min-height: 0;
   }
