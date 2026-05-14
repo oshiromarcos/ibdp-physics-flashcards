@@ -537,26 +537,10 @@ export default function App() {
   const cardHasImageOcclusion = Boolean(
     card && [...card.frontImages, ...card.backImages].some((image) => String(image).includes("/occlusion/"))
   );
-  const flatTopicOptions = useMemo(
-    () => Object.values(topicOptions).flat(),
-    [topicOptions]
-  );
-
-  const selectedTopicOption = flatTopicOptions.find(
-    (item) => item.code === selectedSubtopic
-  );
-
   const selectedLevelLabel =
     levelMode === "HL"
       ? "Higher Level (HL): SL cards + HL extras"
       : "Standard Level (SL)";
-
-  const selectedTopicLabel =
-    studyMode === "review"
-      ? "Saved review cards"
-      : selectedSubtopic === "All topics"
-        ? "All topics"
-        : (selectedTopicOption?.label || card?.subtopicFull || selectedSubtopic);
 
   const displayTheme = darkMode
     ? {
@@ -1030,19 +1014,12 @@ export default function App() {
       <section className="app">
         {!focusMode && <section className="header">
           <div>
-            <div className="modeBadge">
-              {studyMode === "review" ? "Final review sprint" : "Practice mode"}
-            </div>
             <h1>IB Physics Flashcards</h1>
             <p>
               {studyMode === "review"
                 ? `Reviewing ${filteredCards.length} saved card(s)`
                 : `${selectedLevelLabel} · ${availableCards.length} available cards`}
             </p>
-            <div className="currentContext">
-              <span>{selectedLevelLabel}</span>
-              <span>{selectedTopicLabel}</span>
-            </div>
           </div>
 
           <div className="stats">
