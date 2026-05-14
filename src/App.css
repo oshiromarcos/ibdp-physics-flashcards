@@ -349,6 +349,10 @@ select:disabled {
   height: clamp(620px, calc(100vh - 190px), 900px);
 }
 
+.focusShell .cardFace.hasImages .cardImage {
+  max-height: min(480px, 58%);
+}
+
 .flashcard {
   width: 100%;
   height: 100%;
@@ -599,7 +603,7 @@ select:disabled {
 .cardFace.hasImages .cardImage {
   width: 90%;
   max-width: 90%;
-  max-height: none;
+  max-height: min(360px, 52%);
   height: auto;
 }
 
@@ -999,6 +1003,10 @@ select:disabled {
 
   .cardImage {
     max-height: 180px;
+  }
+
+  .cardFace.hasImages .cardImage {
+    max-height: min(320px, 48%);
   }
 
   .buttons button {
