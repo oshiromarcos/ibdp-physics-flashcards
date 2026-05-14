@@ -23,6 +23,12 @@ const THEME_LABELS = {
   E: "Theme E — Nuclear and Quantum Physics",
 };
 
+const LANGUAGE_MODES = [
+  { value: "en", label: "English only" },
+  { value: "zh", label: "Chinese only" },
+  { value: "both", label: "English + Chinese" },
+];
+
 const cards = rawCards.map((card, index) => ({
   ...card,
   id: card.id || `card-${index + 1}`,
@@ -165,6 +171,25 @@ function RichText({ text }) {
   );
 }
 
+function cardTextSections(card, side, languageMode) {
+  const isFront = side === "front";
+  const english = isFront ? card.front : card.back;
+  const chinese = isFront ? card.frontZh : card.backZh;
+
+  if (languageMode === "zh") {
+    return [{ language: chinese ? "zh" : "en", text: chinese || english }];
+  }
+
+  if (languageMode === "both" && chinese) {
+    return [
+      { language: "en", text: english },
+      { language: "zh", text: chinese },
+    ];
+  }
+
+  return [{ language: "en", text: english }];
+}
+
 function FormulaList({ formulas }) {
   if (!formulas?.length) return null;
 
@@ -220,10 +245,10 @@ function cardReportCode(card) {
   return raw;
 }
 
-function CardFace({ card, side, studyMode, isSaved }) {
+function CardFace({ card, side, studyMode, isSaved, languageMode }) {
   const isFront = side === "front";
-  const text = isFront ? card.front : card.back;
   const images = isFront ? card.frontImages : card.backImages;
+  const textSections = cardTextSections(card, side, languageMode);
   const hasImages = images.some(Boolean);
   const cardLevels = card.levels || (card.level === "HL" ? ["HL"] : ["SL", "HL"]);
   const levelLabel = cardLevels.includes("SL") && cardLevels.includes("HL")
@@ -259,7 +284,22 @@ function CardFace({ card, side, studyMode, isSaved }) {
       </div>
 
       <div className="cardContent">
-        <RichText text={text} />
+        <div className={`translationStack ${textSections.length > 1 ? "hasTranslations" : ""}`}>
+          {textSections.map((section) => (
+            <section
+              className={`translationBlock ${section.language === "zh" ? "translationZh" : "translationEn"}`}
+              lang={section.language === "zh" ? "zh-CN" : "en"}
+              key={section.language}
+            >
+              {textSections.length > 1 && (
+                <div className="translationLabel">
+                  {section.language === "zh" ? "中文" : "English"}
+                </div>
+              )}
+              <RichText text={section.text} />
+            </section>
+          ))}
+        </div>
 
         {images.filter(Boolean).map((image, index) => (
           <img
@@ -297,6 +337,7 @@ function loadReviewIds() {
 
 export default function App() {
   const [levelMode, setLevelMode] = useState("SL");
+  const [languageMode, setLanguageMode] = useState("en");
   const [selectedSubtopic, setSelectedSubtopic] = useState("All topics");
   const [index, setIndex] = useState(0);
   const [history, setHistory] = useState([]);
@@ -848,6 +889,23 @@ export default function App() {
             </select>
           </label>
 
+          <fieldset className="languageToggle" aria-label="Card language">
+            <legend>Language</legend>
+            <div className="languageOptions">
+              {LANGUAGE_MODES.map((mode) => (
+                <button
+                  type="button"
+                  key={mode.value}
+                  className={languageMode === mode.value ? "activeLanguage" : ""}
+                  aria-pressed={languageMode === mode.value}
+                  onClick={() => setLanguageMode(mode.value)}
+                >
+                  {mode.label}
+                </button>
+              ))}
+            </div>
+          </fieldset>
+
           <span className="cardCounter">
             Card {safeIndex + 1} / {filteredCards.length}
           </span>
@@ -883,8 +941,20 @@ export default function App() {
               onTouchCancel={handleCardTouchCancel}
               onKeyDown={handleCardKeyDown}
             >
-              <CardFace card={card} side="front" studyMode={studyMode} isSaved={isSaved} />
-              <CardFace card={card} side="back" studyMode={studyMode} isSaved={isSaved} />
+              <CardFace
+                card={card}
+                side="front"
+                studyMode={studyMode}
+                isSaved={isSaved}
+                languageMode={languageMode}
+              />
+              <CardFace
+                card={card}
+                side="back"
+                studyMode={studyMode}
+                isSaved={isSaved}
+                languageMode={languageMode}
+              />
             </div>
           </div>
 
