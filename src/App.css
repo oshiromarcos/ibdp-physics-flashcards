@@ -620,6 +620,31 @@ select:disabled {
   color: #94a3b8;
 }
 
+.reportIssueButton {
+  align-self: center;
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  border-radius: 999px;
+  padding: 7px 11px;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 850;
+  color: #475569;
+  background: rgba(255, 255, 255, 0.54);
+  cursor: pointer;
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.07);
+  transition: background 160ms ease, color 160ms ease, transform 160ms ease;
+}
+
+.reportIssueButton:hover {
+  color: var(--accent);
+  background: rgba(255, 255, 255, 0.84);
+  transform: translateY(-1px);
+}
+
+.reportIssueButton:active {
+  transform: translateY(0);
+}
+
 .buttons {
   display: flex;
   justify-content: center;

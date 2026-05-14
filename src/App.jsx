@@ -31,6 +31,7 @@ const LANGUAGE_MODES = [
 
 const STORAGE_KEY = "ib-physics-flashcards:study-progress:v1";
 const LEGACY_REVIEW_IDS_KEY = "ib-physics-review-ids";
+const GITHUB_ISSUE_URL = "https://github.com/oshiromarcos/ibdp-physics-flashcards/issues/new";
 const DEFAULT_PROGRESS = {
   levelMode: "SL",
   languageMode: "en",
@@ -262,6 +263,34 @@ function cardReportCode(card) {
   return raw;
 }
 
+function githubIssueUrlForCard(card) {
+  const cardCode = cardReportCode(card);
+  const params = new URLSearchParams({
+    title: `[Card issue] ${cardCode}`,
+    body: [
+      "Card code:",
+      cardCode,
+      "",
+      "Problem type (to select):",
+      "- Translation",
+      "- Formula",
+      "- Typo",
+      "- Physics explanation",
+      "- UI issue",
+      "- Other",
+      "",
+      "Description:",
+      "(write here)",
+    ].join("\n"),
+  });
+
+  return `${GITHUB_ISSUE_URL}?${params.toString()}`;
+}
+
+function openIssueForCard(card) {
+  window.open(githubIssueUrlForCard(card), "_blank", "noopener,noreferrer");
+}
+
 function CardFace({ card, side, studyMode, isSaved, languageMode }) {
   const isFront = side === "front";
   const images = isFront ? card.frontImages : card.backImages;
@@ -331,6 +360,16 @@ function CardFace({ card, side, studyMode, isSaved, languageMode }) {
       </div>
 
       <div className="tapHint">Tap to flip or swipe for another card</div>
+      <button
+        type="button"
+        className="reportIssueButton"
+        onClick={(event) => {
+          event.stopPropagation();
+          openIssueForCard(card);
+        }}
+      >
+        Report issue
+      </button>
     </div>
   );
 }
