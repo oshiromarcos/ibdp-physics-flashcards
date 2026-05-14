@@ -29,6 +29,8 @@ const LANGUAGE_MODES = [
   { value: "both", label: "English + Chinese" },
 ];
 
+const GITHUB_ISSUE_URL = "https://github.com/oshiromarcos/ibdp-physics-flashcards/issues/new";
+
 const cards = rawCards.map((card, index) => ({
   ...card,
   id: card.id || `card-${index + 1}`,
@@ -245,6 +247,52 @@ function cardReportCode(card) {
   return raw;
 }
 
+function languageModeLabel(languageMode) {
+  return LANGUAGE_MODES.find((mode) => mode.value === languageMode)?.label || languageMode;
+}
+
+function githubIssueUrlForCard(card, side, languageMode) {
+  const cardCode = cardReportCode(card);
+  const cardLevels = card.levels || (card.level === "HL" ? ["HL"] : ["SL", "HL"]);
+  const sideLabel = side === "front" ? "Front" : "Back";
+  const params = new URLSearchParams({
+    title: `[Card issue] ${cardCode}`,
+    body: [
+      "Card code:",
+      cardCode,
+      "",
+      "Topic:",
+      card.topicCode || "",
+      "",
+      "Level:",
+      cardLevels.join(" + "),
+      "",
+      "Language mode:",
+      languageModeLabel(languageMode),
+      "",
+      "Card side:",
+      sideLabel,
+      "",
+      "Problem type (to select):",
+      "- Translation",
+      "- Formula",
+      "- Typo",
+      "- Physics explanation",
+      "- UI issue",
+      "- Other",
+      "",
+      "Description:",
+      "(write here)",
+    ].join("\n"),
+  });
+
+  return `${GITHUB_ISSUE_URL}?${params.toString()}`;
+}
+
+function openIssueForCard(card, side, languageMode) {
+  window.open(githubIssueUrlForCard(card, side, languageMode), "_blank", "noopener,noreferrer");
+}
+
 function CardFace({ card, side, studyMode, isSaved, languageMode }) {
   const isFront = side === "front";
   const images = isFront ? card.frontImages : card.backImages;
@@ -314,6 +362,16 @@ function CardFace({ card, side, studyMode, isSaved, languageMode }) {
       </div>
 
       <div className="tapHint">Tap to flip or swipe for another card</div>
+      <button
+        type="button"
+        className="reportIssueButton"
+        onClick={(event) => {
+          event.stopPropagation();
+          openIssueForCard(card, side, languageMode);
+        }}
+      >
+        Report issue
+      </button>
     </div>
   );
 }
