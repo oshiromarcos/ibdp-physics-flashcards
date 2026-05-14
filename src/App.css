@@ -56,7 +56,7 @@ body {
 
 .focusShell {
   --focus-card-width: min(90vw, 1180px);
-  --focus-side-offset: max(8px, calc((100vw - var(--focus-card-width)) / 2 + 12px));
+  --focus-side-offset: max(8px, calc((100vw - var(--focus-card-width)) / 2 - 68px));
   min-height: 100vh;
   padding: 16px clamp(66px, 8vw, 104px);
 }
@@ -798,6 +798,10 @@ select:disabled {
   display: block;
   position: fixed;
   top: 50%;
+  opacity: 0.42;
+  background: rgba(255, 255, 255, 0.22);
+  border-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.1);
 }
 
 .focusShell .sideNavPrevious {
@@ -810,10 +814,10 @@ select:disabled {
 
 .focusExitButton {
   position: fixed;
-  right: var(--focus-side-offset);
-  top: calc(50% + 72px);
+  right: clamp(10px, 2vw, 26px);
+  top: clamp(10px, 2vw, 24px);
   z-index: 6;
-  max-width: 86px;
+  max-width: 110px;
   border: 1px solid rgba(255, 255, 255, 0.88);
   border-radius: 999px;
   padding: 10px 12px;
@@ -834,11 +838,20 @@ select:disabled {
   transform: translateY(-1px);
 }
 
+.focusShell .sideNav:hover {
+  opacity: 0.82;
+  background: rgba(255, 255, 255, 0.72);
+}
+
 .darkShell .focusExitButton,
 .darkShell.focusShell .sideNav {
   color: #e5e7eb;
-  background: rgba(15, 23, 42, 0.78);
+  background: rgba(15, 23, 42, 0.28);
   border-color: rgba(148, 163, 184, 0.32);
+}
+
+.darkShell.focusShell .sideNav:hover {
+  background: rgba(15, 23, 42, 0.72);
 }
 
 .buttons button,
@@ -948,7 +961,7 @@ select:disabled {
 
   .focusShell {
     --focus-card-width: min(90vw, 760px);
-    --focus-side-offset: max(6px, calc((100vw - var(--focus-card-width)) / 2 + 6px));
+    --focus-side-offset: max(6px, calc((100vw - var(--focus-card-width)) / 2 - 44px));
     padding: 10px 52px;
   }
 
@@ -1033,8 +1046,9 @@ select:disabled {
   }
 
   .focusExitButton {
-    top: calc(50% + 58px);
-    max-width: 58px;
+    top: 8px;
+    right: 8px;
+    max-width: 74px;
     padding: 8px 7px;
     font-size: 11px;
   }
@@ -1047,7 +1061,7 @@ select:disabled {
 @media (max-width: 480px) {
   .focusShell {
     --focus-card-width: min(90vw, 430px);
-    --focus-side-offset: max(6px, calc((100vw - var(--focus-card-width)) / 2 + 4px));
+    --focus-side-offset: max(6px, calc((100vw - var(--focus-card-width)) / 2 - 42px));
   }
 
   .appShell {
