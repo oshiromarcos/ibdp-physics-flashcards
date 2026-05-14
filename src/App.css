@@ -342,11 +342,19 @@ select:disabled {
 }
 
 .imageCardScene {
-  height: clamp(620px, 74vh, 820px);
+  height: clamp(700px, 92vh, 960px);
 }
 
 .focusShell .imageCardScene {
   height: clamp(620px, calc(100vh - 190px), 900px);
+}
+
+.imageOcclusionScene {
+  height: clamp(860px, 112vh, 1080px);
+}
+
+.focusShell .imageOcclusionScene {
+  height: clamp(820px, calc(100vh - 120px), 1080px);
 }
 
 .focusShell .cardFace.hasImages .cardImage {
@@ -605,6 +613,10 @@ select:disabled {
   max-width: 90%;
   max-height: min(360px, 52%);
   height: auto;
+}
+
+.cardFace.imageOcclusionFace .cardImage {
+  max-height: none;
 }
 
 .formulaBox {
@@ -909,8 +921,18 @@ select:disabled {
   }
 
   .imageCardScene {
-    height: min(78vh, 760px);
+    height: min(92vh, 840px);
     min-height: 600px;
+  }
+
+  .imageOcclusionScene {
+    height: min(120svh, 980px);
+    min-height: 760px;
+  }
+
+  .focusShell .imageOcclusionScene {
+    height: clamp(620px, calc(100svh - 160px), 920px);
+    min-height: 0;
   }
 
   .cardFace {
@@ -972,12 +994,22 @@ select:disabled {
   }
 
   .imageCardScene {
-    height: 80vh;
+    height: 92vh;
     min-height: 620px;
   }
 
   .focusShell .imageCardScene {
     height: clamp(500px, calc(100svh - 200px), 720px);
+    min-height: 0;
+  }
+
+  .imageOcclusionScene {
+    height: min(125svh, 920px);
+    min-height: 720px;
+  }
+
+  .focusShell .imageOcclusionScene {
+    height: clamp(560px, calc(100svh - 150px), 820px);
     min-height: 0;
   }
 
@@ -1007,6 +1039,10 @@ select:disabled {
 
   .cardFace.hasImages .cardImage {
     max-height: min(320px, 48%);
+  }
+
+  .cardFace.imageOcclusionFace .cardImage {
+    max-height: none;
   }
 
   .buttons button {

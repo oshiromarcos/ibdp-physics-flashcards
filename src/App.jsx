@@ -296,6 +296,7 @@ function CardFace({ card, side, studyMode, isSaved, languageMode }) {
   const images = isFront ? card.frontImages : card.backImages;
   const textSections = cardTextSections(card, side, languageMode);
   const hasImages = images.some(Boolean);
+  const hasImageOcclusion = images.some((image) => String(image).includes("/occlusion/"));
   const cardLevels = card.levels || (card.level === "HL" ? ["HL"] : ["SL", "HL"]);
   const levelLabel = cardLevels.includes("SL") && cardLevels.includes("HL")
     ? "SL + HL"
@@ -304,7 +305,7 @@ function CardFace({ card, side, studyMode, isSaved, languageMode }) {
       : "SL";
 
   return (
-    <div className={`cardFace ${isFront ? "cardFront" : "cardBack"} ${hasImages ? "hasImages" : ""}`}>
+    <div className={`cardFace ${isFront ? "cardFront" : "cardBack"} ${hasImages ? "hasImages" : ""} ${hasImageOcclusion ? "imageOcclusionFace" : ""}`}>
       {isSaved && <div className="savedBadge">Saved</div>}
 
       <div className="cardTop">
@@ -530,6 +531,9 @@ export default function App() {
   const knownCount = knownIds.length;
   const cardHasImages = Boolean(
     card && [...card.frontImages, ...card.backImages].some(Boolean)
+  );
+  const cardHasImageOcclusion = Boolean(
+    card && [...card.frontImages, ...card.backImages].some((image) => String(image).includes("/occlusion/"))
   );
   const flatTopicOptions = useMemo(
     () => Object.values(topicOptions).flat(),
@@ -1121,7 +1125,7 @@ export default function App() {
             ‹
           </button>
 
-          <div className={`flipScene ${cardHasImages ? "imageCardScene" : ""}`}>
+          <div className={`flipScene ${cardHasImages ? "imageCardScene" : ""} ${cardHasImageOcclusion ? "imageOcclusionScene" : ""}`}>
             <div
               role="button"
               tabIndex={0}
