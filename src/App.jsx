@@ -446,8 +446,10 @@ export default function App() {
   const [studyMode, setStudyMode] = useState(initialProgress.studyMode);
   const [shuffleOn, setShuffleOn] = useState(initialProgress.shuffleOn);
   const [darkMode, setDarkMode] = useState(initialProgress.darkMode);
+  const [focusMode, setFocusMode] = useState(false);
   const [swipeOffset, setSwipeOffset] = useState(0);
   const [swipeMotion, setSwipeMotion] = useState("");
+  const appShellRef = useRef(null);
   const pointerStartRef = useRef(null);
   const touchStartRef = useRef(null);
   const swipeTimerRef = useRef(null);
@@ -472,6 +474,17 @@ export default function App() {
 
   useEffect(() => () => {
     window.clearTimeout(swipeTimerRef.current);
+  }, []);
+
+  useEffect(() => {
+    function syncFocusWithFullscreen() {
+      if (!document.fullscreenElement) {
+        setFocusMode(false);
+      }
+    }
+
+    document.addEventListener("fullscreenchange", syncFocusWithFullscreen);
+    return () => document.removeEventListener("fullscreenchange", syncFocusWithFullscreen);
   }, []);
 
   const availableCards = useMemo(
@@ -689,6 +702,27 @@ export default function App() {
     setShuffleOn(DEFAULT_PROGRESS.shuffleOn);
     setDarkMode(DEFAULT_PROGRESS.darkMode);
     resetPosition();
+  }
+
+  function enterFocusMode() {
+    setFocusMode(true);
+
+    const requestFullscreen = appShellRef.current?.requestFullscreen;
+    if (requestFullscreen) {
+      requestFullscreen.call(appShellRef.current).catch(() => {
+        // CSS focus mode remains available when browser fullscreen is blocked or unsupported.
+      });
+    }
+  }
+
+  function exitFocusMode() {
+    setFocusMode(false);
+
+    if (document.fullscreenElement && document.exitFullscreen) {
+      document.exitFullscreen().catch(() => {
+        // Leaving CSS focus mode is enough if the browser rejects the fullscreen exit request.
+      });
+    }
   }
 
   function isInteractiveTarget(target) {
@@ -975,7 +1009,8 @@ export default function App() {
 
   return (
     <main
-      className={`appShell ${studyMode === "review" ? "reviewShell" : ""} ${darkMode ? "darkShell" : ""}`}
+      ref={appShellRef}
+      className={`appShell ${studyMode === "review" ? "reviewShell" : ""} ${darkMode ? "darkShell" : ""} ${focusMode ? "focusShell" : ""}`}
       style={{
         "--accent": displayTheme.accent,
         "--accent-soft": displayTheme.accentSoft,
@@ -987,7 +1022,7 @@ export default function App() {
       }}
     >
       <section className="app">
-        <section className="header">
+        {!focusMode && <section className="header">
           <div>
             <div className="modeBadge">
               {studyMode === "review" ? "Final review sprint" : "Practice mode"}
@@ -1016,9 +1051,9 @@ export default function App() {
               {darkMode ? "Dark: On" : "Dark: Off"}
             </button>
           </div>
-        </section>
+        </section>}
 
-        <section className="controls">
+        {!focusMode && <section className="controls">
           <label>
             Study level
             <select value={levelMode} onChange={changeLevel} disabled={studyMode === "review"}>
@@ -1067,7 +1102,14 @@ export default function App() {
           <span className="cardCounter">
             Card {safeIndex + 1} / {filteredCards.length}
           </span>
-        </section>
+        </section>}
+
+        {focusMode && (
+          <section className="focusTopBar" aria-label="Focus mode">
+            <span>Focus mode</span>
+            <span>Card {safeIndex + 1} / {filteredCards.length}</span>
+          </section>
+        )}
 
         <section className="cardArea">
           <button
@@ -1126,16 +1168,30 @@ export default function App() {
           </button>
         </section>
 
+        {!focusMode && (
+          <section className="focusModeControls">
+            <button className="focusModeButton" onClick={enterFocusMode}>
+              Focus mode
+            </button>
+          </section>
+        )}
+
         <section className="buttons">
           <button className="mobileCardNav" onClick={previousCard}>Previous</button>
           <button onClick={() => setFlipped(!flipped)}>Flip</button>
           <button className="mobileCardNav" onClick={goToNext}>Next</button>
-          <button
-            className={shuffleOn ? "activeButton" : ""}
-            onClick={() => setShuffleOn((value) => !value)}
-          >
-            Shuffle: {shuffleOn ? "On" : "Off"}
-          </button>
+          {focusMode ? (
+            <button onClick={exitFocusMode}>Exit focus mode</button>
+          ) : (
+            <>
+              <button
+                className={shuffleOn ? "activeButton" : ""}
+                onClick={() => setShuffleOn((value) => !value)}
+              >
+                Shuffle: {shuffleOn ? "On" : "Off"}
+              </button>
+            </>
+          )}
         </section>
 
         <section className="buttons secondary">
@@ -1147,17 +1203,21 @@ export default function App() {
             {isSaved ? "Saved to review later" : "Save to review later"}
           </button>
 
-          <button onClick={startReviewQuiz} disabled={reviewIds.length === 0}>
-            Start review quiz
-          </button>
+          {!focusMode && (
+            <>
+              <button onClick={startReviewQuiz} disabled={reviewIds.length === 0}>
+                Start review quiz
+              </button>
 
-          <button onClick={clearReviewList} disabled={reviewIds.length === 0}>
-            Clear review list
-          </button>
+              <button onClick={clearReviewList} disabled={reviewIds.length === 0}>
+                Clear review list
+              </button>
 
-          <button className="resetProgressButton" onClick={resetProgress}>
-            Reset progress
-          </button>
+              <button className="resetProgressButton" onClick={resetProgress}>
+                Reset progress
+              </button>
+            </>
+          )}
         </section>
       </section>
     </main>

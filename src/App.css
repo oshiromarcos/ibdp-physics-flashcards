@@ -54,6 +54,46 @@ body {
   margin: 0 auto;
 }
 
+.focusShell {
+  min-height: 100vh;
+  padding: 16px;
+}
+
+.focusShell .app {
+  max-width: 1200px;
+  min-height: calc(100vh - 32px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.focusTopBar {
+  width: min(100%, 1120px);
+  margin: 0 auto 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  color: var(--accent);
+  font-weight: 950;
+}
+
+.focusTopBar span {
+  border: 1px solid rgba(255, 255, 255, 0.92);
+  border-radius: 999px;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.76);
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.08);
+  backdrop-filter: blur(14px);
+}
+
+.darkShell .focusTopBar span {
+  background: rgba(15, 23, 42, 0.76);
+  color: #e5e7eb;
+  border-color: rgba(148, 163, 184, 0.32);
+}
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -284,6 +324,10 @@ select:disabled {
   gap: 16px;
 }
 
+.focusShell .cardArea {
+  width: 100%;
+}
+
 .flipScene {
   width: min(100%, 850px);
   height: clamp(500px, 58vh, 650px);
@@ -291,8 +335,18 @@ select:disabled {
   perspective: 1500px;
 }
 
+.focusShell .flipScene {
+  width: min(100%, 1120px);
+  height: clamp(560px, calc(100vh - 210px), 860px);
+  min-height: 0;
+}
+
 .imageCardScene {
   height: clamp(620px, 74vh, 820px);
+}
+
+.focusShell .imageCardScene {
+  height: clamp(620px, calc(100vh - 190px), 900px);
 }
 
 .flashcard {
@@ -653,6 +707,47 @@ select:disabled {
   margin-top: 10px;
 }
 
+.focusModeControls {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.focusShell .buttons {
+  width: min(100%, 900px);
+  margin-inline: auto;
+}
+
+.focusModeButton {
+  border-radius: 999px;
+  padding: 9px 13px;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 950;
+  background: rgba(255, 255, 255, 0.86);
+  color: var(--accent);
+  border: 1px solid rgba(255, 255, 255, 0.92);
+  cursor: pointer;
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.08);
+  backdrop-filter: blur(14px);
+  transition: transform 160ms ease, background 160ms ease;
+}
+
+.focusModeButton:hover {
+  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.96);
+}
+
+.darkShell .focusModeButton {
+  background: rgba(15, 23, 42, 0.76);
+  color: #e5e7eb;
+  border-color: rgba(148, 163, 184, 0.32);
+}
+
+.focusShell .mobileCardNav {
+  display: inline-block;
+}
+
 .sideNav {
   position: absolute;
   top: 250px;
@@ -792,6 +887,23 @@ select:disabled {
     min-height: 500px;
   }
 
+  .focusShell {
+    padding: 10px;
+  }
+
+  .focusShell .app {
+    min-height: calc(100vh - 20px);
+  }
+
+  .focusShell .flipScene {
+    height: clamp(430px, calc(100svh - 220px), 720px);
+    min-height: 0;
+  }
+
+  .focusShell .imageCardScene {
+    height: clamp(520px, calc(100svh - 210px), 780px);
+  }
+
   .imageCardScene {
     height: min(78vh, 760px);
     min-height: 600px;
@@ -823,6 +935,10 @@ select:disabled {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .focusShell .buttons {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .sideNav {
     display: none;
   }
@@ -846,9 +962,19 @@ select:disabled {
     min-height: 520px;
   }
 
+  .focusShell .flipScene {
+    height: clamp(410px, calc(100svh - 210px), 660px);
+    min-height: 0;
+  }
+
   .imageCardScene {
     height: 80vh;
     min-height: 620px;
+  }
+
+  .focusShell .imageCardScene {
+    height: clamp(500px, calc(100svh - 200px), 720px);
+    min-height: 0;
   }
 
   .cardFace {
@@ -884,6 +1010,10 @@ select:disabled {
 @media (min-width: 781px) {
   .mobileCardNav {
     display: none;
+  }
+
+  .focusShell .mobileCardNav {
+    display: inline-block;
   }
 }
 
