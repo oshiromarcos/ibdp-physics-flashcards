@@ -1108,13 +1108,6 @@ export default function App() {
           </span>
         </section>}
 
-        {focusMode && (
-          <section className="focusTopBar" aria-label="Focus mode">
-            <span>Focus mode</span>
-            <span>Card {safeIndex + 1} / {filteredCards.length}</span>
-          </section>
-        )}
-
         <section className="cardArea">
           <button
             type="button"
@@ -1170,6 +1163,16 @@ export default function App() {
           >
             ›
           </button>
+
+          {focusMode && (
+            <button
+              type="button"
+              className="focusExitButton"
+              onClick={exitFocusMode}
+            >
+              Exit focus mode
+            </button>
+          )}
         </section>
 
         {!focusMode && (
@@ -1180,35 +1183,29 @@ export default function App() {
           </section>
         )}
 
-        <section className="buttons">
-          <button className="mobileCardNav" onClick={previousCard}>Previous</button>
-          <button onClick={() => setFlipped(!flipped)}>Flip</button>
-          <button className="mobileCardNav" onClick={goToNext}>Next</button>
-          {focusMode ? (
-            <button onClick={exitFocusMode}>Exit focus mode</button>
-          ) : (
-            <>
+        {!focusMode && (
+          <>
+            <section className="buttons">
+              <button className="mobileCardNav" onClick={previousCard}>Previous</button>
+              <button onClick={() => setFlipped(!flipped)}>Flip</button>
+              <button className="mobileCardNav" onClick={goToNext}>Next</button>
               <button
                 className={shuffleOn ? "activeButton" : ""}
                 onClick={() => setShuffleOn((value) => !value)}
               >
                 Shuffle: {shuffleOn ? "On" : "Off"}
               </button>
-            </>
-          )}
-        </section>
+            </section>
 
-        <section className="buttons secondary">
-          <button onClick={markKnown}>
-            {studyMode === "review" ? "I know this — remove" : "I know this"}
-          </button>
+            <section className="buttons secondary">
+              <button onClick={markKnown}>
+                {studyMode === "review" ? "I know this — remove" : "I know this"}
+              </button>
 
-          <button className={isSaved ? "savedButton" : ""} onClick={saveForReviewLater}>
-            {isSaved ? "Saved to review later" : "Save to review later"}
-          </button>
+              <button className={isSaved ? "savedButton" : ""} onClick={saveForReviewLater}>
+                {isSaved ? "Saved to review later" : "Save to review later"}
+              </button>
 
-          {!focusMode && (
-            <>
               <button onClick={startReviewQuiz} disabled={reviewIds.length === 0}>
                 Start review quiz
               </button>
@@ -1220,9 +1217,9 @@ export default function App() {
               <button className="resetProgressButton" onClick={resetProgress}>
                 Reset progress
               </button>
-            </>
-          )}
-        </section>
+            </section>
+          </>
+        )}
       </section>
     </main>
   );

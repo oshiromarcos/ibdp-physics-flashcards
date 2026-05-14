@@ -56,42 +56,16 @@ body {
 
 .focusShell {
   min-height: 100vh;
-  padding: 16px;
+  padding: 16px clamp(66px, 8vw, 104px);
 }
 
 .focusShell .app {
-  max-width: 1200px;
+  width: 100%;
+  max-width: none;
   min-height: calc(100vh - 32px);
   display: flex;
   flex-direction: column;
   justify-content: center;
-}
-
-.focusTopBar {
-  width: min(100%, 1120px);
-  margin: 0 auto 12px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  flex-wrap: wrap;
-  color: var(--accent);
-  font-weight: 950;
-}
-
-.focusTopBar span {
-  border: 1px solid rgba(255, 255, 255, 0.92);
-  border-radius: 999px;
-  padding: 8px 12px;
-  background: rgba(255, 255, 255, 0.76);
-  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.08);
-  backdrop-filter: blur(14px);
-}
-
-.darkShell .focusTopBar span {
-  background: rgba(15, 23, 42, 0.76);
-  color: #e5e7eb;
-  border-color: rgba(148, 163, 184, 0.32);
 }
 
 .header {
@@ -336,8 +310,8 @@ select:disabled {
 }
 
 .focusShell .flipScene {
-  width: min(100%, 1120px);
-  height: clamp(560px, calc(100vh - 210px), 860px);
+  width: min(100%, 90vw, 1180px);
+  height: clamp(620px, 90svh, 980px);
   min-height: 0;
 }
 
@@ -346,7 +320,7 @@ select:disabled {
 }
 
 .focusShell .imageCardScene {
-  height: clamp(620px, calc(100vh - 190px), 900px);
+  height: clamp(680px, 90svh, 1040px);
 }
 
 .imageOcclusionScene {
@@ -354,11 +328,16 @@ select:disabled {
 }
 
 .focusShell .imageOcclusionScene {
-  height: clamp(820px, calc(100vh - 120px), 1080px);
+  height: clamp(820px, 92svh, 1100px);
 }
 
 .focusShell .cardFace.hasImages .cardImage {
-  max-height: min(480px, 58%);
+  max-height: min(620px, 68%);
+}
+
+.focusShell .tapHint,
+.focusShell .reportIssueButton {
+  display: none;
 }
 
 .flashcard {
@@ -798,6 +777,53 @@ select:disabled {
   right: clamp(4px, 2vw, 26px);
 }
 
+.focusShell .sideNav {
+  display: block;
+  position: fixed;
+  top: 50%;
+}
+
+.focusShell .sideNavPrevious {
+  left: clamp(8px, 2vw, 28px);
+}
+
+.focusShell .sideNavNext {
+  right: clamp(8px, 2vw, 28px);
+}
+
+.focusExitButton {
+  position: fixed;
+  right: clamp(8px, 2vw, 28px);
+  top: calc(50% + 72px);
+  z-index: 6;
+  max-width: 86px;
+  border: 1px solid rgba(255, 255, 255, 0.88);
+  border-radius: 999px;
+  padding: 10px 12px;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 950;
+  line-height: 1.15;
+  color: var(--accent);
+  background: rgba(255, 255, 255, 0.74);
+  cursor: pointer;
+  box-shadow: 0 18px 42px rgba(15, 23, 42, 0.16);
+  backdrop-filter: blur(16px);
+  transition: transform 160ms ease, background 160ms ease;
+}
+
+.focusExitButton:hover {
+  background: rgba(255, 255, 255, 0.92);
+  transform: translateY(-1px);
+}
+
+.darkShell .focusExitButton,
+.darkShell.focusShell .sideNav {
+  color: #e5e7eb;
+  background: rgba(15, 23, 42, 0.78);
+  border-color: rgba(148, 163, 184, 0.32);
+}
+
 .buttons button,
 .emptyState button {
   border: 0;
@@ -904,7 +930,7 @@ select:disabled {
   }
 
   .focusShell {
-    padding: 10px;
+    padding: 10px 52px;
   }
 
   .focusShell .app {
@@ -912,12 +938,13 @@ select:disabled {
   }
 
   .focusShell .flipScene {
-    height: clamp(430px, calc(100svh - 220px), 720px);
+    width: min(100%, 90vw, 760px);
+    height: clamp(560px, 88svh, 860px);
     min-height: 0;
   }
 
   .focusShell .imageCardScene {
-    height: clamp(520px, calc(100svh - 210px), 780px);
+    height: clamp(620px, 88svh, 900px);
   }
 
   .imageCardScene {
@@ -931,7 +958,7 @@ select:disabled {
   }
 
   .focusShell .imageOcclusionScene {
-    height: clamp(620px, calc(100svh - 160px), 920px);
+    height: clamp(700px, 90svh, 980px);
     min-height: 0;
   }
 
@@ -969,6 +996,29 @@ select:disabled {
     display: none;
   }
 
+  .focusShell .sideNav {
+    display: block;
+    width: 40px;
+    height: 76px;
+    font-size: 36px;
+  }
+
+  .focusShell .sideNavPrevious {
+    left: 6px;
+  }
+
+  .focusShell .sideNavNext,
+  .focusExitButton {
+    right: 6px;
+  }
+
+  .focusExitButton {
+    top: calc(50% + 58px);
+    max-width: 58px;
+    padding: 8px 7px;
+    font-size: 11px;
+  }
+
   .formulaItem {
     grid-template-columns: 1fr;
   }
@@ -989,7 +1039,8 @@ select:disabled {
   }
 
   .focusShell .flipScene {
-    height: clamp(410px, calc(100svh - 210px), 660px);
+    width: min(100%, 90vw, 430px);
+    height: clamp(540px, 88svh, 780px);
     min-height: 0;
   }
 
@@ -999,7 +1050,7 @@ select:disabled {
   }
 
   .focusShell .imageCardScene {
-    height: clamp(500px, calc(100svh - 200px), 720px);
+    height: clamp(600px, 88svh, 820px);
     min-height: 0;
   }
 
@@ -1009,7 +1060,7 @@ select:disabled {
   }
 
   .focusShell .imageOcclusionScene {
-    height: clamp(560px, calc(100svh - 150px), 820px);
+    height: clamp(680px, 90svh, 880px);
     min-height: 0;
   }
 
