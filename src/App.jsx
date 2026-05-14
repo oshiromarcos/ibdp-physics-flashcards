@@ -247,31 +247,13 @@ function cardReportCode(card) {
   return raw;
 }
 
-function languageModeLabel(languageMode) {
-  return LANGUAGE_MODES.find((mode) => mode.value === languageMode)?.label || languageMode;
-}
-
-function githubIssueUrlForCard(card, side, languageMode) {
+function githubIssueUrlForCard(card) {
   const cardCode = cardReportCode(card);
-  const cardLevels = card.levels || (card.level === "HL" ? ["HL"] : ["SL", "HL"]);
-  const sideLabel = side === "front" ? "Front" : "Back";
   const params = new URLSearchParams({
     title: `[Card issue] ${cardCode}`,
     body: [
       "Card code:",
       cardCode,
-      "",
-      "Topic:",
-      card.topicCode || "",
-      "",
-      "Level:",
-      cardLevels.join(" + "),
-      "",
-      "Language mode:",
-      languageModeLabel(languageMode),
-      "",
-      "Card side:",
-      sideLabel,
       "",
       "Problem type (to select):",
       "- Translation",
@@ -289,8 +271,8 @@ function githubIssueUrlForCard(card, side, languageMode) {
   return `${GITHUB_ISSUE_URL}?${params.toString()}`;
 }
 
-function openIssueForCard(card, side, languageMode) {
-  window.open(githubIssueUrlForCard(card, side, languageMode), "_blank", "noopener,noreferrer");
+function openIssueForCard(card) {
+  window.open(githubIssueUrlForCard(card), "_blank", "noopener,noreferrer");
 }
 
 function CardFace({ card, side, studyMode, isSaved, languageMode }) {
@@ -367,7 +349,7 @@ function CardFace({ card, side, studyMode, isSaved, languageMode }) {
         className="reportIssueButton"
         onClick={(event) => {
           event.stopPropagation();
-          openIssueForCard(card, side, languageMode);
+          openIssueForCard(card);
         }}
       >
         Report issue
