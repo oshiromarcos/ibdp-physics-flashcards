@@ -790,6 +790,20 @@ select:disabled {
   right: clamp(4px, 2vw, 26px);
 }
 
+@media (min-width: 781px) and (max-width: 1040px) {
+  .sideNav {
+    opacity: 0.25;
+    background: rgba(255, 255, 255, 0.28);
+    border-color: rgba(255, 255, 255, 0.48);
+    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.1);
+  }
+
+  .sideNav:hover {
+    opacity: 0.78;
+    background: rgba(255, 255, 255, 0.78);
+  }
+}
+
 .focusShell .sideNav {
   display: block;
   position: fixed;
