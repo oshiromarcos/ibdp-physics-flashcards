@@ -1023,13 +1023,19 @@ select:disabled {
   }
 
   .cardFooter {
-    grid-template-columns: 1fr;
-    justify-items: center;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 8px;
   }
 
-  .tapHint,
-  .reportIssueButton {
+  .tapHint {
     grid-column: 1;
+    font-size: 12px;
+  }
+
+  .reportIssueButton {
+    grid-column: 2;
+    padding: 6px 8px;
+    font-size: 11px;
   }
 
   .buttons button {
