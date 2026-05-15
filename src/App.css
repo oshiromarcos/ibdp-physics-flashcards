@@ -413,7 +413,6 @@ select:disabled {
 .cardTop {
   display: grid;
   gap: 10px;
-  padding-right: 80px;
 }
 
 .swipeZone {
@@ -429,6 +428,7 @@ select:disabled {
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
+  min-width: 0;
 }
 
 .cardMeta span {
@@ -446,10 +446,14 @@ select:disabled {
 }
 
 .subtopicTitle {
+  width: min(100%, 760px);
+  justify-self: center;
   color: var(--accent);
   font-size: 15px;
   font-weight: 950;
   line-height: 1.25;
+  text-align: center;
+  text-wrap: balance;
 }
 
 .darkShell .subtopicTitle {
@@ -999,8 +1003,23 @@ select:disabled {
     border-radius: 28px;
   }
 
-  .cardTop {
-    padding-right: 70px;
+  .cardMeta {
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 5px;
+    overflow: hidden;
+  }
+
+  .cardMeta span,
+  .cardCodeBadge {
+    padding: 5px 7px;
+    font-size: 11px;
+    line-height: 1.05;
+  }
+
+  .subtopicTitle {
+    font-size: 13px;
+    line-height: 1.28;
   }
 
   .cardFooter {
@@ -1109,8 +1128,14 @@ select:disabled {
     padding: 7px 10px;
   }
 
-  .cardTop {
-    padding-right: 62px;
+  .cardMeta {
+    gap: 4px;
+  }
+
+  .cardMeta span,
+  .cardCodeBadge {
+    padding: 4px 6px;
+    font-size: 10px;
   }
 
   .mathText {
@@ -1286,6 +1311,23 @@ select {
 
 .cardCodeBadge:active {
   transform: translateY(0);
+}
+
+@media (max-width: 780px) {
+  .cardMeta span,
+  .cardCodeBadge {
+    padding: 5px 7px;
+    font-size: 11px;
+    line-height: 1.05;
+  }
+}
+
+@media (max-width: 480px) {
+  .cardMeta span,
+  .cardCodeBadge {
+    padding: 4px 6px;
+    font-size: 10px;
+  }
 }
 
 
