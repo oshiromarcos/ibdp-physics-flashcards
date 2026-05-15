@@ -494,17 +494,20 @@ select:disabled {
 
 .translationStack {
   width: 100%;
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 12px;
   flex: 0 0 auto;
+  align-items: stretch;
 }
 
 .translationBlock {
   min-width: 0;
+  flex: 0 0 auto;
 }
 
 .translationStack.hasTranslations {
-  align-content: center;
+  align-content: start;
 }
 
 .translationStack.hasTranslations .translationBlock {
@@ -1213,6 +1216,12 @@ select {
   max-height: none;
   overflow: visible;
   scrollbar-gutter: auto;
+  flex-shrink: 0;
+}
+
+.cardContent:has(.translationStack.hasTranslations) {
+  justify-content: flex-start !important;
+  align-items: stretch !important;
 }
 
 .cardFace.hasImages .cardContent {
