@@ -705,8 +705,12 @@ select:disabled {
 }
 
 .focusModeControls {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(132px, 1fr));
   justify-content: center;
+  gap: 10px;
+  width: min(100%, 330px);
+  margin-inline: auto;
   margin-top: 10px;
 }
 
@@ -716,6 +720,7 @@ select:disabled {
 }
 
 .focusModeButton {
+  min-width: 0;
   border-radius: 999px;
   padding: 9px 13px;
   font: inherit;
@@ -728,6 +733,12 @@ select:disabled {
   box-shadow: 0 10px 28px rgba(15, 23, 42, 0.08);
   backdrop-filter: blur(14px);
   transition: transform 160ms ease, background 160ms ease;
+}
+
+.focusModeButton.activeButton {
+  background: var(--accent);
+  color: white;
+  border-color: transparent;
 }
 
 .focusModeButton:hover {
@@ -1006,7 +1017,7 @@ select:disabled {
 
   .buttons {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 6px;
   }
 

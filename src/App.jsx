@@ -1181,6 +1181,12 @@ export default function App() {
 
         {!focusMode && (
           <section className="focusModeControls">
+            <button
+              className={`focusModeButton ${shuffleOn ? "activeButton" : ""}`}
+              onClick={() => setShuffleOn((value) => !value)}
+            >
+              Shuffle: {shuffleOn ? "On" : "Off"}
+            </button>
             <button className="focusModeButton" onClick={enterFocusMode}>
               Focus mode
             </button>
@@ -1191,14 +1197,7 @@ export default function App() {
           <>
             <section className="buttons">
               <button className="mobileCardNav" onClick={previousCard}>Previous</button>
-              <button onClick={() => setFlipped(!flipped)}>Flip</button>
               <button className="mobileCardNav" onClick={goToNext}>Next</button>
-              <button
-                className={shuffleOn ? "activeButton" : ""}
-                onClick={() => setShuffleOn((value) => !value)}
-              >
-                Shuffle: {shuffleOn ? "On" : "Off"}
-              </button>
             </section>
 
             <section className="buttons secondary">
