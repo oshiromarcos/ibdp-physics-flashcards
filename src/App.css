@@ -457,6 +457,9 @@ select:disabled {
   cursor: text;
   user-select: text;
   -webkit-user-select: text;
+  overscroll-behavior: contain;
+  touch-action: pan-y;
+  -webkit-overflow-scrolling: touch;
 }
 
 .cardFace.hasImages .cardContent {
@@ -493,6 +496,7 @@ select:disabled {
   width: 100%;
   display: grid;
   gap: 12px;
+  flex: 0 0 auto;
 }
 
 .translationBlock {

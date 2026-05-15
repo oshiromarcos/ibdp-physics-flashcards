@@ -723,6 +723,13 @@ export default function App() {
     return Boolean(target.closest(".mathText, .cardContent, .cardMeta, .subtopicTitle"));
   }
 
+  function scrollableCardContent(target) {
+    const content = target.closest(".cardContent");
+    if (!content) return null;
+
+    return content.scrollHeight > content.clientHeight + 2 ? content : null;
+  }
+
   function hasSelectedText() {
     return Boolean(window.getSelection?.().toString().trim());
   }
@@ -903,6 +910,12 @@ export default function App() {
     }
 
     if (start.cancelSwipe) return;
+
+    if (scrollableCardContent(event.target) && absY > 8 && absY > absX * 1.12) {
+      start.cancelSwipe = true;
+      resetSwipeMotion(0);
+      return;
+    }
 
     if (absX > SWIPE_ACTIVATION_PX && absX > absY * 0.38) {
       start.swiping = true;
