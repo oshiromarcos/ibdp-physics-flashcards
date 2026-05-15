@@ -96,39 +96,41 @@ body {
 }
 
 .stats {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(118px, 1fr));
   gap: 10px;
-  flex-wrap: wrap;
   justify-content: flex-end;
+  align-items: stretch;
+  min-width: min(100%, 420px);
 }
 
-.stats span {
+.statPill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
   background: rgba(255, 255, 255, 0.74);
   border: 1px solid rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(14px);
   border-radius: 999px;
   padding: 9px 13px;
+  font: inherit;
   font-weight: 900;
+  text-align: center;
+  white-space: nowrap;
   color: #111827;
   box-shadow: 0 10px 28px rgba(15, 23, 42, 0.08);
 }
 
-.darkShell .stats span {
+.darkShell .statPill {
   background: rgba(15, 23, 42, 0.74);
   color: #e5e7eb;
   border-color: rgba(148, 163, 184, 0.32);
 }
 
 .darkModeToggle {
-  border: 1px solid rgba(255, 255, 255, 0.92);
-  border-radius: 999px;
-  padding: 9px 13px;
-  font: inherit;
   font-weight: 950;
-  color: #111827;
-  background: rgba(255, 255, 255, 0.74);
   cursor: pointer;
-  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.08);
   transition: background 160ms ease, color 160ms ease, transform 160ms ease;
 }
 
@@ -140,12 +142,6 @@ body {
   color: #e5e7eb;
   background: #111827;
   border-color: rgba(148, 163, 184, 0.42);
-}
-
-.darkShell .darkModeToggle {
-  color: #e5e7eb;
-  background: rgba(15, 23, 42, 0.74);
-  border-color: rgba(148, 163, 184, 0.32);
 }
 
 .darkShell .darkModeToggle.activeButton {
@@ -947,10 +943,12 @@ select:disabled {
   }
 
   .stats {
-    justify-content: flex-start;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    width: 100%;
+    min-width: 0;
   }
 
-  .darkModeToggle {
+  .statPill {
     padding: 7px 10px;
     font-size: 12px;
     box-shadow: 0 8px 18px rgba(15, 23, 42, 0.07);
@@ -1013,12 +1011,6 @@ select:disabled {
   .tapHint,
   .reportIssueButton {
     grid-column: 1;
-  }
-
-  .buttons {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 6px;
   }
 
   .buttons button {

@@ -1048,11 +1048,11 @@ export default function App() {
           </div>
 
           <div className="stats">
-            <span>Known: {knownCount}</span>
-            <span>Saved review: {reviewIds.length}</span>
+            <span className="statPill">Known: {knownCount}</span>
+            <span className="statPill">Saved review: {reviewIds.length}</span>
             <button
               type="button"
-              className={`darkModeToggle ${darkMode ? "activeButton" : ""}`}
+              className={`statPill darkModeToggle ${darkMode ? "activeButton" : ""}`}
               aria-pressed={darkMode}
               onClick={() => setDarkMode((value) => !value)}
             >
@@ -1195,11 +1195,6 @@ export default function App() {
 
         {!focusMode && (
           <>
-            <section className="buttons">
-              <button className="mobileCardNav" onClick={previousCard}>Previous</button>
-              <button className="mobileCardNav" onClick={goToNext}>Next</button>
-            </section>
-
             <section className="buttons secondary">
               <button onClick={markKnown}>
                 {studyMode === "review" ? "I know this — remove" : "I know this"}
