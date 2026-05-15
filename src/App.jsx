@@ -308,7 +308,7 @@ function CardFace({ card, side, studyMode, isSaved, languageMode }) {
     <div className={`cardFace ${isFront ? "cardFront" : "cardBack"} ${hasImages ? "hasImages" : ""} ${hasImageOcclusion ? "imageOcclusionFace" : ""}`}>
       {isSaved && <div className="savedBadge">Saved</div>}
 
-      <div className="cardTop">
+      <div className="cardTop swipeZone">
         <div className="cardMeta">
           <span>{levelLabel}</span>
           <span>{card.topicCode}</span>
@@ -360,7 +360,7 @@ function CardFace({ card, side, studyMode, isSaved, languageMode }) {
         {!isFront && <FormulaList formulas={card.bookletFormulas} />}
       </div>
 
-      <div className="cardFooter">
+      <div className="cardFooter swipeZone">
         <div className="tapHint">Tap to flip or swipe for another card</div>
         <button
           type="button"
@@ -720,7 +720,13 @@ export default function App() {
   }
 
   function isTextSelectionTarget(target) {
+    if (target.closest(".swipeZone")) return false;
+
     return Boolean(target.closest(".mathText, .cardContent, .cardMeta, .subtopicTitle"));
+  }
+
+  function isSwipeZoneTarget(target) {
+    return Boolean(target.closest(".swipeZone"));
   }
 
   function scrollableCardContent(target) {
@@ -797,6 +803,7 @@ export default function App() {
       pointerType: event.pointerType,
       swiping: false,
       cancelSwipe: false,
+      startedOnSwipeZone: isSwipeZoneTarget(event.target),
       startedOnText: isTextSelectionTarget(event.target),
     };
   }
@@ -903,7 +910,7 @@ export default function App() {
     const absY = Math.abs(deltaY);
     const elapsed = Math.max(1, event.timeStamp - start.time);
 
-    if (hasSelectedText() || (start.startedOnText && elapsed > TEXT_SELECTION_HOLD_MS && absX < 18)) {
+    if (hasSelectedText() || (!start.startedOnSwipeZone && start.startedOnText && elapsed > TEXT_SELECTION_HOLD_MS && absX < 18)) {
       start.cancelSwipe = true;
       resetSwipeMotion(0);
       return;
@@ -911,13 +918,16 @@ export default function App() {
 
     if (start.cancelSwipe) return;
 
-    if (scrollableCardContent(event.target) && absY > 8 && absY > absX * 1.12) {
+    if (!start.startedOnSwipeZone && scrollableCardContent(event.target) && absY > 8 && absY > absX * 1.12) {
       start.cancelSwipe = true;
       resetSwipeMotion(0);
       return;
     }
 
-    if (absX > SWIPE_ACTIVATION_PX && absX > absY * 0.38) {
+    const swipeActivation = start.startedOnSwipeZone ? 8 : SWIPE_ACTIVATION_PX;
+    const horizontalBias = start.startedOnSwipeZone ? 0.25 : 0.38;
+
+    if (absX > swipeActivation && absX > absY * horizontalBias) {
       start.swiping = true;
       event.preventDefault();
       setSwipeMotion("dragging");
@@ -946,7 +956,9 @@ export default function App() {
     const velocity = absX / elapsed;
     const cardWidth = event.currentTarget.offsetWidth || window.innerWidth;
     const swipeThreshold = Math.max(SWIPE_MIN_DISTANCE_PX, cardWidth * SWIPE_DISTANCE_RATIO);
-    const isMostlyHorizontal = absX > absY * 0.38;
+    const isMostlyHorizontal = start.startedOnSwipeZone
+      ? absX > absY * 0.25
+      : absX > absY * 0.38;
     const isSwipe = isMostlyHorizontal && (
       absX > swipeThreshold ||
       (absX > 8 && velocity > SWIPE_VELOCITY_PX_PER_MS)
