@@ -361,6 +361,7 @@ select:disabled {
   user-select: text;
   -webkit-user-select: text;
   transition: transform 520ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  pointer-events: none;
 }
 
 .darkShell .cardFace {
@@ -376,6 +377,7 @@ select:disabled {
     linear-gradient(180deg, rgba(255, 255, 255, 0.72), transparent 40%),
     var(--card-front);
   transform: rotateY(0deg);
+  pointer-events: auto;
 }
 
 .cardBack {
@@ -391,6 +393,11 @@ select:disabled {
 
 .flashcard.isFlipped .cardBack {
   transform: rotateY(0deg);
+  pointer-events: auto;
+}
+
+.flashcard.isFlipped .cardFront {
+  pointer-events: none;
 }
 
 .savedBadge {
