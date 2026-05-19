@@ -54349,7 +54349,7 @@
     "topic": "Structure of the Atom",
     "subtopicFull": "E.1 Structure of the Atom: Atomic structure, binding energy.",
     "front": "What does the observation that most alpha particles passed straight through the gold foil in Rutherford's alpha scattering experiment suggest about the structure of the atom?",
-    "back": "The observation that most alpha particles passed straight through the gold foil suggests that the atom is mostly empty space.",
+    "back": "Most alpha particles passed straight through the gold foil with little or no deflection. This shows that most of the atom is empty space, because the alpha particles usually passed through regions with no concentrated positive charge or mass to repel them strongly.",
     "frontImage": "",
     "backImage": "",
     "frontImages": [],
@@ -54358,7 +54358,7 @@
     "topicOrder": 23,
     "bookletFormulas": [],
     "frontZh": "在卢瑟福的阿尔法散射实验中，大多数阿尔法粒子直接穿过金箔的观察结果对原子结构有何启示？",
-    "backZh": "大多数 α 粒子直接穿过金箔这一观察表明，原子大部分是空的空间。"
+    "backZh": "大多数 α 粒子几乎没有偏转地直接穿过金箔。这表明原子大部分是空的空间，因为 α 粒子通常穿过没有集中正电荷或质量的区域，因此不会受到强烈排斥。"
   },
   {
     "id": "hl-e1-007",
@@ -54391,14 +54391,14 @@
     "topic": "Structure of the Atom",
     "subtopicFull": "E.1 Structure of the Atom: Atomic structure, binding energy.",
     "front": "What does the observation that a tiny number of alpha particles deflect by large angles in Rutherford's alpha scattering experiment suggest about the structure of the atom?",
-    "back": "The deflection of a tiny number of alpha particles at large angles suggests that an atom's positive charge and almost all of its mass are highly concentrated in an extremely small, dense central region, known as the nucleus, rather than being spread out.",
+    "back": "The fact that a tiny number of alpha particles were deflected through very large angles, or even back toward the source, shows that the atom contains a very small, dense, positively charged nucleus. Almost all of the atom's mass and positive charge must be concentrated there, so only alpha particles passing very close to this nucleus experience a strong repulsive force.",
     "frontImages": [],
     "backImages": [],
     "sourceFile": "e1_structure_of_the_atom_flashcards_HL.docx",
     "topicOrder": 23,
     "bookletFormulas": [],
     "frontZh": "在卢瑟福的阿尔法散射实验中，观察到极少数阿尔法粒子发生大角度偏转，这对原子结构有何启示？",
-    "backZh": "极少数 α 粒子发生大角度偏转表明，原子的正电荷和几乎全部质量高度集中在一个极小而致密的中心区域，即原子核，而不是分散分布。"
+    "backZh": "极少数 α 粒子发生很大角度偏转，甚至被反弹回放射源方向，这表明原子含有一个非常小、致密、带正电的原子核。原子的几乎全部质量和正电荷都必须集中在那里，因此只有非常靠近原子核通过的 α 粒子才会受到强烈的排斥力。"
   },
   {
     "id": "hl-e1-009",
@@ -55391,7 +55391,7 @@
     "topic": "Structure of the Atom",
     "subtopicFull": "E.1 Structure of the Atom: Atomic structure, binding energy.",
     "front": "What does the observation that most alpha particles passed straight through the gold foil in Rutherford's alpha scattering experiment suggest about the structure of the atom?",
-    "back": "An alpha particle is a helium nucleus:\n\n\\[\n{}^{4}_{2}\\mathrm{He}^{2+}\n\\]\n\nIt contains <strong>2 protons</strong> and <strong>2 neutrons</strong>, so it has charge \\(+2e\\).",
+    "back": "Most alpha particles passed straight through the gold foil with little or no deflection. This shows that most of the atom is empty space, because the alpha particles usually passed through regions with no concentrated positive charge or mass to repel them strongly.",
     "frontImage": "",
     "backImage": "",
     "frontImages": [],
@@ -55400,7 +55400,7 @@
     "topicOrder": 23,
     "bookletFormulas": [],
     "frontZh": "在卢瑟福的阿尔法散射实验中，大多数阿尔法粒子直接穿过金箔的观察结果对原子结构有何启示？",
-    "backZh": "α粒子是氦核：\\[\n{}^{4}_{2}\\mathrm{He}^{2+}\n\\]它含有<strong>2 个质子</strong>和<strong>2 个中子</strong>，因此它带电荷\\(+2e\\)。"
+    "backZh": "大多数 α 粒子几乎没有偏转地直接穿过金箔。这表明原子大部分是空的空间，因为 α 粒子通常穿过没有集中正电荷或质量的区域，因此不会受到强烈排斥。"
   },
   {
     "id": "sl-e1-007",
@@ -55435,7 +55435,7 @@
     "topic": "Structure of the Atom",
     "subtopicFull": "E.1 Structure of the Atom: Atomic structure, binding energy.",
     "front": "What does the observation that a tiny number of alpha particles deflect by large angles in Rutherford's alpha scattering experiment suggest about the structure of the atom?",
-    "back": "An alpha particle is a helium nucleus:\n\n\\[\n{}^{4}_{2}\\mathrm{He}^{2+}\n\\]\n\nIt contains <strong>2 protons</strong> and <strong>2 neutrons</strong>, so it has charge \\(+2e\\).",
+    "back": "The fact that a tiny number of alpha particles were deflected through very large angles, or even back toward the source, shows that the atom contains a very small, dense, positively charged nucleus. Almost all of the atom's mass and positive charge must be concentrated there, so only alpha particles passing very close to this nucleus experience a strong repulsive force.",
     "frontImage": "",
     "backImage": "",
     "frontImages": [],
@@ -55444,7 +55444,7 @@
     "topicOrder": 23,
     "bookletFormulas": [],
     "frontZh": "在卢瑟福的阿尔法散射实验中，观察到极少数阿尔法粒子发生大角度偏转，这对原子结构有何启示？",
-    "backZh": "α粒子是氦核：\\[\n{}^{4}_{2}\\mathrm{He}^{2+}\n\\]它含有<strong>2 个质子</strong>和<strong>2 个中子</strong>，因此它带电荷\\(+2e\\)。"
+    "backZh": "极少数 α 粒子发生很大角度偏转，甚至被反弹回放射源方向，这表明原子含有一个非常小、致密、带正电的原子核。原子的几乎全部质量和正电荷都必须集中在那里，因此只有非常靠近原子核通过的 α 粒子才会受到强烈的排斥力。"
   },
   {
     "id": "sl-e1-009",
