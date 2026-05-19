@@ -14386,7 +14386,7 @@
     "topic": "Rigid Body Mechanics",
     "subtopicFull": "A.4 Rigid Body Mechanics: Rotational kinematics, torque, moment of inertia, angular momentum.",
     "front": "Define the term <strong>moment of inertia</strong>.",
-    "back": "The moment of inertia is the resistance to a change of rotational motion. It depends on the <strong>distribution of mass</strong> around a chosen axis of rotation.",
+    "back": "Moment of inertia is the resistance of a body to changes in rotational motion. It depends on how the mass is distributed relative to the chosen axis of rotation.<br>\n\\[\nI = \\sum mr^2\n\\]<br>\nHere, \\(m\\) is each mass element and \\(r\\) is its perpendicular distance from the axis of rotation.",
     "frontImage": "",
     "backImage": "",
     "frontImages": [],
@@ -14395,7 +14395,7 @@
     "topicOrder": 7,
     "bookletFormulas": [],
     "frontZh": "定义术语<strong>转动惯量</strong>。",
-    "backZh": "转动惯量是对旋转运动变化的阻力。这取决于<strong>质量分布</strong>绕选定的旋转轴。"
+    "backZh": "转动惯量是物体对转动运动变化的阻碍。它取决于质量相对于所选转轴的分布。<br>\n\\[\nI = \\sum mr^2\n\\]<br>\n其中，\\(m\\) 是每个质点或质量元，\\(r\\) 是它到转轴的垂直距离。"
   },
   {
     "id": "hl-a4-041",
@@ -35400,7 +35400,7 @@
     "topic": "Wave phenomena",
     "subtopicFull": "C.3 – Wave Phenomena",
     "front": "Explain the equation: \\(\\theta = \\frac{\\lambda}{b}\\)",
-    "back": "This equation describes the <strong>activity</strong> of a radioactive sample.\n\n<strong>Meaning of each symbol:</strong><br>\n\\(A\\) is the activity, the number of decays per second. Its unit is the becquerel, \\(\\mathrm{Bq}\\).<br>\n\\(\\lambda\\) is the decay constant. It represents the probability per unit time that one unstable nucleus will decay.<br>\n\\(N\\) is the number of undecayed radioactive nuclei remaining at time \\(t\\).<br>\n\\(N_0\\) is the original number of radioactive nuclei when \\(t=0\\).\n\nThe equation says that activity is proportional to the number of undecayed nuclei remaining. As time passes, \\(N\\) decreases exponentially, so the activity \\(A\\) also decreases exponentially.",
+    "back": "This formula gives the approximate diffraction angle for a single slit:<br>\n\\[\n\\theta = \\frac{\\lambda}{b}\n\\]<br>\n<strong>Components:</strong><br>\n\\(\\theta\\) is the diffraction angle, measured in radians.<br>\n\\(\\lambda\\) is the wavelength of the wave.<br>\n\\(b\\) is the slit width or aperture size.<br>\nA larger wavelength or a smaller slit width gives a larger diffraction angle.",
     "frontImage": "/images/anki-hl/paste-d7294c920394574a8f2b1fba7ceb55a81228a74a.jpg",
     "backImage": "/images/anki-hl/paste-d7294c920394574a8f2b1fba7ceb55a81228a74a.jpg",
     "frontImages": [
@@ -35425,7 +35425,7 @@
     "apkgSlDecision": "SL topic in the 2025 syllabus map",
     "bookletFormulas": [],
     "frontZh": "解释一下方程：\\(\\theta = \\frac{\\lambda}{b}\\)",
-    "backZh": "该方程描述了放射性样品的<strong>活度</strong>。<strong>各符号含义：</strong><br>\\(A\\)是活动，每秒的衰变次数。它的单位是贝克勒尔，\\(\\mathrm{Bq}\\)。<br>\\(\\lambda\\)是衰减常数。它表示单位时间内一个不稳定原子核衰变的概率。<br>\\(N\\)是在时间\\(t\\)时剩余的未衰变放射性核的物理量。<br>\\(N_0\\)是\\(t=0\\)时的原始放射性核数。\n\n该方程表明，活性与剩余的未衰变原子核的物理量成正比。随着时间的推移，\\(N\\)呈指数下降，因此\\(A\\)的活性也呈指数下降。"
+    "backZh": "该公式给出单缝衍射的近似衍射角：<br>\n\\[\n\\theta = \\frac{\\lambda}{b}\n\\]<br>\n<strong>各符号含义：</strong><br>\n\\(\\theta\\) 是衍射角，单位为弧度。<br>\n\\(\\lambda\\) 是波的波长。<br>\n\\(b\\) 是缝宽或孔径大小。<br>\n波长越大，或缝宽越小，衍射角越大。"
   },
   {
     "id": "anki-hl-0463",
@@ -54307,7 +54307,7 @@
     "topic": "Structure of the Atom",
     "subtopicFull": "E.1 Structure of the Atom: Atomic structure, binding energy.",
     "front": "Why was the apparatus placed in an <strong>evacuated chamber</strong>?",
-    "back": "Beta particles are deflected more because they have a much larger <strong>charge-to-mass ratio</strong> than alpha particles.\n\nIn the same electric field, the electric force is:\n\n\\[\nF = qE\n\\]\n\nAn alpha particle has charge \\(+2e\\), while a beta minus particle has charge \\(-e\\). However, an alpha particle is thousands of times more massive than a beta particle. Since:\n\n\\[\na = \\frac{F}{m} = \\frac{qE}{m}\n\\]\n\nthe beta particle has a much greater acceleration, so its path bends more strongly. Beta minus particles bend toward the positive plate; alpha particles bend toward the negative plate.",
+    "back": "<strong>• Preventing Particle Scattering:</strong> Particles like alpha particles are highly ionizing and can only travel a few centimeters in ambient air. Collisions with air molecules cause them to deviate from their paths, distorting the results.<br><strong>• Preserving Kinetic Energy:</strong> Colliding with air molecules causes the incident particles to lose their original energy, which compromises the integrity and accuracy of the experiment.<br><strong>• Ensuring Clear Deflection:</strong> Removing air molecules guarantees that any deviation observed is strictly the result of the intended target (such as a thin metal foil) rather than random collisions with gas in the chamber.",
     "frontImage": "",
     "backImage": "",
     "frontImages": [],
@@ -54316,7 +54316,7 @@
     "topicOrder": 23,
     "bookletFormulas": [],
     "frontZh": "为什么将装置放置在<strong>真空室</strong>中？",
-    "backZh": "β 粒子偏转更多，因为它们具有比 α 粒子大得多的<strong>荷质比</strong>。\n\n在同一电场下，电动势为：\\[\nF = qE\n\\]α 粒子的电荷为\\(+2e\\)，而 β 负粒子的电荷为\\(-e\\)。然而，α粒子的质量是β粒子的数千倍。自：\\[\na = \\frac{F}{m} = \\frac{qE}{m}\n\\]β粒子的加速度更大，因此它的路径弯曲得更厉害。 β负粒子向正极板弯曲； α粒子向负极板弯曲。"
+    "backZh": "<strong>• 防止粒子散射：</strong>像 α 粒子这样的粒子电离能力很强，在普通空气中只能传播几厘米。与空气分子碰撞会使它们偏离原来的路径，从而扭曲实验结果。<br><strong>• 保持动能：</strong>与空气分子碰撞会使入射粒子损失原有能量，从而影响实验的完整性和准确性。<br><strong>• 确保偏转清晰：</strong>移除空气分子可以保证观察到的任何偏转都严格来自预定靶材（如薄金属箔），而不是来自实验腔内气体的随机碰撞。"
   },
   {
     "id": "hl-e1-005",
@@ -54328,7 +54328,7 @@
     "topic": "Structure of the Atom",
     "subtopicFull": "E.1 Structure of the Atom: Atomic structure, binding energy.",
     "front": "What were the <strong>three </strong>main observations from Rutherford's alpha scattering experiment?",
-    "back": "Deviations from Rutherford's scattering predictions, which assume purely electrostatic (Coulomb) repulsion between an alpha particle and a point-like nucleus, occur mainly when alpha particles possess high energy or when targeting lighter nuclei. The primary cause is the strong nuclear force, which becomes significant at very close distances \\((<1.5\\text{ fm})\\), causing scattering to diverge from the predicted inverse square law.\n\nAn alpha particle is a helium nucleus:\n\n\\[\n{}^{4}_{2}\\mathrm{He}^{2+}\n\\]\n\nIt contains <strong>2 protons</strong> and <strong>2 neutrons</strong>, so it has charge \\(+2e\\).",
+    "back": "<strong>• Most passed through undeflected:</strong> The vast majority of alpha particles traveled straight through the gold foil without any change in their path.<br><strong>• Some deflected at small angles:</strong> A small fraction of the alpha particles were deflected by varying, but relatively small, angles.<br><strong>• Very few bounced straight back:</strong> A minuscule number of particles (1 in about 8000) either deflected at very large angles or bounced straight back at a 180º angle.",
     "frontImage": "",
     "backImage": "",
     "frontImages": [],
@@ -54337,7 +54337,7 @@
     "topicOrder": 23,
     "bookletFormulas": [],
     "frontZh": "卢瑟福 α 散射实验中<strong>三个</strong>的主要观察结果是什么？",
-    "backZh": "与卢瑟福散射预测的偏差主要发生在α粒子具有高能量或瞄准较轻的原子核时，卢瑟福的散射预测假设α粒子和点状原子核之间存在纯静电（库仑）排斥。主要原因是强核力，它在非常近的距离\\((<1.5\\text{ fm})\\)处变得显着，导致散射偏离预测的平方反比定律。\n\nα粒子是氦核：\\[\n{}^{4}_{2}\\mathrm{He}^{2+}\n\\]它含有<strong>2个质子</strong>和<strong>2个中子</strong>，所以它有电荷\\(+2e\\)。"
+    "backZh": "<strong>• 大多数未偏转地通过：</strong>绝大多数 α 粒子直接穿过金箔，路径没有发生任何改变。<br><strong>• 一些发生小角度偏转：</strong>少部分 α 粒子发生了不同程度但相对较小角度的偏转。<br><strong>• 极少数直接反弹：</strong>极少数粒子（约 8000 个中有 1 个）发生了很大角度的偏转，或以 180º 角几乎直接反弹回来。"
   },
   {
     "id": "hl-e1-006",
@@ -54349,7 +54349,7 @@
     "topic": "Structure of the Atom",
     "subtopicFull": "E.1 Structure of the Atom: Atomic structure, binding energy.",
     "front": "What does the observation that most alpha particles passed straight through the gold foil in Rutherford's alpha scattering experiment suggest about the structure of the atom?",
-    "back": "An alpha particle is a helium nucleus:\n\n\\[\n{}^{4}_{2}\\mathrm{He}^{2+}\n\\]\n\nIt contains <strong>2 protons</strong> and <strong>2 neutrons</strong>, so it has charge \\(+2e\\).",
+    "back": "The observation that most alpha particles passed straight through the gold foil suggests that the atom is mostly empty space.",
     "frontImage": "",
     "backImage": "",
     "frontImages": [],
@@ -54358,7 +54358,7 @@
     "topicOrder": 23,
     "bookletFormulas": [],
     "frontZh": "在卢瑟福的阿尔法散射实验中，大多数阿尔法粒子直接穿过金箔的观察结果对原子结构有何启示？",
-    "backZh": "α粒子是氦核：\\[\n{}^{4}_{2}\\mathrm{He}^{2+}\n\\]它含有<strong>2 个质子</strong>和<strong>2 个中子</strong>，因此它带电荷\\(+2e\\)。"
+    "backZh": "大多数 α 粒子直接穿过金箔这一观察表明，原子大部分是空的空间。"
   },
   {
     "id": "hl-e1-007",
@@ -54370,7 +54370,7 @@
     "topic": "Structure of the Atom",
     "subtopicFull": "E.1 Structure of the Atom: Atomic structure, binding energy.",
     "front": "What does the observation that some alpha particles deflect by small angles in Rutherford's alpha scattering experiment suggest about the structure of the atom?",
-    "back": "An alpha particle is a helium nucleus:\n\n\\[\n{}^{4}_{2}\\mathrm{He}^{2+}\n\\]\n\nIt contains <strong>2 protons</strong> and <strong>2 neutrons</strong>, so it has charge \\(+2e\\).",
+    "back": "The observation that some alpha particles deflect by small angles suggests that an atom's positive charge is not spread uniformly throughout its volume, but rather concentrated in a dense, central core.",
     "frontImage": "",
     "backImage": "",
     "frontImages": [],
@@ -54379,7 +54379,7 @@
     "topicOrder": 23,
     "bookletFormulas": [],
     "frontZh": "在卢瑟福的阿尔法散射实验中，观察到一些阿尔法粒子发生小角度偏转，这对原子结构有何启示？",
-    "backZh": "α粒子是氦核：\\[\n{}^{4}_{2}\\mathrm{He}^{2+}\n\\]它含有<strong>2 个质子</strong>和<strong>2 个中子</strong>，因此它带电荷\\(+2e\\)。"
+    "backZh": "一些 α 粒子发生小角度偏转这一观察表明，原子的正电荷并不是均匀分布在整个体积中，而是集中在致密的中心核心中。"
   },
   {
     "id": "hl-e1-008",
@@ -54391,14 +54391,14 @@
     "topic": "Structure of the Atom",
     "subtopicFull": "E.1 Structure of the Atom: Atomic structure, binding energy.",
     "front": "What does the observation that a tiny number of alpha particles deflect by large angles in Rutherford's alpha scattering experiment suggest about the structure of the atom?",
-    "back": "Large-angle deflections of a tiny number of alpha particles suggest that the atom contains a very small, dense, positively charged nucleus.\n\nMost alpha particles pass straight through because most of the atom is empty space.\n\nA small number are deflected through large angles because they pass close to the nucleus and experience a strong electrostatic repulsion from its positive charge.\n\nSo this observation supports the nuclear model of the atom: most of the atom's mass and positive charge are concentrated in a tiny central nucleus.",
+    "back": "The deflection of a tiny number of alpha particles at large angles suggests that an atom's positive charge and almost all of its mass are highly concentrated in an extremely small, dense central region, known as the nucleus, rather than being spread out.",
     "frontImages": [],
     "backImages": [],
     "sourceFile": "e1_structure_of_the_atom_flashcards_HL.docx",
     "topicOrder": 23,
     "bookletFormulas": [],
     "frontZh": "在卢瑟福的阿尔法散射实验中，观察到极少数阿尔法粒子发生大角度偏转，这对原子结构有何启示？",
-    "backZh": "极少数阿尔法粒子的大角度偏转表明原子包含一个非常小、致密、带正电的原子核。\n\n大多数阿尔法粒子直接穿过，因为大部分原子都是真空的。\n\n一小部分会发生大角度偏转，因为它们靠近原子核并受到正电荷的强烈静电排斥。\n\n因此，这一观察结果支持了原子的核模型：原子的大部分质量和正电荷都集中在一个微小的中心核中。"
+    "backZh": "极少数 α 粒子发生大角度偏转表明，原子的正电荷和几乎全部质量高度集中在一个极小而致密的中心区域，即原子核，而不是分散分布。"
   },
   {
     "id": "hl-e1-009",
@@ -54580,7 +54580,7 @@
     "topic": "Structure of the Atom",
     "subtopicFull": "E.1 Structure of the Atom: Atomic structure, binding energy.",
     "front": "What is the <strong>mass number</strong> and <strong>proton number</strong> of carbon?",
-    "back": "The proton number, \\(Z\\), is the number of protons in the nucleus.\n\nIt identifies the element.\n\nIn nuclide notation:\n\n\\[\n{}^{A}_{\\mathbf{Z}}X\n\\]\n\nthe bold lower-left number \\(\\mathbf{Z}\\) is the proton number.",
+    "back": "The proton number, \\(Z\\), is the number of protons in the nucleus.\n\nIt identifies the element.\n\nIn nuclide notation:\n\n\\[\n{}^{A}_{\\mathbf{Z}}X\n\\]\n\nthe bold lower-left number \\(\\mathbf{Z}\\) is the proton number.<br><br>The mass number is \\(A\\), the upper-left number.",
     "frontImage": "/images/hl-e1-structure-of-the-atom/hl-e1-017-front-01.png",
     "backImage": "",
     "frontImages": [
@@ -54591,7 +54591,7 @@
     "topicOrder": 23,
     "bookletFormulas": [],
     "frontZh": "碳的<strong>质量数</strong>和<strong>质子数</strong>是多少？",
-    "backZh": "质子数\\(Z\\)是原子核中的质子数。\n\n它标识元素。\n\n在核素符号中：\\[\n{}^{A}_{\\mathbf{Z}}X\n\\]左下角粗体数字\\(\\mathbf{Z}\\)是质子数。"
+    "backZh": "质子数\\(Z\\)是原子核中的质子数。\n\n它标识元素。\n\n在核素符号中：\\[\n{}^{A}_{\\mathbf{Z}}X\n\\]左下角粗体数字\\(\\mathbf{Z}\\)是质子数。<br><br>质量数是 \\(A\\)，即左上角的数。"
   },
   {
     "id": "hl-e1-018",
@@ -55024,7 +55024,7 @@
     "topic": "Structure of the Atom",
     "subtopicFull": "E.1 Structure of the Atom: Atomic structure, binding energy.",
     "front": "What is the significance of the point of<strong> closest approach</strong> in the Rutherford alpha scattering experiment?",
-    "back": "An alpha particle is a helium nucleus:\n\n\\[\n{}^{4}_{2}\\mathrm{He}^{2+}\n\\]\n\nIt contains <strong>2 protons</strong> and <strong>2 neutrons</strong>, so it has charge \\(+2e\\).",
+    "back": "Its significance lies in its ability to estimate the upper limit of the atomic nucleus's size and validate Rutherford’s nuclear model.",
     "frontImage": "",
     "backImage": "",
     "frontImages": [],
@@ -55033,7 +55033,7 @@
     "topicOrder": 23,
     "bookletFormulas": [],
     "frontZh": "卢瑟福α散射实验中<strong>最接近</strong>的点有何意义？",
-    "backZh": "α粒子是氦核：\\[\n{}^{4}_{2}\\mathrm{He}^{2+}\n\\]它含有<strong>2 个质子</strong>和<strong>2 个中子</strong>，因此它带电荷\\(+2e\\)。"
+    "backZh": "其重要意义在于，它能够估计原子核大小的上限，并验证卢瑟福的核式模型。"
   },
   {
     "id": "hl-e1-038",
@@ -55087,7 +55087,7 @@
     "topic": "Structure of the Atom",
     "subtopicFull": "E.1 Structure of the Atom: Atomic structure, binding energy.",
     "front": "What is <strong>observed </strong>to happen to the number of back-scattered alpha particles at very high energies in Rutherford's alpha scattering experiment?",
-    "back": "An alpha particle is a helium nucleus:\n\n\\[\n{}^{4}_{2}\\mathrm{He}^{2+}\n\\]\n\nIt contains <strong>2 protons</strong> and <strong>2 neutrons</strong>, so it has charge \\(+2e\\).",
+    "back": "At very high energies, the number of back-scattered alpha particles falls significantly below the predictions of the classical Rutherford scattering formula.<br><br>(The \"Dip\" in Scattering: When alpha particles reach very high kinetic energies, they can overcome the electrostatic repulsion and approach the target nucleus close enough to enter the range of the strong nuclear force).",
     "frontImage": "",
     "backImage": "",
     "frontImages": [],
@@ -55096,7 +55096,7 @@
     "topicOrder": 23,
     "bookletFormulas": [],
     "frontZh": "在卢瑟福的α散射实验中，<strong>观察到的</strong>在非常高能量的背向散射α粒子的物理量上发生了什么？",
-    "backZh": "α粒子是氦核：\\[\n{}^{4}_{2}\\mathrm{He}^{2+}\n\\]它含有<strong>2 个质子</strong>和<strong>2 个中子</strong>，因此它带电荷\\(+2e\\)。"
+    "backZh": "在非常高的能量下，背向散射的 α 粒子数量明显低于经典卢瑟福散射公式的预测。<br><br>（散射中的“凹陷”：当 α 粒子达到非常高的动能时，它们能够克服静电排斥，并足够接近靶原子核，进入强核力的作用范围。）"
   },
   {
     "id": "hl-e1-041",
@@ -55108,7 +55108,7 @@
     "topic": "Structure of the Atom",
     "subtopicFull": "E.1 Structure of the Atom: Atomic structure, binding energy.",
     "front": "What <strong>causes </strong>deviations from Rutherford's predications in the alpha scattering experiment?",
-    "back": "An alpha particle is a helium nucleus:\n\n\\[\n{}^{4}_{2}\\mathrm{He}^{2+}\n\\]\n\nIt contains <strong>2 protons</strong> and <strong>2 neutrons</strong>, so it has charge \\(+2e\\).",
+    "back": "Deviations from Rutherford's scattering predictions occur when alpha particles get close enough to the target nucleus for the nuclear strong force to dominate.",
     "frontImage": "",
     "backImage": "",
     "frontImages": [],
@@ -55117,7 +55117,7 @@
     "topicOrder": 23,
     "bookletFormulas": [],
     "frontZh": "什么<strong>原因</strong>与卢瑟福在阿尔法散射实验中的预测有偏差吗？",
-    "backZh": "α粒子是氦核：\\[\n{}^{4}_{2}\\mathrm{He}^{2+}\n\\]它含有<strong>2 个质子</strong>和<strong>2 个中子</strong>，因此它带电荷\\(+2e\\)。"
+    "backZh": "当 α 粒子足够接近靶原子核，使强核力占主导作用时，就会出现与卢瑟福散射预测的偏差。"
   },
   {
     "id": "hl-e1-042",
@@ -55176,8 +55176,7 @@
     "backImage": "/images/hl-e1-structure-of-the-atom/hl-e1-044-back-01.png",
     "frontImages": [],
     "backImages": [
-      "/images/hl-e1-structure-of-the-atom/hl-e1-044-back-01.png",
-      "/images/hl-e1-structure-of-the-atom/hl-e1-044-back-02.png"
+      "/images/hl-e1-structure-of-the-atom/hl-e1-044-back-01.png"
     ],
     "sourceFile": "e1_structure_of_the_atom_flashcards_HL.docx",
     "topicOrder": 23,
@@ -55221,9 +55220,7 @@
     "backImage": "/images/hl-e1-structure-of-the-atom/hl-e1-046-back-01.png",
     "frontImages": [],
     "backImages": [
-      "/images/hl-e1-structure-of-the-atom/hl-e1-046-back-01.png",
-      "/images/hl-e1-structure-of-the-atom/hl-e1-046-back-02.png",
-      "/images/hl-e1-structure-of-the-atom/hl-e1-046-back-03.png"
+      "/images/hl-e1-structure-of-the-atom/hl-e1-046-back-01.png"
     ],
     "sourceFile": "e1_structure_of_the_atom_flashcards_HL.docx",
     "topicOrder": 23,
@@ -55350,7 +55347,7 @@
     "topic": "Structure of the Atom",
     "subtopicFull": "E.1 Structure of the Atom: Atomic structure, binding energy.",
     "front": "Why was the apparatus placed in an <strong>evacuated chamber</strong>?",
-    "back": "An alpha particle is a helium nucleus:\n\n\\[\n{}^{4}_{2}\\mathrm{He}^{2+}\n\\]\n\nIt contains <strong>2 protons</strong> and <strong>2 neutrons</strong>, so it has charge \\(+2e\\).",
+    "back": "Rutherford's Gold Foil Experiment: Alpha particles have a short ionizing range in air (about 5 cm) and would quickly lose their energy or collide with gas molecules before ever reaching the target foil.<br><br>The apparatus was placed in an evacuated chamber to prevent the emitted particles (such as alpha rays or electrons) from colliding with, scattering off, or losing energy to air molecules. This ensured accurate, undistorted, and consistent experimental results.",
     "frontImage": "",
     "backImage": "",
     "frontImages": [],
@@ -55359,7 +55356,7 @@
     "topicOrder": 23,
     "bookletFormulas": [],
     "frontZh": "为什么将装置放置在<strong>真空室</strong>中？",
-    "backZh": "α粒子是氦核：\\[\n{}^{4}_{2}\\mathrm{He}^{2+}\n\\]它含有<strong>2 个质子</strong>和<strong>2 个中子</strong>，因此它带电荷\\(+2e\\)。"
+    "backZh": "卢瑟福金箔实验：α 粒子在空气中的电离射程很短（约 5 cm），在到达靶箔之前就会很快失去能量，或与气体分子发生碰撞。<br><br>实验装置放在真空室中，是为了防止发射出的粒子（如 α 射线或电子）与空气分子碰撞、发生散射或把能量损失给空气分子。这保证了实验结果准确、无失真且一致。"
   },
   {
     "id": "sl-e1-005",
@@ -55372,7 +55369,7 @@
     "topic": "Structure of the Atom",
     "subtopicFull": "E.1 Structure of the Atom: Atomic structure, binding energy.",
     "front": "What were the <strong>three </strong>main observations from Rutherford's alpha scattering experiment?",
-    "back": "An alpha particle is a helium nucleus:\n\n\\[\n{}^{4}_{2}\\mathrm{He}^{2+}\n\\]\n\nIt contains <strong>2 protons</strong> and <strong>2 neutrons</strong>, so it has charge \\(+2e\\).",
+    "back": "<strong>• Most passed through undeflected:</strong> The vast majority of alpha particles traveled straight through the gold foil without any change in their path.<br><strong>• Some deflected at small angles:</strong> A small fraction of the alpha particles were deflected by varying, but relatively small, angles.<br><strong>• Very few bounced straight back:</strong> A minuscule number of particles (1 in about 8000) either deflected at very large angles or bounced straight back at a 180º angle.",
     "frontImage": "",
     "backImage": "",
     "frontImages": [],
@@ -55381,7 +55378,7 @@
     "topicOrder": 23,
     "bookletFormulas": [],
     "frontZh": "卢瑟福 α 散射实验中<strong>三个</strong>的主要观察结果是什么？",
-    "backZh": "α粒子是氦核：\\[\n{}^{4}_{2}\\mathrm{He}^{2+}\n\\]它含有<strong>2 个质子</strong>和<strong>2 个中子</strong>，因此它带电荷\\(+2e\\)。"
+    "backZh": "<strong>• 大多数未偏转地通过：</strong>绝大多数 α 粒子直接穿过金箔，路径没有发生任何改变。<br><strong>• 一些发生小角度偏转：</strong>少部分 α 粒子发生了不同程度但相对较小角度的偏转。<br><strong>• 极少数直接反弹：</strong>极少数粒子（约 8000 个中有 1 个）发生了很大角度的偏转，或以 180º 角几乎直接反弹回来。"
   },
   {
     "id": "sl-e1-006",
@@ -58046,7 +58043,7 @@
     "topic": "Radioactive decay",
     "subtopicFull": "E.3 – Radioactive Decay",
     "front": "What is the general equation for gamma decay ?",
-    "back": "\\(\\ce{^A_ZX^* \\rightarrow ^A_ZX + \\gamma}\\)\n\nMnemonic:\nThe asterisk in \\(^A_ZX^*\\) indicates that the nucleus is in an excited state .",
+    "back": "\\(\\ce{^A_ZX^* \\rightarrow ^A_ZX + \\gamma}\\)\n\nMeaning of the asterisk *:\nThe asterisk in \\(^A_ZX^*\\) indicates that the nucleus is in an excited state .",
     "frontImage": "",
     "backImage": "/images/anki-hl/Gamma.png",
     "frontImages": [],
@@ -58069,7 +58066,7 @@
     "apkgSlDecision": "SL topic in the 2025 syllabus map",
     "bookletFormulas": [],
     "frontZh": "伽马衰变的一般方程是什么？",
-    "backZh": "\\(\\ce{^A_ZX^* \\rightarrow ^A_ZX + \\gamma}\\)助记符：\\(^A_ZX^*\\)中的星号表示原子核处于激发态。"
+    "backZh": "\\(\\ce{^A_ZX^* \\rightarrow ^A_ZX + \\gamma}\\)星号 * 的含义：\\(^A_ZX^*\\)中的星号表示原子核处于激发态。"
   },
   {
     "id": "anki-hl-0156",
