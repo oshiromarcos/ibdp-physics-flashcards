@@ -27306,7 +27306,7 @@
     "topic": "Currents and circuits",
     "subtopicFull": "B.5 – Currents And Circuits",
     "front": "Define \"resistivity\".",
-    "back": "The intrinsic property of a material that measures how strongly it resists current .",
+    "back": "The intrinsic property of a material that measures how strongly it resists current.\n\nUseful formula — Resistivity:\n\\[\n\\rho = \\frac{RA}{L}\n\\]\nwhere \\(R\\) is resistance, \\(A\\) is cross-sectional area, and \\(L\\) is length.",
     "frontImage": "",
     "backImage": "/images/anki-hl/resistors-four.jpg",
     "frontImages": [],
@@ -27329,7 +27329,7 @@
     "apkgSlDecision": "SL topic in the 2025 syllabus map",
     "bookletFormulas": [],
     "frontZh": "定义“电阻率”。",
-    "backZh": "材料的固有属性，用于衡量其抵抗电流的强度。"
+    "backZh": "材料的固有属性，用于衡量其抵抗电流的强度。\n\n有用的公式——电阻率：\\[\n\\rho = \\frac{RA}{L}\n\\]\n其中 \\(R\\) 是电阻，\\(A\\) 是横截面积，\\(L\\) 是长度。"
   },
   {
     "id": "anki-hl-0411",
@@ -28320,7 +28320,7 @@
     "topic": "Current and Circuits",
     "subtopicFull": "B.5 Current and Circuits: Resistance, Ohm’s law, series/parallel circuits.",
     "front": "<strong>True or False?</strong>\nOne volt is equal to one joule per coulomb.",
-    "back": "<strong>True.</strong>\nOne volt is equal to one joule per coulomb, 1 V = 1 J C<sup>−1</sup>.\n\nUseful formula — Coulomb’s law:\n\\[\nF = k\\frac{q_1q_2}{r^2}\n\\]",
+    "back": "<strong>True.</strong>\nOne volt is equal to one joule per coulomb, 1 V = 1 J C<sup>−1</sup>.\n\nUseful formula — Potential difference:\n\\[\nV = \\frac{W}{Q}\n\\]",
     "frontImage": "",
     "backImage": "",
     "frontImages": [],
@@ -28329,7 +28329,7 @@
     "topicOrder": 13,
     "bookletFormulas": [],
     "frontZh": "<strong>是真是假？</strong>一伏特等于一焦耳每库仑。",
-    "backZh": "<strong>正确。</strong>一伏特等于一焦耳每库仑，1 V = 1 J C<sup>−1</sup>。\n\n有用的公式——库仑定律：\\[\nF = k\\frac{q_1q_2}{r^2}\n\\]"
+    "backZh": "<strong>正确。</strong>一伏特等于一焦耳每库仑，1 V = 1 J C<sup>−1</sup>。\n\n有用的公式——电势差：\\[\nV = \\frac{W}{Q}\n\\]"
   },
   {
     "id": "sl-b5-025",
@@ -28408,7 +28408,7 @@
     "topic": "Current and Circuits",
     "subtopicFull": "B.5 Current and Circuits: Resistance, Ohm’s law, series/parallel circuits.",
     "front": "State the value of one electronvolt in joules.",
-    "back": "One electronvolt is equal to .",
+    "back": "One electronvolt is equal to \\(1.602\\times10^{-19}\\,\\mathrm{J}\\) (approximately \\(1.60\\times10^{-19}\\,\\mathrm{J}\\)).",
     "frontImage": "",
     "backImage": "",
     "frontImages": [],
@@ -28417,7 +28417,7 @@
     "topicOrder": 13,
     "bookletFormulas": [],
     "frontZh": "说出以焦耳为单位的一电子伏特的值。",
-    "backZh": "一电子伏特等于 。"
+    "backZh": "一电子伏特等于 \\(1.602\\times10^{-19}\\,\\mathrm{J}\\)（约为 \\(1.60\\times10^{-19}\\,\\mathrm{J}\\)）。"
   },
   {
     "id": "sl-b5-029",
@@ -29306,7 +29306,7 @@
     "topic": "Current and Circuits",
     "subtopicFull": "B.5 Current and Circuits: Resistance, Ohm’s law, series/parallel circuits.",
     "front": "What is the rule for determining the total potential difference in a <strong>series </strong>circuit?",
-    "back": "The <strong>total potential difference </strong>across the components in a <strong>series </strong>circuit is equal to the <strong>sum </strong>of the <strong>individual </strong>potential differences across each component.\nThis can be expressed mathematically as:\n\nUseful formula — Potential difference:\n\\[\nV = \\frac{W}{q}\n\\]",
+    "back": "The <strong>total potential difference </strong>across the components in a <strong>series </strong>circuit is equal to the <strong>sum </strong>of the <strong>individual </strong>potential differences across each component.",
     "frontImage": "",
     "backImage": "/images/sl-b5-current-and-circuits/sl-b5-068-back-01.png",
     "frontImages": [],
@@ -29317,7 +29317,7 @@
     "topicOrder": 13,
     "bookletFormulas": [],
     "frontZh": "<strong>系列</strong>电路中总电势差的确定规则是什么？",
-    "backZh": "<strong>系列</strong>电路中组件之间的<strong>总电势差</strong>等于每个组件之间<strong>各个</strong>电势差的<strong>总和</strong>。\n这可以用数学表达为：\n\n有用的公式 - 电势差：\\[\nV = \\frac{W}{q}\n\\]"
+    "backZh": "<strong>串联</strong>电路中各元件两端的<strong>总电势差</strong>等于每个元件两端<strong>电势差</strong>的<strong>总和</strong>。"
   },
   {
     "id": "sl-b5-069",
@@ -29444,7 +29444,7 @@
     "topic": "Current and Circuits",
     "subtopicFull": "B.5 Current and Circuits: Resistance, Ohm’s law, series/parallel circuits.",
     "front": "If the potential difference of the power source is increased, but everything else in the circuit remains constant, what effect does this have on the <strong>current</strong>?",
-    "back": "If the potential difference of the power source is increased, but everything else in the circuit remains constant, the current will <strong>increase</strong>.\n\nUseful formula — Potential difference:\n\\[\nV = \\frac{W}{q}\n\\]",
+    "back": "If the potential difference of the power source is increased, but everything else in the circuit remains constant, the current will <strong>increase</strong>.\n\nUseful formula — Ohm’s law:\n\\[\nV = R\\cdot I\n\\]",
     "frontImage": "",
     "backImage": "",
     "frontImages": [],
@@ -29453,7 +29453,7 @@
     "topicOrder": 13,
     "bookletFormulas": [],
     "frontZh": "如果电源的电势差增加，但电路中的其他一切保持不变，这对<strong>电流</strong>有什么影响？",
-    "backZh": "如果电源的电势差增加，但电路中的其他一切保持不变，则电流将<strong>增加</strong>。\n\n有用的公式 - 电势差：\\[\nV = \\frac{W}{q}\n\\]"
+    "backZh": "如果电源的电势差增加，但电路中的其他一切保持不变，则电流将<strong>增加</strong>。\n\n有用的公式——欧姆定律：\\[\nV = R\\cdot I\n\\]"
   },
   {
     "id": "sl-b5-075",
@@ -30250,7 +30250,7 @@
     "topic": "Current and Circuits",
     "subtopicFull": "B.5 Current and Circuits: Resistance, Ohm’s law, series/parallel circuits.",
     "front": "What is a <strong>variable resistor</strong>?",
-    "back": "A <strong>variable resistor </strong>is a resistor that can change the resistance by changing the length of the wire that makes up the circuit.\nThis is because a longer length of wire has more resistance than a shorter length of wire.\n\nIts circuit symbol is a resistor with a diagonal arrow through it.",
+    "back": "A <strong>variable resistor </strong>is a resistor whose resistance can be changed, usually by moving a sliding contact along a resistive track.\n\nIn the UK/IEC circuit-symbol style, it is drawn as a rectangular resistor with a diagonal arrow through it.",
     "frontImage": "",
     "backImage": "/images/custom/variable_resistor_symbol.svg",
     "frontImages": [],
@@ -30261,7 +30261,7 @@
     "topicOrder": 13,
     "bookletFormulas": [],
     "frontZh": "什么是<strong>可变电阻器</strong>？",
-    "backZh": "<strong>可变电阻器</strong>是可以通过改变构成电路的导线长度来改变阻值的电阻器。\n这是因为较长的电线比较短的电线具有更大的电阻。\n\n其电路符号是一个带有对角箭头的电阻器。"
+    "backZh": "<strong>可变电阻器</strong>是阻值可以改变的电阻器，通常通过沿电阻轨道移动滑动触点来改变阻值。\n\n在英国/IEC 电路符号中，它画成一个带有对角箭头的矩形电阻。"
   },
   {
     "id": "sl-b5-111",
@@ -30274,16 +30274,18 @@
     "topic": "Current and Circuits",
     "subtopicFull": "B.5 Current and Circuits: Resistance, Ohm’s law, series/parallel circuits.",
     "front": "What is a <strong>potentiometer</strong>?",
-    "back": "A <strong>potentiometer </strong>is a type of variable resistor that uses a sliding contact to vary the potential difference in a circuit.",
+    "back": "A <strong>potentiometer </strong>is a type of variable resistor that uses a sliding contact to vary the potential difference in a circuit.\n\nIts circuit symbol is a resistor with a third terminal shown as a sliding contact or arrow touching the resistor.",
     "frontImage": "",
-    "backImage": "",
+    "backImage": "/images/custom/potentiometer_symbol.svg",
     "frontImages": [],
-    "backImages": [],
+    "backImages": [
+      "/images/custom/potentiometer_symbol.svg"
+    ],
     "sourceFile": "b5_current_circuits_flashcards_6_per_page.docx",
     "topicOrder": 13,
     "bookletFormulas": [],
     "frontZh": "什么是<strong>电位器</strong>？",
-    "backZh": "<strong>电位器</strong>是一种可变电阻器，它使用滑动触点来改变电路中的电势差。"
+    "backZh": "<strong>电位器</strong>是一种可变电阻器，它使用滑动触点来改变电路中的电势差。\n\n它的电路符号是一个电阻器，第三个端子画成接触电阻器的滑动触点或箭头。"
   },
   {
     "id": "anki-hl-0121",
