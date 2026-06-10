@@ -896,6 +896,7 @@ export default function App() {
       swiping: false,
       cancelSwipe: false,
       startedOnText: isTextSelectionTarget(event.target),
+      startedOnSwipeZone: isSwipeZoneTarget(event.target),
     };
   }
 
